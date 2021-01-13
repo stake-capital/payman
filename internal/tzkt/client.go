@@ -23,6 +23,7 @@ type URLParameters struct {
 
 type IFace interface {
 	GetTransactions(options ...URLParameters) ([]Transaction, error)
+	GetPastTransactions(cycle int, baker string) ([]PastTransaction, error)
 	GetRewardsSplit(delegate string, cycle int, options ...URLParameters) (RewardsSplit, error)
 	GetRights(options ...URLParameters) (Rights, error)
 	GetHead() (Head, error)

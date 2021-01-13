@@ -78,13 +78,13 @@ func New(config config.Config, cycle int, inject, verbose bool) (*Payout, error)
 func (p *Payout) Execute() (tzkt.RewardsSplit, error) {
 	payout, err := p.constructPayoutFunc()
 	if err != nil {
-		return payout, errors.Wrapf(err, "failed to execute payout for cycle %d", p.cycle)
+		return payout, errors.Wrapf(err, "failed to execute payout for cycle %d, sob1", p.cycle)
 	}
 
 	if p.inject {
 		operations, err := p.applyFunc(payout.Delegators)
 		if err != nil {
-			return payout, errors.Wrapf(err, "failed to execute payout for cycle %d", p.cycle)
+			return payout, errors.Wrapf(err, "failed to execute payout for cycle %d, sob2", p.cycle)
 		}
 
 		for _, op := range operations {
