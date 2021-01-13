@@ -1,0 +1,1501 @@
+[boy@Plum payman (feature/old-cycles ✗)]$ go run main.go dryrun2 287
++-------+--------------------------------------+----------+-----------+-----------+-----------+------------+
+| CYLCE |                BAKER                 |  SHARE   |  REWARDS  |   FEES    |   TOTAL   | OPERATIONS |
++-------+--------------------------------------+----------+-----------+-----------+-----------+------------+
+|   287 | tz1Z3KCf8CLGAYfvVWPEr562jDDyWkwNF7sT | 0.118702 | 30.125656 | 20.398380 | 50.524036 | N/A        |
++-------+--------------------------------------+----------+-----------+-----------+-----------+------------+
++--------------------------------------+-------------+----------+-----------+------------+-----------+
+|              DELEGATION              | BLACKLISTED |  SHARE   |   GROSS   |    NET     |    FEE    |
++--------------------------------------+-------------+----------+-----------+------------+-----------+
+| tz1KpR68GkryWSQJhyJhim8hs7WiBzwSj1RN | false       | 0.092924 | 23.583350 |  21.225015 |  2.358335 |
+| KT19NDU5v35XYqYn3LtcxvyZwMPBV5jUmeJ5 | false       | 0.054348 | 13.793087 |  12.413779 |  1.379308 |
+| tz1QG5wmua1J8bTvGiGLeYEceDZJ8p3UDD8p | false       | 0.036072 |  9.154865 |   8.239379 |  0.915486 |
+| KT1WBq1M1ZLWuk9nGoXvCyhMfcucZmnYtjHU | false       | 0.035860 |  9.101129 |   8.191017 |  0.910112 |
+| KT1Mu2VDkSFTVkga9NHz7yDVyx9fKou5wA3i | false       | 0.029820 |  7.568009 |   6.811209 |  0.756800 |
+| tz1Y5NH34F4RFAxe61TiwzBVKGFp7hn52vQu | false       | 0.024085 |  6.112649 |   5.501385 |  0.611264 |
+| tz1guM3QVFin7Qs7yh4LEjG33guP2WCyTN44 | false       | 0.023547 |  5.976001 |   5.378401 |  0.597600 |
+| tz1Qh12SE4xj5FNKKYYQoAxbkWGJjpvAZKeC | false       | 0.023458 |  5.953478 |   5.358131 |  0.595347 |
+| KT1RpwDcfeor2z87LNbuA7tQxdevWGrmNByY | false       | 0.023438 |  5.948514 |   5.353663 |  0.594851 |
+| tz1LiTDD7JRi1xPVaFsCiFeTLHAYvTzDvNrt | false       | 0.023274 |  5.906830 |   5.316147 |  0.590683 |
+| tz1cxp4tHyiaQfkGSxQzzDZfL22bwwRpb52b | false       | 0.020932 |  5.312422 |   4.781180 |  0.531242 |
+| tz1cGzNCCby7qk2bpjbyszA8FHGUtLuzNivJ | false       | 0.019695 |  4.998549 |   4.498695 |  0.499854 |
+| KT1NFfnRiGcXjh7shNNprLJLJg5acTWnNdKf | false       | 0.017497 |  4.440552 |   3.996497 |  0.444055 |
+| tz1Qg7zULmrmGL187umZsycbdHuifpuNBdsh | false       | 0.015820 |  4.015071 |   3.613564 |  0.401507 |
+| tz1WGeBE6cMpdUe7meZ1YrSyE9aTFTLiX9bH | false       | 0.014114 |  3.581973 |   3.223776 |  0.358197 |
+| tz1LuSHHhJmKrECdA3CJrunMhFjD4hCGKJRN | false       | 0.014044 |  3.564210 |   3.207789 |  0.356421 |
+| tz1ZYs7fw53vqcH6SxEoTtbJU58RpSURA6dc | false       | 0.013981 |  3.548181 |   3.193363 |  0.354818 |
+| tz1U1CHLRud8QYefxj1AxoCuD2cidrTh53kS | false       | 0.012638 |  3.207366 |   2.886630 |  0.320736 |
+| tz1ZTLh5vo6xwaSzUsqrEWjS6o2mTycZs3vD | false       | 0.012037 |  3.054862 |   2.749376 |  0.305486 |
+| KT1Ki1Z2qtK7FqH2YewYmWnJVZeTdDzBD1vg | false       | 0.011264 |  2.858725 |   2.572853 |  0.285872 |
+| tz1afxp7fXP1UXdueH4VBg3bgRxs8kMvqDAr | false       | 0.009230 |  2.342532 |   2.108279 |  0.234253 |
+| tz1giCkT5ksWU2tia9NFYoKCVzUKake7Qu6f | false       | 0.008982 |  2.279458 |   2.051513 |  0.227945 |
+| tz1R1bModU5MwrjNxPMaooxvhNGQ7JA1HSMk | false       | 0.008689 |  2.205117 |   1.984606 |  0.220511 |
+| tz1NTk2gcNv1sTNQKt3Y3fyasEsftkcdjrcN | false       | 0.007624 |  1.934931 |   1.741438 |  0.193493 |
+| tz1YVCPZqx2VsX7wVspiFXKSxjXjyhZp88LU | false       | 0.007189 |  1.824536 |   1.642083 |  0.182453 |
+| tz1ZMhVoQFH1QBMdakmpn1qWAcDPQB4p7MDY | true        | 0.007010 |  1.779124 |   1.601212 |  0.177912 |
+| tz1gSoMFn22TCCd8VzKdLB23gByvYEEnahKD | false       | 0.006597 |  1.674247 |   1.506823 |  0.167424 |
+| tz1RjR1h3am5c8GVvzqRU6KQFT2gFVhMDreX | false       | 0.006482 |  1.645201 |   1.480681 |  0.164520 |
+| tz1Yxmb2T6zKTffDfPFmR4aNfsjXKnktZcRx | false       | 0.005876 |  1.491248 |   1.342124 |  0.149124 |
+| KT1HUAvDaCRYJQVWtEJM9eMMg7tiCvXTd4Ps | true        | 0.005310 |  1.347601 |   1.212841 |  0.134760 |
+| KT1E9z2WyP7ic1a3xwPEtnz2t8K6EhjT5scm | true        | 0.005302 |  1.345523 |   1.210971 |  0.134552 |
+| tz1cuoVFLa2NECpAvUiFpDV8mGX6bpBBbEUF | false       | 0.005031 |  1.276934 |   1.149241 |  0.127693 |
+| tz1h7TGc6MAVR6VwSbakLpMEjdanhhm7NyMS | false       | 0.004901 |  1.243915 |   1.119524 |  0.124391 |
+| tz1bRzcwMiusj5Zu9nY4RVcc1uLPSxsSF3sA | false       | 0.004866 |  1.235079 |   1.111572 |  0.123507 |
+| tz1XzKTjhhFUTaBM2rZ8mBhqxjLNDEMWWpt8 | false       | 0.004675 |  1.186564 |   1.067908 |  0.118656 |
+| tz1Xtkx445zEbFeKZ2umww2dxvmtd6MAaJEs | false       | 0.004591 |  1.165152 |   1.048637 |  0.116515 |
+| tz1eY3pFcwNaDaN1iYVJ9igCSYRtxqe3fs2w | false       | 0.004464 |  1.132905 |   1.019615 |  0.113290 |
+| KT1L4TQiu17xupn3ph2U2k3kQiYwnNj1vfaW | false       | 0.004282 |  1.086808 |   0.978128 |  0.108680 |
+| tz1itE1jhHodLP17XdYunz2VmVqMzd4xakNg | false       | 0.003501 |  0.888508 |   0.799658 |  0.088850 |
+| KT1K4caGxcBW6ktP5tMtFXjdXYd47faDYd2V | false       | 0.003399 |  0.862742 |   0.776468 |  0.086274 |
+| tz1Q77ZcZghPWvNBVefPCgHykQAwZCpMCseK | false       | 0.003389 |  0.860014 |   0.774013 |  0.086001 |
+| tz1PKdYUvtvWLzPuEiCsXb6YfXowMdFZ3MXJ | false       | 0.003354 |  0.851283 |   0.766155 |  0.085128 |
+| tz1SPJtP8GwzYpXZxVBpSnEBxCacebhAmk9W | true        | 0.003285 |  0.833638 |   0.750275 |  0.083363 |
+| tz1UKX6ZVxB1mcra9i4NPEhATAN8ismApN2R | false       | 0.003198 |  0.811628 |   0.730466 |  0.081162 |
+| tz1gYyUFmBQd5zCaBTjA9SFwAfx25CadNvg5 | false       | 0.003166 |  0.803610 |   0.723249 |  0.080361 |
+| tz1UBxMdoFAFWTqjydpjFXfH819GaWQkCqth | false       | 0.003144 |  0.797840 |   0.718056 |  0.079784 |
+| tz1QFJYavNXePFafWxBM3gjuxsPDqAz1agSG | false       | 0.002939 |  0.745848 |   0.671264 |  0.074584 |
+| tz1Yjemg8TQCiNnwZAuXF67AAZHiYGcQuVBT | false       | 0.002818 |  0.715248 |   0.643724 |  0.071524 |
+| tz1TW6TkKamWP5VVYYrUAapteVRpmgrTS2JH | false       | 0.002804 |  0.711598 |   0.640439 |  0.071159 |
+| KT1T3EsMLX2EVRcifTp2msaAk3EuDwD7GUNT | false       | 0.002688 |  0.682158 |   0.613943 |  0.068215 |
+| KT1QN5vJqTcP9XQHa4HatcjWBUsw4qE4HWqa | false       | 0.002599 |  0.659624 |   0.593662 |  0.065962 |
+| KT1L86xsTvmcXiKNCKjHMDp5xUHSUkHdKiAQ | false       | 0.002533 |  0.642928 |   0.578636 |  0.064292 |
+| tz1aMygJa6MPbZ1KPsForifyNkbuzyxiX1mU | false       | 0.002466 |  0.625927 |   0.563335 |  0.062592 |
+| tz1TJKJBWbhibtxMCwctLzA3D3MyUKGt5nUo | true        | 0.002439 |  0.618976 |   0.557079 |  0.061897 |
+| tz1RjgEnULSzgkjWLHE2gvW6Q1B6dcLpDtUw | false       | 0.002429 |  0.616533 |   0.554880 |  0.061653 |
+| tz1febig6brY9M2TmmRMWmNbyJGwPgeW2Sx3 | false       | 0.002397 |  0.608293 |   0.547464 |  0.060829 |
+| tz1QjaFUNnBVHBXoTMsW5BJnNJhKsUrPVj87 | false       | 0.002376 |  0.603057 |   0.542752 |  0.060305 |
+| tz1MyKQaPvijnR3bwHsFqJyiGHbm7ay6fi2X | false       | 0.002363 |  0.599733 |   0.539760 |  0.059973 |
+| KT1N22vkiB4GSxFjwyLWhXXQzYCT3ADdvubP | false       | 0.002357 |  0.598249 |   0.538425 |  0.059824 |
+| tz1iQsAnyq5hPuiqqUF7YFog6L5MqLneo5NN | true        | 0.002349 |  0.596236 |   0.536613 |  0.059623 |
+| tz1VCqgWd8buPvWBU4Jv1uPiDxRg52XEinaH | false       | 0.002342 |  0.594393 |   0.534954 |  0.059439 |
+| tz1c9GefKMKhZgo74Z6zPa2eLAikSWnV8sAU | false       | 0.002341 |  0.594066 |   0.534660 |  0.059406 |
+| tz1fDPJAq93teURaYAdSKa4LDsT1EGiek4a8 | false       | 0.002336 |  0.592781 |   0.533503 |  0.059278 |
+| KT1Q9jrZ8dRcdVhCcL4v7xPcdLnLJ5rorjW4 | false       | 0.002331 |  0.591494 |   0.532345 |  0.059149 |
+| KT1V1YQYdHvagPjXAApUeyK9wEH8yuS5R6Hb | false       | 0.002319 |  0.588576 |   0.529719 |  0.058857 |
+| tz1gXNwGv91PXaETvQmSQyZnSrNTHhAQtGHL | false       | 0.002306 |  0.585152 |   0.526637 |  0.058515 |
+| tz1TnbmVrRBjdvoLFCSz9oRKSLGwAEMScPiE | false       | 0.002066 |  0.524364 |   0.471928 |  0.052436 |
+| tz1NhqvEkXdqnYdxpjnYsshS28XKt1yhiH6N | false       | 0.002062 |  0.523377 |   0.471040 |  0.052337 |
+| tz1YXx7rrMqQzT6J5SWikfkLNRXbnDCaUvTJ | true        | 0.001975 |  0.501159 |   0.451044 |  0.050115 |
+| tz1PVAzUn8vuK5VHjS8fczbjNS3hTZxaSjvP | false       | 0.001892 |  0.480204 |   0.432184 |  0.048020 |
+| tz1VoTssSQrMybZ5zwvAzVo4QzdCeggEa83q | false       | 0.001768 |  0.448741 |   0.403867 |  0.044874 |
+| tz1YP7s2bxcS5amaxbGWy6biK24yeSLS1UmS | false       | 0.001754 |  0.445056 |   0.400551 |  0.044505 |
+| tz1TDBByRbw3G45sVYrvVs6afHrRxTvCdPN6 | false       | 0.001655 |  0.419988 |   0.377990 |  0.041998 |
+| tz1TajMkoqfoMFY8Ju9WpXDPk1NpjN7uBDLX | false       | 0.001651 |  0.419017 |   0.377116 |  0.041901 |
+| tz1SuCKoYC9Rwm72oD7AcZ9ByyoAVFpqouwn | false       | 0.001647 |  0.417923 |   0.376131 |  0.041792 |
+| tz1PqsuL6feKx81wyWKeHapyh8rucKEv6pQM | false       | 0.001539 |  0.390558 |   0.351503 |  0.039055 |
+| tz1gtLf7yM7wV7uThWnWCbH3cqEm9H4kwcF7 | true        | 0.001520 |  0.385731 |   0.347158 |  0.038573 |
+| tz1PCeDqPQVUNmkxsGf9TUrCPpn53DfDFiQ4 | false       | 0.001498 |  0.380231 |   0.342208 |  0.038023 |
+| tz1VTe56pRR6jQu1qU6HAf6BVAxnrLo7uDio | false       | 0.001493 |  0.378972 |   0.341075 |  0.037897 |
+| tz1eG9ouy38Yi2SBp7EtWVyPuWuMMY9xmfPv | false       | 0.001476 |  0.374684 |   0.337216 |  0.037468 |
+| tz1QRQfv8nDtgrbwUAmcXXsX6o4mWSi3TVdy | true        | 0.001475 |  0.374459 |   0.337014 |  0.037445 |
+| tz1cr5czaozJhGPACiBhcnoGET4Yvv8DZes2 | false       | 0.001422 |  0.360863 |   0.324777 |  0.036086 |
+| tz1aMhteQb4cnKrrNGALgpn9JKyhp5mVGFKQ | true        | 0.001419 |  0.360019 |   0.324018 |  0.036001 |
+| tz1RES1mXs6WA39eWHK8jt2XVTHb3cFenxD7 | false       | 0.001410 |  0.357798 |   0.322019 |  0.035779 |
+| tz1WDtyKHWnfgzH9kN4g9exBrm1Q4BNFvyj3 | false       | 0.001365 |  0.346382 |   0.311744 |  0.034638 |
+| tz1Zxd2hzY2AU2BN5Ho6HdiZ7kXz8qQNDtfF | false       | 0.001358 |  0.344539 |   0.310086 |  0.034453 |
+| KT1HcAz8mBjYZgPLzC3xf7DZkGMQ3WCkD67M | false       | 0.001300 |  0.329865 |   0.296879 |  0.032986 |
+| tz1bY3b5xE5WZ1cxeZyYhxWKSfHPeyieAwFq | false       | 0.001297 |  0.329043 |   0.296139 |  0.032904 |
+| tz1Q8RtyZyZZfDToNJmYrPEPucwcjryxbvSQ | false       | 0.001261 |  0.320093 |   0.288084 |  0.032009 |
+| tz1LDw5zoY7FYzhUHsixCTnrF3U6x3kRDPJF | false       | 0.001198 |  0.304064 |   0.273658 |  0.030406 |
+| tz1TsYEmro6UJ75DNPHPTbEZsJKG2fQEanhF | true        | 0.001192 |  0.302605 |   0.272345 |  0.030260 |
+| tz1ULEUTbaY1LEComjSVPqPuY1QRJJwXTiwg | false       | 0.001156 |  0.293414 |   0.264073 |  0.029341 |
+| tz1V4srsB3sz5i6xB6vx3uL7tUiXhpDtvLiS | false       | 0.001100 |  0.279194 |   0.251275 |  0.027919 |
+| tz1QYjAZ5Sy2j7cjAWs7fPMUQENCpa5rKJLM | false       | 0.001079 |  0.273921 |   0.246529 |  0.027392 |
+| tz1RPRipqd7yFKPyJN55mB6GRDUqkbzcDo4h | false       | 0.001070 |  0.271583 |   0.244425 |  0.027158 |
+| tz1fXtHKHFPEMWadNDXa4VtoqNyUrYT8Wech | false       | 0.001060 |  0.268992 |   0.242093 |  0.026899 |
+| KT1CA9msNjX4K8rgU9UxjASb2Pg4qXYjHvWB | false       | 0.001020 |  0.258924 |   0.233032 |  0.025892 |
+| tz1TqxAqcdcg3Y6Kwa3xGnvVGnD6jfDRKFoe | false       | 0.001018 |  0.258400 |   0.232560 |  0.025840 |
+| tz1TYYphefn6L3bDrNo88HMWbNFZFutuLbXp | false       | 0.000985 |  0.250013 |   0.225012 |  0.025001 |
+| tz1bKcf7FP2MGmB6q6xM6e4n1x1aDZCo7EVY | false       | 0.000983 |  0.249464 |   0.224518 |  0.024946 |
+| tz1MD6CVdDpRrHSQYvNdZRkb1ty1zCLDp6Jf | false       | 0.000942 |  0.239069 |   0.215163 |  0.023906 |
+| KT1RgBmtR6bMUmxWKKK5tM1fjcWeAfdGYd6V | false       | 0.000932 |  0.236649 |   0.212985 |  0.023664 |
+| tz1ibdFZSwd7AVqcvmmCXdhcDjhgqedNo7Tp | true        | 0.000928 |  0.235640 |   0.212076 |  0.023564 |
+| tz1etJt3TonYCXHpUfJgaD8VhqYou6PiboeP | false       | 0.000885 |  0.224588 |   0.202130 |  0.022458 |
+| tz1PePQHfBC5PW3wky56Jv8ZnyZfaKrdnTKv | false       | 0.000885 |  0.224483 |   0.202035 |  0.022448 |
+| tz1h1CxXpje8GkKECPyNP4FRnRprZc1rqogf | false       | 0.000843 |  0.213841 |   0.192457 |  0.021384 |
+| tz1TUcLFNhPqye1yo9nsNRPfXErEBJWHCLSJ | true        | 0.000823 |  0.208835 |   0.187952 |  0.020883 |
+| tz1YBsFY8APAgXSKTDCUHHLEWqNhcv55jBZE | false       | 0.000791 |  0.200836 |   0.180753 |  0.020083 |
+| tz1hbi3QhKZirVkCArzTx4xZ1SQSVNDpQd7y | false       | 0.000781 |  0.198217 |   0.178396 |  0.019821 |
+| KT1RNcF2pRnvCR8ej1Uk7exvZ5ZTRf9HRgw1 | false       | 0.000749 |  0.190053 |   0.171048 |  0.019005 |
+| KT1A7drknXEwQ84BztjFLaHspPsR5gq7WLU4 | false       | 0.000744 |  0.188734 |   0.169861 |  0.018873 |
+| tz1QVsmU7n1Dw2J8Mu8XcLnNJVcAm5EkMdSN | false       | 0.000742 |  0.188217 |   0.169396 |  0.018821 |
+| tz1hXEfHS8KNMc4iuPqg7s1PVnELkeMxZGFj | false       | 0.000737 |  0.187057 |   0.168352 |  0.018705 |
+| tz1R1Skm13E6HYQ2miSGfJzKqdsJ77Z111nk | false       | 0.000728 |  0.184661 |   0.166195 |  0.018466 |
+| tz1g8FgdE3A2p5HUaFHQNm9Z3JtKXbABGSwz | false       | 0.000726 |  0.184234 |   0.165811 |  0.018423 |
+| tz1RFc7FwdNTeiSMmCLskgRgc6dPm9itHpGZ | false       | 0.000724 |  0.183868 |   0.165482 |  0.018386 |
+| tz1hCXC5jr2dUs4cGay526ShAZxHNVarkHFh | false       | 0.000715 |  0.181581 |   0.163423 |  0.018158 |
+| tz1fYZBTiJ5HQ7S8hnzJMy81vBpMEnUsWXjM | false       | 0.000698 |  0.177098 |   0.159389 |  0.017709 |
+| tz1XN6KrExL2xU5EwUM4o1K1bsztRv6prSZp | true        | 0.000679 |  0.172339 |   0.155106 |  0.017233 |
+| tz1a1ZcbAeBEjxYSwuNKxSu6FbFB4dxdL3m9 | false       | 0.000678 |  0.172082 |   0.154874 |  0.017208 |
+| tz1QKDWXEnSBS3M948txvvreTKQPAtCQEjhK | false       | 0.000664 |  0.168522 |   0.151670 |  0.016852 |
+| tz1SMkiGccYjFuPHQTuurb4ebqxfQUnD3mFP | false       | 0.000651 |  0.165143 |   0.148629 |  0.016514 |
+| tz1iaatepHXc87Q4nTsmbpCtnp7XqoYktzhZ | false       | 0.000633 |  0.160580 |   0.144522 |  0.016058 |
+| tz1W8nDK4chGH5q3kh1LPjyRGkQn358XquDF | false       | 0.000611 |  0.155034 |   0.139531 |  0.015503 |
+| tz1ebdhHDyC2z4VbxJqdPHQJp3dSWjG7bDGP | false       | 0.000607 |  0.154093 |   0.138684 |  0.015409 |
+| tz1N9FT6EkgM174b6suFBxhszg5oLnYpBvqf | true        | 0.000605 |  0.153549 |   0.138195 |  0.015354 |
+| tz1NhNqQ9jfXJf4cBHc6RrtziUYWQ8XfUywj | false       | 0.000600 |  0.152401 |   0.137161 |  0.015240 |
+| KT18s41CcAYvFWCAhar94knxSY2beJjLSNM2 | false       | 0.000589 |  0.149588 |   0.134630 |  0.014958 |
+| KT1DY95a4BgFuzFQPvDzruhenSz2Qiv4waK3 | false       | 0.000589 |  0.149381 |   0.134443 |  0.014938 |
+| tz1gerydtyNqTuYDQ5fZZ4PsVotD7nxPAaBa | false       | 0.000584 |  0.148338 |   0.133505 |  0.014833 |
+| tz1SSZErQeBFHrQe3RkgVPbzZF6DEXXdFmJd | false       | 0.000555 |  0.140942 |   0.126848 |  0.014094 |
+| tz1bsZ9wHvZo9DNDCrkcaH2MZ5sgQYRA4i8P | false       | 0.000520 |  0.132066 |   0.118860 |  0.013206 |
+| tz1RJhQikDLqYnxKMgQGJeh2Tj5NVFiL23ox | false       | 0.000515 |  0.130717 |   0.117646 |  0.013071 |
+| tz1WUTxeiRsUm1a3MbECduZ6UZHYCU2xo3TF | false       | 0.000506 |  0.128406 |   0.115566 |  0.012840 |
+| tz1gV3DEaWtqKGWB5jkYfziKqxPRLNfY9YFW | false       | 0.000500 |  0.126911 |   0.114220 |  0.012691 |
+| tz1aA9QbrZpCMMjQc8e4WZnas2s4hkgYoeRp | false       | 0.000489 |  0.124222 |   0.111800 |  0.012422 |
+| tz1XLjJBYaLXKndgeGJUoEiqBt2ucVjHp7Nw | false       | 0.000484 |  0.122727 |   0.110455 |  0.012272 |
+| tz1h6xJUFfz4yNLonKfNVVrjJsmHVnUTxEbF | false       | 0.000478 |  0.121319 |   0.109188 |  0.012131 |
+| KT1E2YuzGzE4qy9xwHYQEgfT7gs9BKNLrPce | false       | 0.000471 |  0.119531 |   0.107578 |  0.011953 |
+| tz1dPAPShEvHDmHGTaQakcfPMQEy7syJtqt3 | false       | 0.000464 |  0.117812 |   0.106031 |  0.011781 |
+| tz1XNMVTPgAf2ufF9FxAyBjUzSZbEuZtcQyq | false       | 0.000456 |  0.115644 |   0.104080 |  0.011564 |
+| tz1XqPBwtRCHWdoJcAPptmvJosWGuGfwujb5 | false       | 0.000433 |  0.110015 |   0.099014 |  0.011001 |
+| tz1ZRcBhGe2DHMAD44x5riSw2zMD9YAWgD6Q | false       | 0.000420 |  0.106682 |   0.096014 |  0.010668 |
+| tz1b12b4mLtNiUDtJD1EijaSn2Zkcqs4QRmT | false       | 0.000411 |  0.104316 |   0.093885 |  0.010431 |
+| KT1KYaG216oBbNgQa92FrALdBiQVLj4jDbqQ | false       | 0.000409 |  0.103926 |   0.093534 |  0.010392 |
+| tz1Yb47sodX4a22hH7sSeLLusKrS1fD5xecC | false       | 0.000386 |  0.097967 |   0.088171 |  0.009796 |
+| tz1gTHxkVeqWtWTQyr9xMd3a1Bh2fFB1KNLP | false       | 0.000383 |  0.097173 |   0.087456 |  0.009717 |
+| tz1WGos4kEnRkwA6TNSQU5UCsuhmzUJttqhk | false       | 0.000382 |  0.096845 |   0.087161 |  0.009684 |
+| tz1iZmUv59ZDiXadwJUFtkMUsugdrWzdDRX7 | false       | 0.000357 |  0.090633 |   0.081570 |  0.009063 |
+| tz1L7M4VKvrPxm2etF4keSj4tY4pBxg2Ly6h | false       | 0.000356 |  0.090313 |   0.081282 |  0.009031 |
+| tz1X4s9vDagF3dbP1yeqbnYsJhrU6byk3DRF | false       | 0.000325 |  0.082458 |   0.074213 |  0.008245 |
+| tz1fzLhUjygbdUc482h2TLpy2wnaPbaYJEyf | false       | 0.000321 |  0.081403 |   0.073263 |  0.008140 |
+| tz1ZL8jccNxiQ17C34hkXC6jdkTREoTxfp9Y | false       | 0.000307 |  0.077907 |   0.070117 |  0.007790 |
+| KT1WjyowJSz4iLwu194xK6GuyUgDjo9sJCwL | false       | 0.000303 |  0.076942 |   0.069248 |  0.007694 |
+| tz1ivy6mhh8Lz3qboNPMugJWSsrjLsvSf5NG | true        | 0.000295 |  0.074912 |   0.067421 |  0.007491 |
+| tz1SAaSYqid12hjzuXFB1duUXhJmHEG4bzZ9 | false       | 0.000295 |  0.074764 |   0.067288 |  0.007476 |
+| tz1XyUSebf84VX4VpziJS2fQnRB34um2Bxof | true        | 0.000280 |  0.071092 |   0.063983 |  0.007109 |
+| tz1fsAKHUGPrbMZWxYjMMhW9KvpLY4UiVuqB | false       | 0.000277 |  0.070251 |   0.063226 |  0.007025 |
+| tz1WJhJcoa3qC7i8q21xWb5BKUWNjvdAJgWX | false       | 0.000275 |  0.069897 |   0.062908 |  0.006989 |
+| KT1B7dRzQhifuWGLGEvzvfGuCVupudgX1far | false       | 0.000275 |  0.069817 |   0.062836 |  0.006981 |
+| tz1fJsdQcdigeZ9xjQLGgcJnKQAo1UxwiAL2 | false       | 0.000275 |  0.069738 |   0.062765 |  0.006973 |
+| tz1T9pDBM9nohX5YgaDCTkHh8HD3chB5J5An | false       | 0.000267 |  0.067798 |   0.061019 |  0.006779 |
+| tz1TrCC8w2pZPgn2MurZrnMA5ULA82gNcP76 | false       | 0.000266 |  0.067467 |   0.060721 |  0.006746 |
+| tz1cX5zH9h3Mqbb8MHvBtSVoiJDnACCLFC3B | false       | 0.000264 |  0.067026 |   0.060324 |  0.006702 |
+| tz1TwUDXJwWdGUxwCAkjbkYju2De6EaGS1Kx | false       | 0.000262 |  0.066508 |   0.059858 |  0.006650 |
+| tz1LgGjrgcUFe9ztaFxzjo1XNiqFtYqTF3Pd | false       | 0.000260 |  0.066015 |   0.059414 |  0.006601 |
+| tz1Lv635Hq3dJxPMcLak1VuxhGWxRjQNFvka | false       | 0.000260 |  0.065929 |   0.059337 |  0.006592 |
+| tz1iVX7Aq5V5RbToCpBzAUCwsRqPtrRf4GWY | false       | 0.000259 |  0.065609 |   0.059049 |  0.006560 |
+| tz1M5FmR2Krt1Rko5BSrrkP8MV7SaskRM9tY | false       | 0.000254 |  0.064554 |   0.058099 |  0.006455 |
+| tz1Va74cmt3QV16gN3e4NDvr3maSjG9wmH7G | false       | 0.000249 |  0.063157 |   0.056842 |  0.006315 |
+| KT1BguM844PNfqcTHijPKk2HqMNsojH3NBRo | false       | 0.000246 |  0.062484 |   0.056236 |  0.006248 |
+| KT1XEN5V5othwaLwNhjUJffKgnYLbZRUCPx8 | false       | 0.000246 |  0.062366 |   0.056130 |  0.006236 |
+| tz1Q1MK5e96yDeoNrGM9Sga6n3i4eqDYBjNu | false       | 0.000243 |  0.061784 |   0.055606 |  0.006178 |
+| tz1dt1s5VynRUURYTcW2KhCqFAuemP7Zh2Tr | false       | 0.000241 |  0.061155 |   0.055040 |  0.006115 |
+| tz1MJt6YYLLGPTZw9tUWVbo3ZAcAWWbGdhDn | false       | 0.000239 |  0.060670 |   0.054603 |  0.006067 |
+| tz1iu6scdJBgsDhA1yWCybqmE5XxGN5hLrUY | false       | 0.000236 |  0.059998 |   0.053999 |  0.005999 |
+| tz1dRb2htoZennXPaSGHtYpQbyaCSaJ45zwn | false       | 0.000236 |  0.059848 |   0.053864 |  0.005984 |
+| tz1c9Fm1et1PUowuv4rMABNaRB1YtcaQjLLN | false       | 0.000236 |  0.059821 |   0.053839 |  0.005982 |
+| tz1hSa8Sokf4Psb39tNZ9KtoEFKUbjdASdKB | false       | 0.000235 |  0.059538 |   0.053585 |  0.005953 |
+| tz1MZWsL6DpjkqXLmQ6eiRqjiwvb9ykMNUPj | false       | 0.000234 |  0.059262 |   0.053336 |  0.005926 |
+| tz1LBEuPv4bDWnwpqVqm3uUwdjRfVfEN7dYA | false       | 0.000232 |  0.058985 |   0.053087 |  0.005898 |
+| tz1ixqkmiNCaGk8S743VWJ126NRPhdUNhxvk | false       | 0.000232 |  0.058812 |   0.052931 |  0.005881 |
+| KT1NUWAgxRAD7FWynszzbAMSTfon3Ms1sXDB | false       | 0.000232 |  0.058758 |   0.052883 |  0.005875 |
+| tz1gYzsnfbpmbMemEfNdCdftPAw6hpqXXnrj | false       | 0.000231 |  0.058673 |   0.052806 |  0.005867 |
+| tz1V6kVYBSzUkhkafb4UNGuGDMMd8j33uDBX | false       | 0.000231 |  0.058538 |   0.052685 |  0.005853 |
+| KT1QFTpFb5NBuZNLWjTBsNc8fpqnLBXdjJ3y | false       | 0.000227 |  0.057555 |   0.051800 |  0.005755 |
+| tz1bNuNi7NfQ5cBDXKKc7p8o5YK2gUdPYBqW | false       | 0.000218 |  0.055200 |   0.049680 |  0.005520 |
+| tz1WAokvav96926wAjWnwLE6eh2kzQzCuUp2 | false       | 0.000208 |  0.052765 |   0.047489 |  0.005276 |
+| tz1ZmsWeD7ccB9ySL7zFmiWBV1aTeYrQUSzG | false       | 0.000197 |  0.050045 |   0.045041 |  0.005004 |
+| tz1Zue3BtG1iTTpTfr2Cju123jjbPecvw2jG | false       | 0.000195 |  0.049600 |   0.044640 |  0.004960 |
+| KT1W1XUAnV9aJV34o1buRsEa8GAdA6cyhbcx | false       | 0.000195 |  0.049470 |   0.044523 |  0.004947 |
+| tz1akbAW96YXTW5Da212BpSPZEKAxsmmJLgM | false       | 0.000192 |  0.048702 |   0.043832 |  0.004870 |
+| tz1aWabqcQsJbUcPBhDvsX5LmcbGBHjHBk6b | false       | 0.000185 |  0.046936 |   0.042243 |  0.004693 |
+| tz1SnPG7TTmBG4wFRrGxn7voQwBeaQy4JGYR | false       | 0.000183 |  0.046547 |   0.041893 |  0.004654 |
+| KT1BThb9BXQpunk7Y4nVPtkR2DuLgcmUzqJB | false       | 0.000182 |  0.046292 |   0.041663 |  0.004629 |
+| tz1coccA9FKPwpPhCPSYE2riCuZRDiTv9zS6 | false       | 0.000180 |  0.045740 |   0.041166 |  0.004574 |
+| KT1P2ZP1DUxjYcDDCLrULca1g81k18uifKrK | false       | 0.000178 |  0.045269 |   0.040743 |  0.004526 |
+| tz1YrscUYv4LdzPZqr3jbDTQzWy7ZSfHaKex | false       | 0.000177 |  0.044855 |   0.040370 |  0.004485 |
+| tz1YXSeHDk4k9S4gCS3KT5Rn8gbXLMUES4N3 | false       | 0.000170 |  0.043036 |   0.038733 |  0.004303 |
+| tz1RRmX2EwBVKvMyyqbZnswWN8PTBCxh7H6r | false       | 0.000153 |  0.038841 |   0.034957 |  0.003884 |
+| KT1JMYavPEzjZ5XdyQsNkkaDycapJARLr7zQ | false       | 0.000150 |  0.038013 |   0.034212 |  0.003801 |
+| KT19GFjfYtNCicqXMgCYRvq7fZRDhE828uw2 | false       | 0.000135 |  0.034219 |   0.030798 |  0.003421 |
+| tz1TBV1dce3eQ2VGsL1ZP1NvC2AZnks3JQh2 | false       | 0.000130 |  0.032919 |   0.029628 |  0.003291 |
+| tz1VF9DN8gFWSZFhTXjnurFAi66b1xkS6bh4 | false       | 0.000128 |  0.032554 |   0.029299 |  0.003255 |
+| tz1VuKJfHh8Mets5fDspTdLAYgYAJ3i7c2SK | false       | 0.000119 |  0.030152 |   0.027137 |  0.003015 |
+| tz1hj8tpquUGy553HCyLEcxGM7JB7ZqXvSox | true        | 0.000119 |  0.030080 |   0.027072 |  0.003008 |
+| tz1MKCMt9dQDccykzripUGk5439BwEWthqx5 | false       | 0.000117 |  0.029708 |   0.026738 |  0.002970 |
+| KT1PH39UeJRGTpVBCSHQcBpb4pjgVp8NSpde | false       | 0.000117 |  0.029702 |   0.026732 |  0.002970 |
+| tz1bD4oVSaWAaRYiWB6aYaDa3f1ABv9TsBV7 | false       | 0.000117 |  0.029677 |   0.026710 |  0.002967 |
+| tz1bTezZ1NYwtxxuMLuPTtU94hqkXd3fLEfZ | false       | 0.000116 |  0.029429 |   0.026487 |  0.002942 |
+| tz1fp4qfYHMfftoxmyCNnHgQ37kukHhh5Hgu | false       | 0.000115 |  0.029278 |   0.026351 |  0.002927 |
+| tz1N2bv4tWZL3P8bPz9spiatisSMThEBvC4B | false       | 0.000110 |  0.027823 |   0.025041 |  0.002782 |
+| tz1eQ2rkeafEHG1GGZcd3eiRfaXNJ1f6jWfD | false       | 0.000106 |  0.026930 |   0.024237 |  0.002693 |
+| tz1bSTfd7Bo7XJP1hi4MDdsU2BbEkdUJ3GVY | false       | 0.000104 |  0.026461 |   0.023815 |  0.002646 |
+| tz1XkfMgm23yhbS6CWwMguZBn59GVXEnLNQ2 | false       | 0.000102 |  0.026011 |   0.023410 |  0.002601 |
+| tz1LB7TVKUy7E5k5Xp63LxTENSoUoQvSem9y | false       | 0.000102 |  0.025813 |   0.023232 |  0.002581 |
+| tz1KnCyw7NrtW8ukxd4XCfX2tX7RHfvQBR8o | false       | 0.000097 |  0.024552 |   0.022097 |  0.002455 |
+| tz1XgduT7uwnwx24ZdgKkAMmGo4pU6uzw8AL | false       | 0.000096 |  0.024261 |   0.021835 |  0.002426 |
+| KT1S9JdEqwrVC7723Mckk4Zs7RxuUYzgELzw | false       | 0.000094 |  0.023801 |   0.021421 |  0.002380 |
+| tz1LWrH6fEB1NfHA4iEvfYQifPi3EwBpY45M | false       | 0.000093 |  0.023604 |   0.021244 |  0.002360 |
+| tz1VncNSworAZPVavTGP1pN1mZeJEqWY2NWE | false       | 0.000092 |  0.023309 |   0.020979 |  0.002330 |
+| tz1N9Waofcf9xj2HFar5ZrD8xDrufRFCxRZN | false       | 0.000091 |  0.023069 |   0.020763 |  0.002306 |
+| tz1gRXve9tsnTCA7dMoBdQzebW3PWbWNazQB | false       | 0.000090 |  0.022801 |   0.020521 |  0.002280 |
+| KT1VLU2GdLCW7YtfWuFcuavud2bFRrjqagk1 | false       | 0.000088 |  0.022331 |   0.020098 |  0.002233 |
+| tz1h7XuhpHWoyoe3oEGRwZDEWyWxGStjrGpA | false       | 0.000085 |  0.021671 |   0.019504 |  0.002167 |
+| KT1KLRcd8pnotvsCFN9GYFoqemrVGm46qfNv | false       | 0.000085 |  0.021522 |   0.019370 |  0.002152 |
+| tz1Qq5AfNXrBqRQNrgXPoZ6uQ1nJdPTctonU | false       | 0.000083 |  0.021076 |   0.018969 |  0.002107 |
+| tz1aarbbPrrEjgwPTUgon8UKSrzARWKTjsRk | false       | 0.000082 |  0.020774 |   0.018697 |  0.002077 |
+| tz1ZfywPheNAWAMVkKBK6nB4Kf3hetV8DTeU | false       | 0.000078 |  0.019775 |   0.017798 |  0.001977 |
+| tz1horhhhbXZtMJjE95b6w2DzkjhX7p53PQX | false       | 0.000078 |  0.019699 |   0.017730 |  0.001969 |
+| tz1VBgUQMBJLWRU747a3N7Q8V3rHccUCduic | false       | 0.000077 |  0.019641 |   0.017677 |  0.001964 |
+| tz1WzsxKAE1bedEvtAZTEU1p8vyjaqhmA8ZA | false       | 0.000073 |  0.018629 |   0.016767 |  0.001862 |
+| tz1SBWobVR73mQD5TaAZACVy6Rpwj9hrcyUz | false       | 0.000073 |  0.018438 |   0.016595 |  0.001843 |
+| tz1ZTmaDrpmGGSkGjhdvGMh3NNLAUx8PVpLZ | false       | 0.000073 |  0.018432 |   0.016589 |  0.001843 |
+| tz1PMms7MnwDM2oUsY5P9aTaRzhwrtJ8g6CR | false       | 0.000072 |  0.018216 |   0.016395 |  0.001821 |
+| tz1LUB9b1b6PKzWgxBhpZuVBKm1CaJ3R1EQN | false       | 0.000070 |  0.017885 |   0.016097 |  0.001788 |
+| tz1dbhyNPyKQi2VgDvsdKQLCwpEkZUwNJ2CR | false       | 0.000070 |  0.017748 |   0.015974 |  0.001774 |
+| tz1W6bajt6UQVjGikL3NodVyNYqiXtKd33Gv | false       | 0.000069 |  0.017616 |   0.015855 |  0.001761 |
+| tz1MzceVHro7b9SUAk5iicCnyEdFuBCkk7gd | false       | 0.000069 |  0.017417 |   0.015676 |  0.001741 |
+| tz1Mt9eG1vSc8pgRQCpt5W8dMcWTiX6jP1Lz | true        | 0.000067 |  0.016965 |   0.015269 |  0.001696 |
+| KT1Pc4vDuWPWaVKY2KYZb3ZSNb7xDyMWg7ou | false       | 0.000067 |  0.016964 |   0.015268 |  0.001696 |
+| tz1Wv2SVQDUUKNw2s1qF3WmXiKHpEoPs8CdM | false       | 0.000067 |  0.016948 |   0.015254 |  0.001694 |
+| tz1YXqyLWV3H5VyqfA5JvrYiaTysHzb8Qbfp | false       | 0.000065 |  0.016586 |   0.014928 |  0.001658 |
+| tz1RAL2uWYZiP2fpsnLceUgMAg24Vyxr55J7 | false       | 0.000065 |  0.016529 |   0.014877 |  0.001652 |
+| tz1L9NoFW4TMtJGWVmAtrUF7S3fJFPv1VLWV | false       | 0.000064 |  0.016362 |   0.014726 |  0.001636 |
+| tz1YF9upXPgVJDSHKxP3BVhbiyhNZRYKwMS4 | false       | 0.000064 |  0.016337 |   0.014704 |  0.001633 |
+| KT1AXfc7F5cWEWKCVS84RrHZec1LaJFActom | false       | 0.000064 |  0.016299 |   0.014670 |  0.001629 |
+| tz1VJ3xTYZXWVJkEzPhtkf3j1THFWKadTtFV | true        | 0.000064 |  0.016215 |   0.014594 |  0.001621 |
+| tz1ZEnEDKdd27RUuMUGe7PXdiFBv7em2a1pe | false       | 0.000064 |  0.016206 |   0.014586 |  0.001620 |
+| tz1i21ZfqYAW3tCz1o24TWkpHvDytyzD1k7q | false       | 0.000062 |  0.015775 |   0.014198 |  0.001577 |
+| tz1cAaFnoY24sdADLjGkQMtcbV5fcFSkFVgo | false       | 0.000060 |  0.015307 |   0.013777 |  0.001530 |
+| tz1UNFm4QKx1kemaXArmCC3dCJDGHHiQWnGJ | false       | 0.000060 |  0.015258 |   0.013733 |  0.001525 |
+| tz1UgLEZornKsKPMDpq44Y84poaQRZgXZctK | false       | 0.000060 |  0.015163 |   0.013647 |  0.001516 |
+| tz1XHv93pDVEp4PJWCVpwChBTvnSvP4UN3iV | true        | 0.000058 |  0.014635 |   0.013172 |  0.001463 |
+| KT1BLbHcUujF8QgLJh14Wxqh8k667DNACjNj | false       | 0.000057 |  0.014376 |   0.012939 |  0.001437 |
+| tz1dvoDjEjCoYNwoHBKyQcQ6idS9RYYRJd9g | false       | 0.000056 |  0.014238 |   0.012815 |  0.001423 |
+| tz1WVtvyLDDsVaPg9s2req2UBucYsgrUfkcX | false       | 0.000054 |  0.013733 |   0.012360 |  0.001373 |
+| tz1L9Ez42oLSCEu4gKUrnDpKdJkoPD6BuB7Q | false       | 0.000054 |  0.013681 |   0.012313 |  0.001368 |
+| tz1VMCv5wueZnAmeoMgkhpiDz1Un2FBXf25y | false       | 0.000051 |  0.012971 |   0.011674 |  0.001297 |
+| tz1ebithdPYQBuM96gSA72eYuudyRgS3Tn98 | false       | 0.000051 |  0.012825 |   0.011543 |  0.001282 |
+| tz1ZQ4QbGKAWbLxX1pGYj4gHjFHUC4sPZ5ez | false       | 0.000048 |  0.012140 |   0.010926 |  0.001214 |
+| tz1fDNxi79eypDkDVxfLLKacZmaeCHC2hHrm | false       | 0.000046 |  0.011754 |   0.010579 |  0.001175 |
+| KT1KXsKxcBdJD8S8Pc4JCLxceX65LEH2WWn1 | false       | 0.000046 |  0.011562 |   0.010406 |  0.001156 |
+| tz1M6j55v5bw6yTVXyHUVcvnkNjtqpufBvQw | false       | 0.000045 |  0.011457 |   0.010312 |  0.001145 |
+| tz1dce8MCEY6oXqd95BajXt24Jxiur85khGJ | false       | 0.000043 |  0.010809 |   0.009729 |  0.001080 |
+| tz1TTsbQ9iCEY91JohqyLL8tvE7KAFDtnmCb | false       | 0.000041 |  0.010454 |   0.009409 |  0.001045 |
+| tz1YdDUWSZms1SWtC5dAX2Du2yKCQBrR8kMX | true        | 0.000041 |  0.010398 |   0.009359 |  0.001039 |
+| tz1eaMccdqKqNHrfCHSrM7XQoBShGvTZqjYU | false       | 0.000041 |  0.010308 |   0.009278 |  0.001030 |
+| tz1eiXKjDMMMvx8mQhmBkoSaS8iGkQqbw3aa | false       | 0.000040 |  0.010135 |   0.009122 |  0.001013 |
+| tz1Tz5EvufeZrzz7JE3Zhw8TQY77SKqjfv2m | false       | 0.000038 |  0.009751 |   0.008776 |  0.000975 |
+| tz1ege3wZ6PUWpbe1GvrNaN2usjWViyhfmZb | false       | 0.000038 |  0.009630 |   0.008667 |  0.000963 |
+| tz1YEPUWvkYBujQSEf8RssgzBAwXa5ep74eC | false       | 0.000036 |  0.009249 |   0.008325 |  0.000924 |
+| tz1dNpQjArCn46vDcATJ5GX9Xes8t6RHhyf4 | false       | 0.000036 |  0.009092 |   0.008183 |  0.000909 |
+| tz1Rtxn4TbMg2EEQ45B6AkDwnnqQAQHiAiz4 | false       | 0.000036 |  0.009022 |   0.008120 |  0.000902 |
+| tz1TvKD3tZGv2jGap1CHvxVPjVc6onmT1Sr7 | false       | 0.000033 |  0.008394 |   0.007555 |  0.000839 |
+| tz1P8H3JtoJid5G4tyFc2TdFQ58Wd6vWH2pP | false       | 0.000032 |  0.008217 |   0.007396 |  0.000821 |
+| tz1coCHKVMnr2sZteFLmpAqPQjzyAtHV46wf | false       | 0.000031 |  0.007804 |   0.007024 |  0.000780 |
+| KT1ER1FtuKoWy6jGMqCs3gGx6yEHRPqQUMVN | false       | 0.000030 |  0.007660 |   0.006894 |  0.000766 |
+| tz1NQN7Vq485AeWM1PrZKXcfMMdU9yXjV57o | true        | 0.000030 |  0.007546 |   0.006792 |  0.000754 |
+| KT1AP55nYiD1iV5uXTkaMVW7NTQtTvHLfBmr | false       | 0.000030 |  0.007536 |   0.006783 |  0.000753 |
+| tz1W66bLkHwWqGgPY3tDAhNYhw9mbax11Fos | false       | 0.000029 |  0.007379 |   0.006642 |  0.000737 |
+| tz1RiLWqhd9hAD5C1HdEGqPMeAowuKGQSyu1 | false       | 0.000029 |  0.007357 |   0.006622 |  0.000735 |
+| tz1TCrDs9XhF9g3jaAWARTtA8XoHu6TJPLzN | false       | 0.000028 |  0.007067 |   0.006361 |  0.000706 |
+| tz1ZkxvUecFyLmBjTgKmD5CYv94TDo1cdWK5 | false       | 0.000027 |  0.006828 |   0.006146 |  0.000682 |
+| KT1C3EUjFvXPxjCfTyHFgFfZDK96yvGWnUKu | false       | 0.000025 |  0.006302 |   0.005672 |  0.000630 |
+| KT1WZsytxAcncs5suMRfqRUQBC4i5zUSTrpZ | false       | 0.000025 |  0.006237 |   0.005614 |  0.000623 |
+| tz1iD1UzVrohEhru2aqKdJHYkdkX1FMGCMWP | false       | 0.000024 |  0.005988 |   0.005390 |  0.000598 |
+| tz1VadHe4AetFx1E6cJQ1LFD49yno61P7ygX | false       | 0.000023 |  0.005901 |   0.005311 |  0.000590 |
+| tz1M7Kpno9fjk1DWpbsXUmD3jVs4gYyvoa6a | true        | 0.000023 |  0.005880 |   0.005292 |  0.000588 |
+| tz1gQz4riMiZcsPczWhgVB8MX9uu2mKHAg3j | false       | 0.000023 |  0.005761 |   0.005185 |  0.000576 |
+| tz1SnnzWescq9Hwzvq7Bqw9wkUdyJV55WcYm | false       | 0.000023 |  0.005734 |   0.005161 |  0.000573 |
+| KT19FCo5Btgx1qAGpXNyJesMVW4F7q25EqtM | false       | 0.000022 |  0.005651 |   0.005086 |  0.000565 |
+| tz1Z3sRrPwZmHo5EkdFLczf792FBpdLvJVys | true        | 0.000022 |  0.005581 |   0.005023 |  0.000558 |
+| tz1g6KdjisEZMgSrwjxwbSKJB7JR1pSw1iev | false       | 0.000022 |  0.005546 |   0.004992 |  0.000554 |
+| KT1ApjGtPKWTYncqCmQKzHiUD3YMhxw7sSwx | false       | 0.000021 |  0.005366 |   0.004830 |  0.000536 |
+| tz1f1irCPQkjEZ12WwKLixyLuRw9gswcGZXq | false       | 0.000021 |  0.005295 |   0.004766 |  0.000529 |
+| tz1SNSQWSie7Bm9mFWHQFGvSLAcsc3ak8wMw | false       | 0.000021 |  0.005269 |   0.004743 |  0.000526 |
+| tz1cA8sxvRxEqCqWkGFVWj6zdotrqubLzepq | true        | 0.000020 |  0.005111 |   0.004600 |  0.000511 |
+| tz1Zx8a8i3h4UFFfdkDL7nThsVjxriDosFZo | false       | 0.000020 |  0.005106 |   0.004596 |  0.000510 |
+| tz1a23GzcRmEVfWaR1EquzX9fuFqHS2bpSdp | false       | 0.000020 |  0.005038 |   0.004535 |  0.000503 |
+| tz1Thyh3smtxaKxzVtoomKddWG1ue7F4FgdU | false       | 0.000019 |  0.004911 |   0.004420 |  0.000491 |
+| tz1doTAcL9x1cwXaj8YJ2JYo1BZxmHZQZ8F1 | false       | 0.000018 |  0.004688 |   0.004220 |  0.000468 |
+| KT1CEodmDdSxBdYsrdmVGZkrZyKJo6wPSPDH | false       | 0.000018 |  0.004608 |   0.004148 |  0.000460 |
+| KT19gcB65rQksq2N8NmaviLxRo66JoBKP41d | false       | 0.000016 |  0.004077 |   0.003670 |  0.000407 |
+| tz1WojdivEjjxWrH8QLu8cS9sMKvgy4HVmWq | false       | 0.000016 |  0.003956 |   0.003561 |  0.000395 |
+| tz1cAGZyxojMQDyhaAAD5X458fdqpEUCo8WN | false       | 0.000015 |  0.003866 |   0.003480 |  0.000386 |
+| tz1QAJfuurKsT8MQZXy2RGMbojLy66KyZssm | false       | 0.000015 |  0.003795 |   0.003416 |  0.000379 |
+| KT1BR9YbKw1nTCpSQG5nnWHxM2vNyuW4824p | false       | 0.000015 |  0.003769 |   0.003393 |  0.000376 |
+| KT1WGDtvK1KkUNDASSwifDL5TebEVtMZ6afz | false       | 0.000014 |  0.003442 |   0.003098 |  0.000344 |
+| KT19Lvb9rpgDRnRT5hBqNzTpKzkycafia4ax | false       | 0.000013 |  0.003384 |   0.003046 |  0.000338 |
+| tz1aXoe9fbRpSBWQx6qkdkWMmcvWWb86VTPM | false       | 0.000013 |  0.003260 |   0.002934 |  0.000326 |
+| KT1FFirXDd2Kt6LdYWaDEcLGHZmqNYKRHCsg | false       | 0.000013 |  0.003254 |   0.002929 |  0.000325 |
+| KT1U3bR9LdJ1d7UcUL5RMjCEbBMDfhCDhrP5 | false       | 0.000013 |  0.003240 |   0.002916 |  0.000324 |
+| tz1f7b979MrjD6dLnVcJJXfwY4KLkzyT6M5r | false       | 0.000012 |  0.003122 |   0.002810 |  0.000312 |
+| tz1d4NWXgkCKzZftLWL71LGyCArhWxfBoniJ | false       | 0.000012 |  0.003102 |   0.002792 |  0.000310 |
+| tz1dLq8e9Hq8KeMQvXsnYHPhJ8CWg8S7W5m3 | false       | 0.000012 |  0.002975 |   0.002678 |  0.000297 |
+| tz1XNXhzfD8k5cMjRaRRNSjHWyodtJvfiZjn | false       | 0.000012 |  0.002961 |   0.002665 |  0.000296 |
+| tz1TS4FbJfZjMfxfTpsLQn45FF5Wj7auZNwq | false       | 0.000011 |  0.002858 |   0.002573 |  0.000285 |
+| tz1eV4U1N5AmQo4L7AYy5T7hmxr2q1XDmnTH | false       | 0.000011 |  0.002680 |   0.002412 |  0.000268 |
+| KT1E2KjWSFpaiQYgMHhZKE4BwVPr1fzo9jjJ | true        | 0.000010 |  0.002584 |   0.002326 |  0.000258 |
+| tz1hLPpEf8Nfn2jU1i3cgWHmhabvzMJQSseG | false       | 0.000010 |  0.002468 |   0.002222 |  0.000246 |
+| tz1XhDErypaAa46T3NJpn43bMFY2xdvwPXg4 | false       | 0.000010 |  0.002466 |   0.002220 |  0.000246 |
+| KT1Min6mLRf48zHPdpnXsQGL9rsy7KwRtLSN | false       | 0.000009 |  0.002324 |   0.002092 |  0.000232 |
+| tz1TGvp19rT95YkA7rQCsjz37Ms1g4vSvJR9 | false       | 0.000009 |  0.002304 |   0.002074 |  0.000230 |
+| tz1NcMTsYqqr2WhAiK8gFGxCR8VN4CRtf9BT | false       | 0.000009 |  0.002286 |   0.002058 |  0.000228 |
+| KT1BF5s3aah3YeavBTf2XUZscgAiaCgT4bnD | false       | 0.000009 |  0.002264 |   0.002038 |  0.000226 |
+| tz1iSXduDgf7yiUV8ME2GANNogDsEhnYkB2w | false       | 0.000008 |  0.002129 |   0.001917 |  0.000212 |
+| tz1h35ZDHw3MKN4J3DPMRzxnMWkHWkKFzUz7 | false       | 0.000008 |  0.002023 |   0.001821 |  0.000202 |
+| tz1YugXN8rCohivVVK52y3S4qZhpcrYVvpFX | false       | 0.000008 |  0.002002 |   0.001802 |  0.000200 |
+| tz1ZuyuFM8wPB8VoBniCZm1NNN6veLxBUxnH | false       | 0.000008 |  0.001946 |   0.001752 |  0.000194 |
+| tz1V4uckBMZJ816eeHMf1zqW9j7GQheJy5vz | false       | 0.000008 |  0.001931 |   0.001738 |  0.000193 |
+| tz1iraXc1VfSJ8WJnZJ5ujGouP2VscsZtEKC | false       | 0.000008 |  0.001916 |   0.001725 |  0.000191 |
+| tz1RLKDBWhewQrzZMGPGHmyQzBcDTSegJRdL | false       | 0.000007 |  0.001842 |   0.001658 |  0.000184 |
+| tz1hWmwHZxc58p2maFg498uSZYXHTDQ4iTJn | false       | 0.000007 |  0.001835 |   0.001652 |  0.000183 |
+| tz1cfTyXgKuqVZf4Pbwt4VrM3ZK51Fyxu2DC | false       | 0.000007 |  0.001740 |   0.001566 |  0.000174 |
+| tz1T6LUopATG7zaERezxRDTDxT1xqEpG3iic | false       | 0.000007 |  0.001695 |   0.001526 |  0.000169 |
+| tz1doZ62LHC99WPAetioYKteTRnLgA8T4euM | false       | 0.000007 |  0.001688 |   0.001520 |  0.000168 |
+| KT1WWur5chtQJDPfX4PnNqPisfAE5wuEBX4G | false       | 0.000007 |  0.001677 |   0.001510 |  0.000167 |
+| KT1X64yHCHPRMaZpmqH6JRbtF5ADfBxmHLga | false       | 0.000007 |  0.001649 |   0.001485 |  0.000164 |
+| tz1Mg35BKtwTMgMLfdNdaXqa7ZoqW8C4euy8 | false       | 0.000006 |  0.001600 |   0.001440 |  0.000160 |
+| KT1DUX94ze5cJyoDBi8NoGKKibnV8JpTed2B | false       | 0.000006 |  0.001535 |   0.001382 |  0.000153 |
+| tz1Xo5aEbrd5EGEccNkZnKY26JeiDJQGbBBK | false       | 0.000006 |  0.001446 |   0.001302 |  0.000144 |
+| tz1RpMBcAvRwvePLCFWkBmKitGz6FuL43HiD | false       | 0.000006 |  0.001405 |   0.001265 |  0.000140 |
+| tz1X7tWMP3J2jBwspxDhBD6jdAQbykbGofS8 | false       | 0.000005 |  0.001366 |   0.001230 |  0.000136 |
+| tz1RStT6WxtdR7SFxgD8A4kvTegERirw4Z6d | false       | 0.000005 |  0.001341 |   0.001207 |  0.000134 |
+| tz1c5c4gbpZwFtGGuyuQ2U2KRyjCxuvkJGtM | false       | 0.000005 |  0.001318 |   0.001187 |  0.000131 |
+| tz1i5FCt3zjFkYFZForrJQRC8L5gimTQWnqk | false       | 0.000005 |  0.001313 |   0.001182 |  0.000131 |
+| KT1MEYRN58iSwF1JcjE3r6rmFt8rT6FDK6aK | false       | 0.000005 |  0.001307 |   0.001177 |  0.000130 |
+| KT19NNAd3cnUp7TPgxaWb8BP2v6UqUhy4hp5 | false       | 0.000005 |  0.001267 |   0.001141 |  0.000126 |
+| KT18dqd1o1Umm7KujuEZCEXhiE1VwZj6DyGp | false       | 0.000005 |  0.001255 |   0.001130 |  0.000125 |
+| tz1h2oCSn5Xyy76jKxXwwQuLjHDpqtxakxLy | false       | 0.000005 |  0.001217 |   0.001096 |  0.000121 |
+| tz1RGRQA7wq1GANPCCL2PgEySCHy5wx5WDxN | false       | 0.000005 |  0.001182 |   0.001064 |  0.000118 |
+| tz1PpEhrfJmM3wr3BUxoHKawjUVC4S7yFPa2 | false       | 0.000004 |  0.001115 |   0.001004 |  0.000111 |
+| tz1bCydLqcheD6Ao1pR8qEawxGZkZ5jkNBWN | false       | 0.000004 |  0.001076 |   0.000969 |  0.000107 |
+| KT19EgRhdPSnugHVarrqmbLcbdWcTVjHoGes | false       | 0.000004 |  0.000946 |   0.000852 |  0.000094 |
+| tz1TxmrWpGxf5S9QAmd7VregGfd9VdwpMPQx | true        | 0.000004 |  0.000910 |   0.000819 |  0.000091 |
+| KT1DSHXNZ34ppp8E4GjY7joedcB9DhDzVTMc | false       | 0.000003 |  0.000884 |   0.000796 |  0.000088 |
+| KT1MH5TLBMPF6iDLvLrjrct2mYngeUf2fmN8 | false       | 0.000003 |  0.000866 |   0.000780 |  0.000086 |
+| tz1aLpFAf1UWWRbUbZ1fSHeFky6snLq86EUY | false       | 0.000003 |  0.000749 |   0.000675 |  0.000074 |
+| tz1KjF3vrKPBFesS4iWhAyMiaDTVZhin2r3p | false       | 0.000003 |  0.000707 |   0.000637 |  0.000070 |
+| tz1Sn2oTMoG2vzsnUbhUZdY2S6b66ukTvcjj | false       | 0.000003 |  0.000703 |   0.000633 |  0.000070 |
+| KT1ABEYRksbtndGJKMXiRCQ2A7ym3GjhBPrQ | false       | 0.000003 |  0.000697 |   0.000628 |  0.000069 |
+| KT1GhPXVU7qcH9rug79QjFapwcZ436WVTXGi | false       | 0.000003 |  0.000677 |   0.000610 |  0.000067 |
+| tz1NoPcf5pSL723o23MVxYpJjVboJoC1CurB | false       | 0.000003 |  0.000673 |   0.000606 |  0.000067 |
+| KT1WskG2woswPMieWGzcFjVZNtuFYBTALimy | false       | 0.000003 |  0.000671 |   0.000604 |  0.000067 |
+| KT1BL1eHUKMC6fZAYdbu32Kwtvfk2L2cdEeC | false       | 0.000002 |  0.000626 |   0.000564 |  0.000062 |
+| tz1Va3cLY2LywWCiQGSGUYNzZrxWAYzzEcLB | false       | 0.000002 |  0.000610 |   0.000549 |  0.000061 |
+| tz1dQ4UYR7GBPGmyQdhnE1zLZv43kGBcZbzJ | false       | 0.000002 |  0.000608 |   0.000548 |  0.000060 |
+| tz1YCtEVcCpDPpqhPsxcETNYHcYnJe6CBAFC | false       | 0.000002 |  0.000608 |   0.000548 |  0.000060 |
+| tz1KowAN7P9WjydTiDpjqhLyER5xMEHe4VDV | false       | 0.000002 |  0.000595 |   0.000536 |  0.000059 |
+| tz1W4WdHs4hgeB3sqMeAAqzFisyEqt2QAtro | false       | 0.000002 |  0.000592 |   0.000533 |  0.000059 |
+| tz1aAfeSEC3EFhjyHBdVpQsrR4pAENBpijBY | false       | 0.000002 |  0.000583 |   0.000525 |  0.000058 |
+| KT1RxGFZL2NUC3kpE2SgCQumWKqHtRXCjq5X | false       | 0.000002 |  0.000577 |   0.000520 |  0.000057 |
+| tz1bNpwHjJ9QBfRNR8xcTiKao5rXCWfiUPCH | false       | 0.000002 |  0.000569 |   0.000513 |  0.000056 |
+| tz1WFW6EYZLeDRrvNggbfqTycfUd9jSCoTMP | false       | 0.000002 |  0.000569 |   0.000513 |  0.000056 |
+| KT1HqffgvPs1ZaUbfMcvqSizJgwWUwhcFr1Z | false       | 0.000002 |  0.000561 |   0.000505 |  0.000056 |
+| tz1KuTQSonJYYPZBTswT8tLiQbFqbWXdukD5 | false       | 0.000002 |  0.000557 |   0.000502 |  0.000055 |
+| tz1cvjAje9hWWYanETg1t7oWo7DPx2ASszE5 | false       | 0.000002 |  0.000490 |   0.000441 |  0.000049 |
+| tz1Lv2khLyTi5r6yBcpzCuvjFwUuk92KzEwA | false       | 0.000002 |  0.000449 |   0.000405 |  0.000044 |
+| KT1M3dhr5zqzjsKMyChQZ7Vh5VrGa6m5xbw5 | false       | 0.000002 |  0.000438 |   0.000395 |  0.000043 |
+| tz1VrEjWBi3jDSECwdWcXo1TjS22y5kaQD1S | false       | 0.000002 |  0.000434 |   0.000391 |  0.000043 |
+| tz1gNvsZt6ZTLSa1ReEYgzUsAnusRro3zNws | false       | 0.000002 |  0.000396 |   0.000357 |  0.000039 |
+| KT1Gu6TxpCcm4m47KWPDwww3YekmcCPqozRs | false       | 0.000002 |  0.000381 |   0.000343 |  0.000038 |
+| KT1PtbK31rbtcvjdL4gFY9eaDGbZdPoZRNoL | false       | 0.000001 |  0.000371 |   0.000334 |  0.000037 |
+| KT1M1XCvL37K5Lj4dPC6x2QMY7sSuZNw61tk | false       | 0.000001 |  0.000370 |   0.000333 |  0.000037 |
+| tz1QznDdZPW4jfMeRuJWLuQsrQkHLaA3dq8M | false       | 0.000001 |  0.000356 |   0.000321 |  0.000035 |
+| tz1X3Z9S5CGYg9kijAxtzJpRfcTuYuncitxH | false       | 0.000001 |  0.000328 |   0.000296 |  0.000032 |
+| KT1QrRXS5HCwFFL4VojSyNzuQJaEUo1UuZb1 | false       | 0.000001 |  0.000314 |   0.000283 |  0.000031 |
+| KT1NxUPYwCfJZrgW7LYh229NrLjuPbHyGCBC | false       | 0.000001 |  0.000313 |   0.000282 |  0.000031 |
+| KT1DYVu1ETsex35jtG9CfrcjM6zxETKVCeya | false       | 0.000001 |  0.000306 |   0.000276 |  0.000030 |
+| tz1NPRoJzijdJpCJgewSG4UbQoCskdFfXXKm | false       | 0.000001 |  0.000290 |   0.000261 |  0.000029 |
+| tz1cmR3XFdnaFKL5mrsmn1jc2MhVz4W7zJB1 | false       | 0.000001 |  0.000266 |   0.000240 |  0.000026 |
+| tz1XnrjfWq1iu2rMj19L8j84fG1ARDJgfrUt | false       | 0.000001 |  0.000233 |   0.000210 |  0.000023 |
+| tz1QHKL26Xsj5vQwd8k3kS7sYdZ3Bbwthqxi | false       | 0.000001 |  0.000218 |   0.000197 |  0.000021 |
+| KT1HJDDohgquugZ4wA4tQphWFKa8pK7SLh45 | false       | 0.000001 |  0.000218 |   0.000197 |  0.000021 |
+| tz1P3zYHDMgunNCwVnhhNBJtZeiHpfMYTwK9 | false       | 0.000001 |  0.000209 |   0.000189 |  0.000020 |
+| tz1eLZWXwhERj3yziigkYjGQzSFRnYwZkpXD | false       | 0.000001 |  0.000187 |   0.000169 |  0.000018 |
+| tz1ddPJMnpa7a27usgnKmSaARY8Nd4u5TaVy | false       | 0.000001 |  0.000175 |   0.000158 |  0.000017 |
+| tz1YEyNgphYf7M1EVA5XjHnFfaUZcNWp9rsX | false       | 0.000001 |  0.000175 |   0.000158 |  0.000017 |
+| tz1Xht17bycYk5PRJiGunuwcYGAuSaxDrQBp | false       | 0.000001 |  0.000158 |   0.000143 |  0.000015 |
+| tz1WaPZgxMPBgov728i7gqdUSkCuRSQXihK1 | false       | 0.000001 |  0.000157 |   0.000142 |  0.000015 |
+| tz1hDmTVduoD3Mp4DYNH2mBeeDAiSyhnzrZF | false       | 0.000001 |  0.000147 |   0.000133 |  0.000014 |
+| tz1WskwmoAXUXdgzucE4X9TWbgT3WEFBJNqe | false       | 0.000001 |  0.000146 |   0.000132 |  0.000014 |
+| tz1RcGJja2N7Xasd8hBZxi5nJCNd4xGy5WNK | false       | 0.000001 |  0.000140 |   0.000126 |  0.000014 |
+| KT1XMhF448qQVTcWAknovsvmpByXLzmQpdkr | false       | 0.000001 |  0.000140 |   0.000126 |  0.000014 |
+| tz1gvvcwDex4aGdvPAe7fbYaavoHYso8gPZU | false       | 0.000001 |  0.000128 |   0.000116 |  0.000012 |
+| tz1LxidQXeRuXWe61VYRf7JV4ceq4psvbRir | false       | 0.000000 |  0.000126 |   0.000114 |  0.000012 |
+| tz1PmWKP1tHDZtEx66YZaeqrjKSRVCufNpDm | false       | 0.000000 |  0.000123 |   0.000111 |  0.000012 |
+| tz1XUECdE5krrWxesBJ89iKsfYybka4GiYn6 | false       | 0.000000 |  0.000117 |   0.000106 |  0.000011 |
+| KT1HReKDyoqwBmujQJzVLHZd17gDEybaw3c1 | false       | 0.000000 |  0.000103 |   0.000093 |  0.000010 |
+| KT1QQ2U6ADB9TJ1cNLyTKAh2hpUM3yvZp1j4 | false       | 0.000000 |  0.000093 |   0.000084 |  0.000009 |
+| tz1ULbSRSK8muk8Y92W5SLKG7daBVhJJ4tpJ | false       | 0.000000 |  0.000091 |   0.000082 |  0.000009 |
+| KT1XH4i4WymDZyqQckLdQ1m5GBZabYa9JV2M | false       | 0.000000 |  0.000085 |   0.000077 |  0.000008 |
+| KT1A6mBggiwAuDmVa2oS4uUHNAPXTWMmXbrU | false       | 0.000000 |  0.000085 |   0.000077 |  0.000008 |
+| tz1U6fNxbPUMkRU625oxk5ya7hrjEn5SHtS7 | false       | 0.000000 |  0.000074 |   0.000067 |  0.000007 |
+| KT1KHSgro3py2nnACjnkjRRRH7RYSjB9aXpj | false       | 0.000000 |  0.000070 |   0.000063 |  0.000007 |
+| tz1YPArnvm7FLfqHDJwBPNSVwq1sBPr8aEpV | false       | 0.000000 |  0.000069 |   0.000063 |  0.000006 |
+| KT1V8njyWahCtGktDEvN9hWNP8hPzCNgvTmb | false       | 0.000000 |  0.000067 |   0.000061 |  0.000006 |
+| KT1SZW1BpgPibbiRc9aqtqXeKKh4fe56XyZB | false       | 0.000000 |  0.000062 |   0.000056 |  0.000006 |
+| tz1aFQMUAS5BrtUB1dbAA19bs335KYhFxYnr | false       | 0.000000 |  0.000060 |   0.000054 |  0.000006 |
+| tz1Sc9xnVPRBHbDtjkSRk8KYDQXdad6HUusD | false       | 0.000000 |  0.000060 |   0.000054 |  0.000006 |
+| tz1cuWdffSkBznZU8xLGLZXVo1HdWTW32dBb | false       | 0.000000 |  0.000060 |   0.000054 |  0.000006 |
+| tz1aHjcevnojC1wwNS34qcHskX2phFnLk1w1 | false       | 0.000000 |  0.000056 |   0.000051 |  0.000005 |
+| tz1ib1p6h7K7kENdECS2vmskhhea6rBhan4v | false       | 0.000000 |  0.000055 |   0.000050 |  0.000005 |
+| tz1McAK72w7tQufJseNtWCp4qe6MoSosnjFX | false       | 0.000000 |  0.000054 |   0.000049 |  0.000005 |
+| tz1MAf5p7b2kSWYPAueNhfYHYiva62CbUL5L | false       | 0.000000 |  0.000048 |   0.000044 |  0.000004 |
+| KT1EiYYRdgQRVcm6ds2QyTEDYJXyBfyGpkZ1 | false       | 0.000000 |  0.000045 |   0.000041 |  0.000004 |
+| KT1JQW8krmGmYJrrHxSUH8ikW5vTcP8M52GC | false       | 0.000000 |  0.000045 |   0.000041 |  0.000004 |
+| KT1JSX6utL7m7sZenk2oNZJQKrq2NuPzdTbk | false       | 0.000000 |  0.000039 |   0.000036 |  0.000003 |
+| tz1iyLY6LfU8123rrrWvQ2u78icGurjK1UtH | false       | 0.000000 |  0.000037 |   0.000034 |  0.000003 |
+| tz1Kz5xj7eASEkdWRsPnWygjHQZPjkm4Ybu7 | false       | 0.000000 |  0.000037 |   0.000034 |  0.000003 |
+| tz1TGQp7bwMNHx65qW6YBmYxpB3BeV54kZpf | false       | 0.000000 |  0.000037 |   0.000034 |  0.000003 |
+| KT1QFRFVKzQ3MqUA9UoVT8bWfH1GWsrpL9GX | false       | 0.000000 |  0.000034 |   0.000031 |  0.000003 |
+| tz1Pqt7vHvTqueCCBEyVTPSo4jZu8bnCdG6V | false       | 0.000000 |  0.000032 |   0.000029 |  0.000003 |
+| KT1DF1Q7WBL3cL3NdC1SHkuUCHGKXFL3H8F7 | false       | 0.000000 |  0.000031 |   0.000028 |  0.000003 |
+| tz1Uk5xHJ25ZabQq8fWE9WXsRnU39XQ7QKbu | false       | 0.000000 |  0.000030 |   0.000027 |  0.000003 |
+| KT1ReyqCeWoTDzjJ7rYmVEAU7dWFNCdi3X3F | false       | 0.000000 |  0.000029 |   0.000027 |  0.000002 |
+| tz1ThbvKgAKXD9y9Mcb92eVLJd5EqjqYXmAc | false       | 0.000000 |  0.000023 |   0.000021 |  0.000002 |
+| tz1R4wj72xLBUTCx7irHUJKjNEM9sAh3SPJK | false       | 0.000000 |  0.000016 |   0.000015 |  0.000001 |
+| KT1XWovRciZLv7cnAs3QWCLVTxEg4rDheCJL | false       | 0.000000 |  0.000015 |   0.000014 |  0.000001 |
+| tz1cwgsGm8vQx4YaEzKZ8XCVzxfGX2dxnZ9W | false       | 0.000000 |  0.000015 |   0.000014 |  0.000001 |
+| tz1Wh5VdCB4ig3nSLNJurAtosgRwnebaUAXA | false       | 0.000000 |  0.000014 |   0.000013 |  0.000001 |
+| tz1bsy611TeS7dPmJiHJxcgrpKDYJd94vahr | false       | 0.000000 |  0.000013 |   0.000012 |  0.000001 |
+| tz1ZmWVVZXVQ5CJpA2zkbnXWhjAq6EcgzjHh | false       | 0.000000 |  0.000013 |   0.000012 |  0.000001 |
+| tz1QtjVmtpVyEj6mEWEsLxqTGTymLAFaHTkd | false       | 0.000000 |  0.000011 |   0.000010 |  0.000001 |
+| tz1LjExjhAP74j9q97KqtD4xEM4LGVoBxuFK | false       | 0.000000 |  0.000010 |   0.000009 |  0.000001 |
+| KT1CGN3VALPUSHX5SmHQcrcBGNwidVDL4WnP | false       | 0.000000 |  0.000008 |   0.000008 |  0.000000 |
+| tz1ec7Rgtk8sDCdLWvVEsZw6QaPG77QSC1yq | false       | 0.000000 |  0.000007 |   0.000007 |  0.000000 |
+| tz1bxf1gUQ9HGXENpPeneguywjy1XjxzEguV | false       | 0.000000 |  0.000007 |   0.000007 |  0.000000 |
+| KT1DqedG8RozoTecvXmjFMWhrR7FFSGFVsey | false       | 0.000000 |  0.000005 |   0.000005 |  0.000000 |
+| tz1Vfw5DpJ9zyTx36Gex2wrMVCfHUFdiPuvf | false       | 0.000000 |  0.000004 |   0.000004 |  0.000000 |
+| KT1FfnuiMeyPQDbJYztiCPKmrowkAgcBy3ym | false       | 0.000000 |  0.000004 |   0.000004 |  0.000000 |
+| KT1Ff9hiadZZfjNoPdK2M42THsAV2Zxonsja | false       | 0.000000 |  0.000004 |   0.000004 |  0.000000 |
+| tz1MY5Yg36KaJzSnXDuknWCUH3JaBJkPZw6Z | false       | 0.000000 |  0.000003 |   0.000003 |  0.000000 |
+| tz1iMGegH6qzeDxFwk8v5nJZ8wpEt97jmmsA | false       | 0.000000 |  0.000003 |   0.000003 |  0.000000 |
+| tz1i9FdG144CgNfAHAurXgkkQ1srCNq2ypLj | false       | 0.000000 |  0.000003 |   0.000003 |  0.000000 |
+| tz1YDFHsRrL2sbkownnRaJ2d5tVeQbqQ6Qbj | false       | 0.000000 |  0.000003 |   0.000003 |  0.000000 |
+| tz1gCVeNd5GUAPBn6GPq4K5kBRzKZzVPNvtt | false       | 0.000000 |  0.000003 |   0.000003 |  0.000000 |
+| tz1g7AE4pqQLY4MZEMQBDGFY7gAZkA8PpSSC | false       | 0.000000 |  0.000003 |   0.000003 |  0.000000 |
+| tz1THnQKU5CDxKjaqSPFLoBNBv8VttqNFwg5 | false       | 0.000000 |  0.000003 |   0.000003 |  0.000000 |
+| tz1W7cb4ifpzQbnaY8WaPZApynmwsGu427W3 | false       | 0.000000 |  0.000002 |   0.000002 |  0.000000 |
+| tz1RNPyQd8Mf24Guj7f6YGp8q8dZUrjFxdTp | false       | 0.000000 |  0.000002 |   0.000002 |  0.000000 |
+| tz1cfKgUTmHw6FxQpinFTxxZYZq1aMcVYCDp | false       | 0.000000 |  0.000002 |   0.000002 |  0.000000 |
+| KT1Gy2pTXh7xc3nfoHt8RHQcrpnjt3b11qUb | false       | 0.000000 |  0.000002 |   0.000002 |  0.000000 |
+| tz1XzpYQcuQs7mkRJzUf3u2MMprXHkBhhDy3 | false       | 0.000000 |  0.000001 |   0.000001 |  0.000000 |
+| tz1SBoSCn5x3L7VnNqHD2bkH6xKgUR6qf9As | false       | 0.000000 |  0.000001 |   0.000001 |  0.000000 |
+| tz1ZwF84tJjLiWQ4TuxYYWKMjKLMwEb7mwDR | false       | 0.000000 |  0.000001 |   0.000001 |  0.000000 |
+| tz1WCJqyXkvWLehg7DLbK2Lm3b98GComEaoE | false       | 0.000000 |  0.000001 |   0.000001 |  0.000000 |
+| tz1NUHJF4PcYq1QbN3sW7RX76b81r96hKKoz | false       | 0.000000 |  0.000001 |   0.000001 |  0.000000 |
+| tz1fJukHeerbXMmfhKWjLTvuv9c8ZemF8hfF | false       | 0.000000 |  0.000000 |   0.000000 |  0.000000 |
+| tz1eBzykec1yRita7173eL4j4dAup1Yg295N | false       | 0.000000 |  0.000000 |   0.000000 |  0.000000 |
+| tz1aDKMDsuDfPjgg5pT9FBvtQ3MDTLN3aity | false       | 0.000000 |  0.000000 |   0.000000 |  0.000000 |
+| tz1MWxwzYbEHLTJZKZW642pdjNYpJZQCcyBF | false       | 0.000000 |  0.000000 |   0.000000 |  0.000000 |
+| tz1ccnSTJf46cT8TD1CBFASUDQFJkv81Unqi | false       | 0.000000 |  0.000000 |   0.000000 |  0.000000 |
+| tz1QJywDdjvfvpULxiahNh1cZ2UfAA3Zhs5o | false       | 0.000000 |  0.000000 |   0.000000 |  0.000000 |
+| tz1VbFjEmVZdSNYG4fNeYDXZLZgucY6JUoNs | false       | 0.000000 |  0.000000 |   0.000000 |  0.000000 |
+| tz1c64qCngKqXTsn2usNhF5NmB5H41zwcT58 | false       | 0.000000 |  0.000000 |   0.000000 |  0.000000 |
+| KT1KvY6mH6g4GpvipAoLRiY4RBMHJ8PP9zNc | false       | 0.000000 |  0.000000 |   0.000000 |  0.000000 |
+| KT1BcWHVnGwsQCwaotsRcsGo19QTqXCTku4S | false       | 0.000000 |  0.000000 |   0.000000 |  0.000000 |
+| tz1btRKgEjk84W8FtBFHdyJvJczt4YGUF5Lu | false       | 0.000000 |  0.000000 |   0.000000 |  0.000000 |
+| tz1bFpZ6cBhMNCg6Ky43zjgwb2EwCum6v4my | false       | 0.000000 |  0.000000 |   0.000000 |  0.000000 |
+| KT1QXPgnDmVHkeqWQLxprzc5mFhRdsdXWGQZ | true        | 0.000000 |  0.000000 |   0.000000 |  0.000000 |
+| KT1SJMCeSEtvRcHtNYneUzHFDtV93nQEpbyV | true        | 0.000000 |  0.000000 |   0.000000 |  0.000000 |
+| KT1S5msHHWxbb18ZfL6PhQetx3D2i3dwhQXG | true        | 0.000000 |  0.000000 |   0.000000 |  0.000000 |
++--------------------------------------+-------------+----------+-----------+------------+-----------+
+|                                                                   TOTAL   | 183.587570 | 20.398380 |
++--------------------------------------+-------------+----------+-----------+------------+-----------+
++-------------+----------+---------+--------------------------------------+-----------+
+|    TYPE     |    ID    |  LEVEL  |              DELEGATOR               |  AMOUNT   |
++-------------+----------+---------+--------------------------------------+-----------+
+| transaction | 35081921 | 1202409 | KT18dqd1o1Umm7KujuEZCEXhiE1VwZj6DyGp |  0.000937 |
+| transaction | 35081922 | 1202409 | KT18s41CcAYvFWCAhar94knxSY2beJjLSNM2 |  0.111641 |
+| transaction | 35081923 | 1202409 | KT19EgRhdPSnugHVarrqmbLcbdWcTVjHoGes |  0.000706 |
+| transaction | 35081924 | 1202409 | KT19FCo5Btgx1qAGpXNyJesMVW4F7q25EqtM |  0.004218 |
+| transaction | 35081925 | 1202409 | KT19GFjfYtNCicqXMgCYRvq7fZRDhE828uw2 |  0.025538 |
+| transaction | 35081926 | 1202409 | KT19gcB65rQksq2N8NmaviLxRo66JoBKP41d |  0.003046 |
+| transaction | 35081927 | 1202409 | KT19Lvb9rpgDRnRT5hBqNzTpKzkycafia4ax |  0.002526 |
+| transaction | 35081928 | 1202409 | KT19NDU5v35XYqYn3LtcxvyZwMPBV5jUmeJ5 | 10.294061 |
+| transaction | 35081929 | 1202409 | KT19NNAd3cnUp7TPgxaWb8BP2v6UqUhy4hp5 |  0.000946 |
+| transaction | 35081930 | 1202409 | KT1A6mBggiwAuDmVa2oS4uUHNAPXTWMmXbrU |  0.000063 |
+| transaction | 35081931 | 1202409 | KT1A7drknXEwQ84BztjFLaHspPsR5gq7WLU4 |  0.140857 |
+| transaction | 35081932 | 1202409 | KT1ABEYRksbtndGJKMXiRCQ2A7ym3GjhBPrQ |  0.000521 |
+| transaction | 35081933 | 1202409 | KT1AP55nYiD1iV5uXTkaMVW7NTQtTvHLfBmr |  0.005625 |
+| transaction | 35081934 | 1202409 | KT1ApjGtPKWTYncqCmQKzHiUD3YMhxw7sSwx |  0.004005 |
+| transaction | 35081935 | 1202409 | KT1AXfc7F5cWEWKCVS84RrHZec1LaJFActom |  0.012164 |
+| transaction | 35081936 | 1202409 | KT1B7dRzQhifuWGLGEvzvfGuCVupudgX1far |  0.052106 |
+| transaction | 35081937 | 1202409 | KT1BF5s3aah3YeavBTf2XUZscgAiaCgT4bnD |  0.001690 |
+| transaction | 35081938 | 1202409 | KT1BguM844PNfqcTHijPKk2HqMNsojH3NBRo |  0.046633 |
+| transaction | 35081939 | 1202409 | KT1BL1eHUKMC6fZAYdbu32Kwtvfk2L2cdEeC |  0.000468 |
+| transaction | 35081940 | 1202409 | KT1BLbHcUujF8QgLJh14Wxqh8k667DNACjNj |  0.010729 |
+| transaction | 35081941 | 1202409 | KT1BR9YbKw1nTCpSQG5nnWHxM2vNyuW4824p |  0.002813 |
+| transaction | 35081942 | 1202409 | KT1BThb9BXQpunk7Y4nVPtkR2DuLgcmUzqJB |  0.034549 |
+| transaction | 35081943 | 1202409 | KT1C3EUjFvXPxjCfTyHFgFfZDK96yvGWnUKu |  0.004704 |
+| transaction | 35081944 | 1202409 | KT1CA9msNjX4K8rgU9UxjASb2Pg4qXYjHvWB |  0.193241 |
+| transaction | 35081945 | 1202409 | KT1CEodmDdSxBdYsrdmVGZkrZyKJo6wPSPDH |  0.003439 |
+| transaction | 35081946 | 1202409 | KT1CGN3VALPUSHX5SmHQcrcBGNwidVDL4WnP |  0.000007 |
+| transaction | 35081947 | 1202409 | KT1DF1Q7WBL3cL3NdC1SHkuUCHGKXFL3H8F7 |  0.000024 |
+| transaction | 35081948 | 1202409 | KT1DqedG8RozoTecvXmjFMWhrR7FFSGFVsey |  0.000004 |
+| transaction | 35081949 | 1202409 | KT1DSHXNZ34ppp8E4GjY7joedcB9DhDzVTMc |  0.000660 |
+| transaction | 35081950 | 1202409 | KT1DUX94ze5cJyoDBi8NoGKKibnV8JpTed2B |  0.001145 |
+| transaction | 35081951 | 1202409 | KT1DY95a4BgFuzFQPvDzruhenSz2Qiv4waK3 |  0.111486 |
+| transaction | 35081952 | 1202409 | KT1DYVu1ETsex35jtG9CfrcjM6zxETKVCeya |  0.000228 |
+| transaction | 35081953 | 1202409 | KT1E2KjWSFpaiQYgMHhZKE4BwVPr1fzo9jjJ |  0.001929 |
+| transaction | 35081954 | 1202409 | KT1E2YuzGzE4qy9xwHYQEgfT7gs9BKNLrPce |  0.089209 |
+| transaction | 35081955 | 1202409 | KT1E9z2WyP7ic1a3xwPEtnz2t8K6EhjT5scm |  1.004192 |
+| transaction | 35081956 | 1202409 | KT1EiYYRdgQRVcm6ds2QyTEDYJXyBfyGpkZ1 |  0.000035 |
+| transaction | 35081957 | 1202409 | KT1ER1FtuKoWy6jGMqCs3gGx6yEHRPqQUMVN |  0.005717 |
+| transaction | 35081958 | 1202409 | KT1FFirXDd2Kt6LdYWaDEcLGHZmqNYKRHCsg |  0.002429 |
+| transaction | 35081959 | 1202409 | KT1Ff9hiadZZfjNoPdK2M42THsAV2Zxonsja |  0.000003 |
+| transaction | 35081960 | 1202409 | KT1FfnuiMeyPQDbJYztiCPKmrowkAgcBy3ym |  0.000003 |
+| transaction | 35081961 | 1202409 | KT1GhPXVU7qcH9rug79QjFapwcZ436WVTXGi |  0.000506 |
+| transaction | 35081962 | 1202409 | KT1Gu6TxpCcm4m47KWPDwww3YekmcCPqozRs |  0.000285 |
+| transaction | 35081963 | 1202409 | KT1Gy2pTXh7xc3nfoHt8RHQcrpnjt3b11qUb |  0.000001 |
+| transaction | 35081964 | 1202409 | KT1HcAz8mBjYZgPLzC3xf7DZkGMQ3WCkD67M |  0.246186 |
+| transaction | 35081965 | 1202409 | KT1HJDDohgquugZ4wA4tQphWFKa8pK7SLh45 |  0.000163 |
+| transaction | 35081966 | 1202409 | KT1HqffgvPs1ZaUbfMcvqSizJgwWUwhcFr1Z |  0.000419 |
+| transaction | 35081967 | 1202409 | KT1HReKDyoqwBmujQJzVLHZd17gDEybaw3c1 |  0.000077 |
+| transaction | 35081968 | 1202409 | KT1HUAvDaCRYJQVWtEJM9eMMg7tiCvXTd4Ps |  1.005742 |
+| transaction | 35081969 | 1202409 | KT1JMYavPEzjZ5XdyQsNkkaDycapJARLr7zQ |  0.028370 |
+| transaction | 35081970 | 1202409 | KT1JQW8krmGmYJrrHxSUH8ikW5vTcP8M52GC |  0.000034 |
+| transaction | 35081971 | 1202409 | KT1JSX6utL7m7sZenk2oNZJQKrq2NuPzdTbk |  0.000029 |
+| transaction | 35081972 | 1202409 | KT1K4caGxcBW6ktP5tMtFXjdXYd47faDYd2V |  0.643883 |
+| transaction | 35081973 | 1202409 | KT1KHSgro3py2nnACjnkjRRRH7RYSjB9aXpj |  0.000053 |
+| transaction | 35081974 | 1202409 | KT1Ki1Z2qtK7FqH2YewYmWnJVZeTdDzBD1vg |  2.133524 |
+| transaction | 35081975 | 1202409 | KT1KLRcd8pnotvsCFN9GYFoqemrVGm46qfNv |  0.016063 |
+| transaction | 35081976 | 1202409 | KT1KXsKxcBdJD8S8Pc4JCLxceX65LEH2WWn1 |  0.008630 |
+| transaction | 35081977 | 1202409 | KT1KYaG216oBbNgQa92FrALdBiQVLj4jDbqQ |  0.077562 |
+| transaction | 35081978 | 1202409 | KT1L4TQiu17xupn3ph2U2k3kQiYwnNj1vfaW |  0.811107 |
+| transaction | 35081979 | 1202409 | KT1L86xsTvmcXiKNCKjHMDp5xUHSUkHdKiAQ |  0.479831 |
+| transaction | 35081980 | 1202409 | KT1M1XCvL37K5Lj4dPC6x2QMY7sSuZNw61tk |  0.000277 |
+| transaction | 35081981 | 1202409 | KT1M3dhr5zqzjsKMyChQZ7Vh5VrGa6m5xbw5 |  0.000327 |
+| transaction | 35081982 | 1202409 | KT1MEYRN58iSwF1JcjE3r6rmFt8rT6FDK6aK |  0.000977 |
+| transaction | 35081983 | 1202409 | KT1MH5TLBMPF6iDLvLrjrct2mYngeUf2fmN8 |  0.000647 |
+| transaction | 35081984 | 1202409 | KT1Min6mLRf48zHPdpnXsQGL9rsy7KwRtLSN |  0.001735 |
+| transaction | 35081985 | 1202409 | KT1Mu2VDkSFTVkga9NHz7yDVyx9fKou5wA3i |  5.648159 |
+| transaction | 35081986 | 1202409 | KT1N22vkiB4GSxFjwyLWhXXQzYCT3ADdvubP |  0.446486 |
+| transaction | 35081987 | 1202409 | KT1NFfnRiGcXjh7shNNprLJLJg5acTWnNdKf |  3.314074 |
+| transaction | 35081988 | 1202409 | KT1NUWAgxRAD7FWynszzbAMSTfon3Ms1sXDB |  0.043852 |
+| transaction | 35081989 | 1202409 | KT1NxUPYwCfJZrgW7LYh229NrLjuPbHyGCBC |  0.000234 |
+| transaction | 35081990 | 1202409 | KT1P2ZP1DUxjYcDDCLrULca1g81k18uifKrK |  0.033786 |
+| transaction | 35081991 | 1202409 | KT1Pc4vDuWPWaVKY2KYZb3ZSNb7xDyMWg7ou |  0.012662 |
+| transaction | 35081992 | 1202409 | KT1PH39UeJRGTpVBCSHQcBpb4pjgVp8NSpde |  0.022167 |
+| transaction | 35081993 | 1202409 | KT1PtbK31rbtcvjdL4gFY9eaDGbZdPoZRNoL |  0.000278 |
+| transaction | 35081994 | 1202409 | KT1Q9jrZ8dRcdVhCcL4v7xPcdLnLJ5rorjW4 |  0.441442 |
+| transaction | 35081995 | 1202409 | KT1QFRFVKzQ3MqUA9UoVT8bWfH1GWsrpL9GX |  0.000026 |
+| transaction | 35081996 | 1202409 | KT1QFTpFb5NBuZNLWjTBsNc8fpqnLBXdjJ3y |  0.042955 |
+| transaction | 35081997 | 1202409 | KT1QN5vJqTcP9XQHa4HatcjWBUsw4qE4HWqa |  0.492291 |
+| transaction | 35081998 | 1202409 | KT1QQ2U6ADB9TJ1cNLyTKAh2hpUM3yvZp1j4 |  0.000070 |
+| transaction | 35081999 | 1202409 | KT1QrRXS5HCwFFL4VojSyNzuQJaEUo1UuZb1 |  0.000235 |
+| transaction | 35082000 | 1202409 | KT1ReyqCeWoTDzjJ7rYmVEAU7dWFNCdi3X3F |  0.000022 |
+| transaction | 35082001 | 1202409 | KT1RgBmtR6bMUmxWKKK5tM1fjcWeAfdGYd6V |  0.176544 |
+| transaction | 35082002 | 1202409 | KT1RNcF2pRnvCR8ej1Uk7exvZ5ZTRf9HRgw1 |  0.141840 |
+| transaction | 35082003 | 1202409 | KT1RpwDcfeor2z87LNbuA7tQxdevWGrmNByY |  4.439497 |
+| transaction | 35082004 | 1202409 | KT1RxGFZL2NUC3kpE2SgCQumWKqHtRXCjq5X |  0.000432 |
+| transaction | 35082005 | 1202409 | KT1S9JdEqwrVC7723Mckk4Zs7RxuUYzgELzw |  0.017764 |
+| transaction | 35082006 | 1202409 | KT1SZW1BpgPibbiRc9aqtqXeKKh4fe56XyZB |  0.000046 |
+| transaction | 35082007 | 1202409 | KT1T3EsMLX2EVRcifTp2msaAk3EuDwD7GUNT |  0.509109 |
+| transaction | 35082008 | 1202409 | KT1U3bR9LdJ1d7UcUL5RMjCEbBMDfhCDhrP5 |  0.002419 |
+| transaction | 35082009 | 1202409 | KT1V1YQYdHvagPjXAApUeyK9wEH8yuS5R6Hb |  0.439266 |
+| transaction | 35082010 | 1202409 | KT1V8njyWahCtGktDEvN9hWNP8hPzCNgvTmb |  0.000014 |
+| transaction | 35082011 | 1202409 | KT1VLU2GdLCW7YtfWuFcuavud2bFRrjqagk1 |  0.016667 |
+| transaction | 35082012 | 1202409 | KT1W1XUAnV9aJV34o1buRsEa8GAdA6cyhbcx |  0.036920 |
+| transaction | 35082013 | 1202409 | KT1WBq1M1ZLWuk9nGoXvCyhMfcucZmnYtjHU |  6.792357 |
+| transaction | 35082014 | 1202409 | KT1WGDtvK1KkUNDASSwifDL5TebEVtMZ6afz |  0.002569 |
+| transaction | 35082015 | 1202409 | KT1WjyowJSz4iLwu194xK6GuyUgDjo9sJCwL |  0.057424 |
+| transaction | 35082016 | 1202409 | KT1WskG2woswPMieWGzcFjVZNtuFYBTALimy |  0.000501 |
+| transaction | 35082017 | 1202409 | KT1WWur5chtQJDPfX4PnNqPisfAE5wuEBX4G |  0.001253 |
+| transaction | 35082018 | 1202409 | KT1WZsytxAcncs5suMRfqRUQBC4i5zUSTrpZ |  0.004655 |
+| transaction | 35082019 | 1202409 | KT1X64yHCHPRMaZpmqH6JRbtF5ADfBxmHLga |  0.001232 |
+| transaction | 35082020 | 1202409 | KT1XEN5V5othwaLwNhjUJffKgnYLbZRUCPx8 |  0.046545 |
+| transaction | 35082021 | 1202409 | KT1XH4i4WymDZyqQckLdQ1m5GBZabYa9JV2M |  0.028554 |
+| transaction | 35082022 | 1202409 | KT1XMhF448qQVTcWAknovsvmpByXLzmQpdkr |  0.000105 |
+| transaction | 35082023 | 1202409 | KT1XWovRciZLv7cnAs3QWCLVTxEg4rDheCJL |  0.000011 |
+| transaction | 35082024 | 1202409 | tz1a1ZcbAeBEjxYSwuNKxSu6FbFB4dxdL3m9 |  0.128466 |
+| transaction | 35082025 | 1202409 | tz1a23GzcRmEVfWaR1EquzX9fuFqHS2bpSdp |  0.003760 |
+| transaction | 35082026 | 1202409 | tz1aA9QbrZpCMMjQc8e4WZnas2s4hkgYoeRp |  0.092709 |
+| transaction | 35082027 | 1202409 | tz1aAfeSEC3EFhjyHBdVpQsrR4pAENBpijBY |  0.000436 |
+| transaction | 35082028 | 1202409 | tz1aarbbPrrEjgwPTUgon8UKSrzARWKTjsRk |  0.015505 |
+| transaction | 35082029 | 1202409 | tz1aFQMUAS5BrtUB1dbAA19bs335KYhFxYnr |  0.000045 |
+| transaction | 35082030 | 1202409 | tz1afxp7fXP1UXdueH4VBg3bgRxs8kMvqDAr |  1.748279 |
+| transaction | 35082031 | 1202409 | tz1aHjcevnojC1wwNS34qcHskX2phFnLk1w1 |  0.000043 |
+| transaction | 35082032 | 1202409 | tz1akbAW96YXTW5Da212BpSPZEKAxsmmJLgM |  0.036347 |
+| transaction | 35082033 | 1202409 | tz1aLpFAf1UWWRbUbZ1fSHeFky6snLq86EUY |  0.000559 |
+| transaction | 35082034 | 1202409 | tz1aMygJa6MPbZ1KPsForifyNkbuzyxiX1mU |  0.467143 |
+| transaction | 35082035 | 1202409 | tz1aWabqcQsJbUcPBhDvsX5LmcbGBHjHBk6b |  0.035029 |
+| transaction | 35082036 | 1202409 | tz1aXoe9fbRpSBWQx6qkdkWMmcvWWb86VTPM |  0.002434 |
+| transaction | 35082037 | 1202409 | tz1b12b4mLtNiUDtJD1EijaSn2Zkcqs4QRmT |  0.077896 |
+| transaction | 35082038 | 1202409 | tz1bCydLqcheD6Ao1pR8qEawxGZkZ5jkNBWN |  0.000803 |
+| transaction | 35082039 | 1202409 | tz1bD4oVSaWAaRYiWB6aYaDa3f1ABv9TsBV7 |  0.022149 |
+| transaction | 35082069 | 1202410 | tz1bKcf7FP2MGmB6q6xM6e4n1x1aDZCo7EVY |  0.186180 |
+| transaction | 35082070 | 1202410 | tz1bNpwHjJ9QBfRNR8xcTiKao5rXCWfiUPCH |  0.000425 |
+| transaction | 35082071 | 1202410 | tz1bNuNi7NfQ5cBDXKKc7p8o5YK2gUdPYBqW |  0.041258 |
+| transaction | 35082072 | 1202410 | tz1bRzcwMiusj5Zu9nY4RVcc1uLPSxsSF3sA |  0.921764 |
+| transaction | 35082073 | 1202410 | tz1bSTfd7Bo7XJP1hi4MDdsU2BbEkdUJ3GVY |  0.019748 |
+| transaction | 35082074 | 1202410 | tz1bsy611TeS7dPmJiHJxcgrpKDYJd94vahr |  0.000010 |
+| transaction | 35082075 | 1202410 | tz1bsZ9wHvZo9DNDCrkcaH2MZ5sgQYRA4i8P |  0.098564 |
+| transaction | 35082076 | 1202410 | tz1bTezZ1NYwtxxuMLuPTtU94hqkXd3fLEfZ |  0.021996 |
+| transaction | 35082077 | 1202410 | tz1bY3b5xE5WZ1cxeZyYhxWKSfHPeyieAwFq |  0.245572 |
+| transaction | 35082078 | 1202410 | tz1c5c4gbpZwFtGGuyuQ2U2KRyjCxuvkJGtM |  0.000984 |
+| transaction | 35082079 | 1202410 | tz1c9Fm1et1PUowuv4rMABNaRB1YtcaQjLLN |  0.044646 |
+| transaction | 35082080 | 1202410 | tz1c9GefKMKhZgo74Z6zPa2eLAikSWnV8sAU |  0.442800 |
+| transaction | 35082081 | 1202410 | tz1cA8sxvRxEqCqWkGFVWj6zdotrqubLzepq |  0.003816 |
+| transaction | 35082082 | 1202410 | tz1cAaFnoY24sdADLjGkQMtcbV5fcFSkFVgo |  0.011424 |
+| transaction | 35082083 | 1202410 | tz1cAGZyxojMQDyhaAAD5X458fdqpEUCo8WN |  0.002888 |
+| transaction | 35082084 | 1202410 | tz1cfKgUTmHw6FxQpinFTxxZYZq1aMcVYCDp |  0.000001 |
+| transaction | 35082085 | 1202410 | tz1cfTyXgKuqVZf4Pbwt4VrM3ZK51Fyxu2DC |  0.001301 |
+| transaction | 35082086 | 1202410 | tz1cGzNCCby7qk2bpjbyszA8FHGUtLuzNivJ |  1.974810 |
+| transaction | 35082087 | 1202410 | tz1cmR3XFdnaFKL5mrsmn1jc2MhVz4W7zJB1 |  0.000199 |
+| transaction | 35082088 | 1202410 | tz1coCHKVMnr2sZteFLmpAqPQjzyAtHV46wf |  0.005831 |
+| transaction | 35082089 | 1202410 | tz1coccA9FKPwpPhCPSYE2riCuZRDiTv9zS6 |  0.034137 |
+| transaction | 35082090 | 1202410 | tz1cr5czaozJhGPACiBhcnoGET4Yvv8DZes2 |  0.269325 |
+| transaction | 35082091 | 1202410 | tz1cuoVFLa2NECpAvUiFpDV8mGX6bpBBbEUF |  0.953532 |
+| transaction | 35082092 | 1202410 | tz1cuWdffSkBznZU8xLGLZXVo1HdWTW32dBb |  0.000045 |
+| transaction | 35082093 | 1202410 | tz1cvjAje9hWWYanETg1t7oWo7DPx2ASszE5 |  0.000366 |
+| transaction | 35082094 | 1202410 | tz1cwgsGm8vQx4YaEzKZ8XCVzxfGX2dxnZ9W |  0.000009 |
+| transaction | 35082095 | 1202410 | tz1cX5zH9h3Mqbb8MHvBtSVoiJDnACCLFC3B |  0.050023 |
+| transaction | 35082096 | 1202410 | tz1cxp4tHyiaQfkGSxQzzDZfL22bwwRpb52b |  3.964742 |
+| transaction | 35082097 | 1202410 | tz1d4NWXgkCKzZftLWL71LGyCArhWxfBoniJ |  0.002315 |
+| transaction | 35082098 | 1202410 | tz1dbhyNPyKQi2VgDvsdKQLCwpEkZUwNJ2CR |  0.013266 |
+| transaction | 35082099 | 1202410 | tz1dce8MCEY6oXqd95BajXt24Jxiur85khGJ |  0.008079 |
+| transaction | 35082100 | 1202410 | tz1ddPJMnpa7a27usgnKmSaARY8Nd4u5TaVy |  0.000131 |
+| transaction | 35082101 | 1202410 | tz1dLq8e9Hq8KeMQvXsnYHPhJ8CWg8S7W5m3 |  0.002221 |
+| transaction | 35082102 | 1202410 | tz1dNpQjArCn46vDcATJ5GX9Xes8t6RHhyf4 |  0.006786 |
+| transaction | 35082103 | 1202410 | tz1doTAcL9x1cwXaj8YJ2JYo1BZxmHZQZ8F1 |  0.003500 |
+| transaction | 35082104 | 1202410 | tz1doZ62LHC99WPAetioYKteTRnLgA8T4euM |  0.001260 |
+| transaction | 35082105 | 1202410 | tz1dPAPShEvHDmHGTaQakcfPMQEy7syJtqt3 |  0.088056 |
+| transaction | 35082106 | 1202410 | tz1dQ4UYR7GBPGmyQdhnE1zLZv43kGBcZbzJ |  0.000454 |
+| transaction | 35082107 | 1202410 | tz1dRb2htoZennXPaSGHtYpQbyaCSaJ45zwn |  0.044666 |
+| transaction | 35082108 | 1202410 | tz1dt1s5VynRUURYTcW2KhCqFAuemP7Zh2Tr |  0.045641 |
+| transaction | 35082109 | 1202410 | tz1dvoDjEjCoYNwoHBKyQcQ6idS9RYYRJd9g |  0.010627 |
+| transaction | 35082110 | 1202410 | tz1eaMccdqKqNHrfCHSrM7XQoBShGvTZqjYU |  0.007693 |
+| transaction | 35082111 | 1202410 | tz1ebdhHDyC2z4VbxJqdPHQJp3dSWjG7bDGP |  0.115003 |
+| transaction | 35082112 | 1202410 | tz1ebithdPYQBuM96gSA72eYuudyRgS3Tn98 |  0.009572 |
+| transaction | 35082113 | 1202410 | tz1ec7Rgtk8sDCdLWvVEsZw6QaPG77QSC1yq |  0.000006 |
+| transaction | 35082114 | 1202410 | tz1eG9ouy38Yi2SBp7EtWVyPuWuMMY9xmfPv |  0.279634 |
+| transaction | 35082115 | 1202410 | tz1ege3wZ6PUWpbe1GvrNaN2usjWViyhfmZb |  0.007188 |
+| transaction | 35082116 | 1202410 | tz1eiXKjDMMMvx8mQhmBkoSaS8iGkQqbw3aa |  0.007564 |
+| transaction | 35082117 | 1202410 | tz1eLZWXwhERj3yziigkYjGQzSFRnYwZkpXD |  0.000140 |
+| transaction | 35082118 | 1202410 | tz1eQ2rkeafEHG1GGZcd3eiRfaXNJ1f6jWfD |  0.020098 |
+| transaction | 35082119 | 1202410 | tz1etJt3TonYCXHpUfJgaD8VhqYou6PiboeP |  0.167615 |
+| transaction | 35082120 | 1202410 | tz1eV4U1N5AmQo4L7AYy5T7hmxr2q1XDmnTH |  0.002000 |
+| transaction | 35082121 | 1202410 | tz1eY3pFcwNaDaN1iYVJ9igCSYRtxqe3fs2w |  0.845511 |
+| transaction | 35082122 | 1202410 | tz1f1irCPQkjEZ12WwKLixyLuRw9gswcGZXq |  0.003933 |
+| transaction | 35082123 | 1202410 | tz1f7b979MrjD6dLnVcJJXfwY4KLkzyT6M5r |  0.002331 |
+| transaction | 35082124 | 1202410 | tz1fBEj3ZtQzVe2b8ZmQVSFdP2XgipyoFe2o |  0.052395 |
+| transaction | 35082125 | 1202410 | tz1fbxNVj5b49VQwHTpwnTDp7T8ojzWLY6F6 |  0.000006 |
+| transaction | 35082126 | 1202410 | tz1fDNxi79eypDkDVxfLLKacZmaeCHC2hHrm |  0.008781 |
+| transaction | 35082127 | 1202410 | tz1fDPJAq93teURaYAdSKa4LDsT1EGiek4a8 |  0.442130 |
+| transaction | 35082128 | 1202410 | tz1febig6brY9M2TmmRMWmNbyJGwPgeW2Sx3 |  0.453981 |
+| transaction | 35082129 | 1202410 | tz1fJsdQcdigeZ9xjQLGgcJnKQAo1UxwiAL2 |  0.052047 |
+| transaction | 35082130 | 1202410 | tz1fKe1LmdrU16BVquHuxZKEAQvwckseceSq |  0.014934 |
+| transaction | 35082131 | 1202410 | tz1fp4qfYHMfftoxmyCNnHgQ37kukHhh5Hgu |  0.021873 |
+| transaction | 35082132 | 1202410 | tz1fsAKHUGPrbMZWxYjMMhW9KvpLY4UiVuqB |  0.052430 |
+| transaction | 35082133 | 1202410 | tz1fXtHKHFPEMWadNDXa4VtoqNyUrYT8Wech |  0.201053 |
+| transaction | 35082134 | 1202410 | tz1fYZBTiJ5HQ7S8hnzJMy81vBpMEnUsWXjM |  0.132172 |
+| transaction | 35082135 | 1202410 | tz1fzLhUjygbdUc482h2TLpy2wnaPbaYJEyf |  0.060753 |
+| transaction | 35082136 | 1202410 | tz1g7AE4pqQLY4MZEMQBDGFY7gAZkA8PpSSC |  0.000003 |
+| transaction | 35082137 | 1202410 | tz1g8FgdE3A2p5HUaFHQNm9Z3JtKXbABGSwz |  0.137498 |
+| transaction | 35082138 | 1202410 | tz1gCVeNd5GUAPBn6GPq4K5kBRzKZzVPNvtt |  0.000003 |
+| transaction | 35082139 | 1202410 | tz1gerydtyNqTuYDQ5fZZ4PsVotD7nxPAaBa |  0.110872 |
+| transaction | 35082140 | 1202410 | tz1giCkT5ksWU2tia9NFYoKCVzUKake7Qu6f |  1.701198 |
+| transaction | 35082141 | 1202410 | tz1gNvsZt6ZTLSa1ReEYgzUsAnusRro3zNws |  0.000297 |
+| transaction | 35082142 | 1202410 | tz1gQz4riMiZcsPczWhgVB8MX9uu2mKHAg3j |  0.004301 |
+| transaction | 35082143 | 1202410 | tz1gRXve9tsnTCA7dMoBdQzebW3PWbWNazQB |  0.017017 |
+| transaction | 35082144 | 1202410 | tz1gSoMFn22TCCd8VzKdLB23gByvYEEnahKD |  1.249571 |
+| transaction | 35082145 | 1202410 | tz1gTHxkVeqWtWTQyr9xMd3a1Bh2fFB1KNLP |  0.072522 |
+| transaction | 35082146 | 1202410 | tz1gtLf7yM7wV7uThWnWCbH3cqEm9H4kwcF7 |  0.288307 |
+| transaction | 35082147 | 1202410 | tz1guM3QVFin7Qs7yh4LEjG33guP2WCyTN44 |  4.460012 |
+| transaction | 35082148 | 1202410 | tz1gV3DEaWtqKGWB5jkYfziKqxPRLNfY9YFW |  0.094800 |
+| transaction | 35082149 | 1202410 | tz1gvvcwDex4aGdvPAe7fbYaavoHYso8gPZU |  0.000096 |
+| transaction | 35082150 | 1202410 | tz1gXNwGv91PXaETvQmSQyZnSrNTHhAQtGHL |  0.436711 |
+| transaction | 35082151 | 1202410 | tz1gYyUFmBQd5zCaBTjA9SFwAfx25CadNvg5 |  0.599751 |
+| transaction | 35082152 | 1202410 | tz1h1CxXpje8GkKECPyNP4FRnRprZc1rqogf |  0.159832 |
+| transaction | 35082153 | 1202410 | tz1h2oCSn5Xyy76jKxXwwQuLjHDpqtxakxLy |  0.000909 |
+| transaction | 35082154 | 1202410 | tz1h35ZDHw3MKN4J3DPMRzxnMWkHWkKFzUz7 |  0.001511 |
+| transaction | 35082155 | 1202410 | tz1h6xJUFfz4yNLonKfNVVrjJsmHVnUTxEbF |  0.090543 |
+| transaction | 35082156 | 1202410 | tz1h7TGc6MAVR6VwSbakLpMEjdanhhm7NyMS |  0.928359 |
+| transaction | 35082157 | 1202410 | tz1h7XuhpHWoyoe3oEGRwZDEWyWxGStjrGpA |  0.016174 |
+| transaction | 35082158 | 1202410 | tz1hbi3QhKZirVkCArzTx4xZ1SQSVNDpQd7y |  0.147844 |
+| transaction | 35082159 | 1202410 | tz1hCXC5jr2dUs4cGay526ShAZxHNVarkHFh |  0.135518 |
+| transaction | 35082160 | 1202410 | tz1hDmTVduoD3Mp4DYNH2mBeeDAiSyhnzrZF |  0.000110 |
+| transaction | 35082161 | 1202410 | tz1hLhKWw9qNj4Fg1v3MB2XrKNkrJ7DtNqKR |  0.154582 |
+| transaction | 35082162 | 1202410 | tz1hLPpEf8Nfn2jU1i3cgWHmhabvzMJQSseG |  0.001843 |
+| transaction | 35082163 | 1202410 | tz1horhhhbXZtMJjE95b6w2DzkjhX7p53PQX |  0.014702 |
+| transaction | 35082164 | 1202410 | tz1hSa8Sokf4Psb39tNZ9KtoEFKUbjdASdKB |  0.044434 |
+| transaction | 35082165 | 1202410 | tz1hWmwHZxc58p2maFg498uSZYXHTDQ4iTJn |  0.001370 |
+| transaction | 35082166 | 1202410 | tz1hXEfHS8KNMc4iuPqg7s1PVnELkeMxZGFj |  0.139593 |
+| transaction | 35082167 | 1202410 | tz1i21ZfqYAW3tCz1o24TWkpHvDytyzD1k7q |  0.011773 |
+| transaction | 35082168 | 1202410 | tz1i9FdG144CgNfAHAurXgkkQ1srCNq2ypLj |  0.000003 |
+| transaction | 35082169 | 1202410 | tz1iaatepHXc87Q4nTsmbpCtnp7XqoYktzhZ |  0.119844 |
+| transaction | 35082170 | 1202410 | tz1ib1p6h7K7kENdECS2vmskhhea6rBhan4v |  0.000041 |
+| transaction | 35082171 | 1202410 | tz1ibdFZSwd7AVqcvmmCXdhcDjhgqedNo7Tp |  0.176125 |
+| transaction | 35082172 | 1202410 | tz1iD1UzVrohEhru2aqKdJHYkdkX1FMGCMWP |  0.004469 |
+| transaction | 35082173 | 1202410 | tz1iMGegH6qzeDxFwk8v5nJZ8wpEt97jmmsA |  0.000003 |
+| transaction | 35082174 | 1202410 | tz1iQsAnyq5hPuiqqUF7YFog6L5MqLneo5NN |  0.444983 |
+| transaction | 35082175 | 1202410 | tz1iraXc1VfSJ8WJnZJ5ujGouP2VscsZtEKC |  0.001431 |
+| transaction | 35082176 | 1202410 | tz1iSXduDgf7yiUV8ME2GANNogDsEhnYkB2w |  0.000729 |
+| transaction | 35082177 | 1202410 | tz1itE1jhHodLP17XdYunz2VmVqMzd4xakNg |  0.664099 |
+| transaction | 35082178 | 1202410 | tz1iu6scdJBgsDhA1yWCybqmE5XxGN5hLrUY |  0.044778 |
+| transaction | 35082179 | 1202410 | tz1iVX7Aq5V5RbToCpBzAUCwsRqPtrRf4GWY |  0.048966 |
+| transaction | 35082180 | 1202410 | tz1ixqkmiNCaGk8S743VWJ126NRPhdUNhxvk |  0.043958 |
+| transaction | 35082181 | 1202410 | tz1iyLY6LfU8123rrrWvQ2u78icGurjK1UtH |  0.000027 |
+| transaction | 35082182 | 1202410 | tz1iZmUv59ZDiXadwJUFtkMUsugdrWzdDRX7 |  0.067642 |
+| transaction | 35082183 | 1202410 | tz1KjF3vrKPBFesS4iWhAyMiaDTVZhin2r3p |  0.000528 |
+| transaction | 35082184 | 1202410 | tz1KnCyw7NrtW8ukxd4XCfX2tX7RHfvQBR8o |  0.018324 |
+| transaction | 35082185 | 1202410 | tz1KowAN7P9WjydTiDpjqhLyER5xMEHe4VDV |  0.000444 |
+| transaction | 35082186 | 1202410 | tz1KpR68GkryWSQJhyJhim8hs7WiBzwSj1RN | 16.407801 |
+| transaction | 35082187 | 1202410 | tz1KuTQSonJYYPZBTswT8tLiQbFqbWXdukD5 |  0.000416 |
+| transaction | 35082213 | 1202411 | tz1Kz5xj7eASEkdWRsPnWygjHQZPjkm4Ybu7 |  0.000027 |
+| transaction | 35082214 | 1202411 | tz1L7M4VKvrPxm2etF4keSj4tY4pBxg2Ly6h |  0.067403 |
+| transaction | 35082215 | 1202411 | tz1L9Ez42oLSCEu4gKUrnDpKdJkoPD6BuB7Q |  0.010220 |
+| transaction | 35082216 | 1202411 | tz1L9NoFW4TMtJGWVmAtrUF7S3fJFPv1VLWV |  0.012212 |
+| transaction | 35082217 | 1202411 | tz1LB7TVKUy7E5k5Xp63LxTENSoUoQvSem9y |  0.019265 |
+| transaction | 35082218 | 1202411 | tz1LBEuPv4bDWnwpqVqm3uUwdjRfVfEN7dYA |  0.044067 |
+| transaction | 35082219 | 1202411 | tz1LDw5zoY7FYzhUHsixCTnrF3U6x3kRDPJF |  0.226929 |
+| transaction | 35082220 | 1202411 | tz1LgGjrgcUFe9ztaFxzjo1XNiqFtYqTF3Pd |  0.049269 |
+| transaction | 35082221 | 1202411 | tz1LiTDD7JRi1xPVaFsCiFeTLHAYvTzDvNrt |  4.846947 |
+| transaction | 35082222 | 1202411 | tz1LjExjhAP74j9q97KqtD4xEM4LGVoBxuFK |  0.000003 |
+| transaction | 35082223 | 1202411 | tz1LUB9b1b6PKzWgxBhpZuVBKm1CaJ3R1EQN |  0.013348 |
+| transaction | 35082224 | 1202411 | tz1LuSHHhJmKrECdA3CJrunMhFjD4hCGKJRN |  2.660042 |
+| transaction | 35082225 | 1202411 | tz1Lv2khLyTi5r6yBcpzCuvjFwUuk92KzEwA |  0.000335 |
+| transaction | 35082226 | 1202411 | tz1Lv635Hq3dJxPMcLak1VuxhGWxRjQNFvka |  0.049225 |
+| transaction | 35082227 | 1202411 | tz1LWrH6fEB1NfHA4iEvfYQifPi3EwBpY45M |  0.017617 |
+| transaction | 35082228 | 1202411 | tz1LxidQXeRuXWe61VYRf7JV4ceq4psvbRir |  0.000095 |
+| transaction | 35082229 | 1202411 | tz1M5FmR2Krt1Rko5BSrrkP8MV7SaskRM9tY |  0.048178 |
+| transaction | 35082230 | 1202411 | tz1M6j55v5bw6yTVXyHUVcvnkNjtqpufBvQw |  0.008551 |
+| transaction | 35082231 | 1202411 | tz1M7Kpno9fjk1DWpbsXUmD3jVs4gYyvoa6a |  0.004395 |
+| transaction | 35082232 | 1202411 | tz1MAf5p7b2kSWYPAueNhfYHYiva62CbUL5L |  0.000036 |
+| transaction | 35082233 | 1202411 | tz1McAK72w7tQufJseNtWCp4qe6MoSosnjFX |  0.000041 |
+| transaction | 35082234 | 1202411 | tz1MD6CVdDpRrHSQYvNdZRkb1ty1zCLDp6Jf |  0.178424 |
+| transaction | 35082235 | 1202411 | tz1Mg35BKtwTMgMLfdNdaXqa7ZoqW8C4euy8 |  0.001194 |
+| transaction | 35082236 | 1202411 | tz1MJt6YYLLGPTZw9tUWVbo3ZAcAWWbGdhDn |  0.045279 |
+| transaction | 35082237 | 1202411 | tz1MKCMt9dQDccykzripUGk5439BwEWthqx5 |  0.005597 |
+| transaction | 35082238 | 1202411 | tz1Mt9eG1vSc8pgRQCpt5W8dMcWTiX6jP1Lz |  0.012661 |
+| transaction | 35082239 | 1202411 | tz1MY5Yg36KaJzSnXDuknWCUH3JaBJkPZw6Z |  0.000003 |
+| transaction | 35082240 | 1202411 | tz1MyKQaPvijnR3bwHsFqJyiGHbm7ay6fi2X |  0.447594 |
+| transaction | 35082241 | 1202411 | tz1MZWsL6DpjkqXLmQ6eiRqjiwvb9ykMNUPj |  0.044228 |
+| transaction | 35082242 | 1202411 | tz1MzceVHro7b9SUAk5iicCnyEdFuBCkk7gd |  0.012999 |
+| transaction | 35082243 | 1202411 | tz1N2bv4tWZL3P8bPz9spiatisSMThEBvC4B |  0.020765 |
+| transaction | 35082244 | 1202411 | tz1N9FT6EkgM174b6suFBxhszg5oLnYpBvqf |  0.114597 |
+| transaction | 35082245 | 1202411 | tz1N9Waofcf9xj2HFar5ZrD8xDrufRFCxRZN |  0.017217 |
+| transaction | 35082246 | 1202411 | tz1NcMTsYqqr2WhAiK8gFGxCR8VN4CRtf9BT |  0.001710 |
+| transaction | 35082247 | 1202411 | tz1NFpC1vXmKU9zqJ3yBA5XJFmksGF2RXvXf |  0.001757 |
+| transaction | 35082248 | 1202411 | tz1NhNqQ9jfXJf4cBHc6RrtziUYWQ8XfUywj |  0.113756 |
+| transaction | 35082249 | 1202411 | tz1NhqvEkXdqnYdxpjnYsshS28XKt1yhiH6N |  0.390610 |
+| transaction | 35082250 | 1202411 | tz1NoPcf5pSL723o23MVxYpJjVboJoC1CurB |  0.000503 |
+| transaction | 35082251 | 1202411 | tz1NPRoJzijdJpCJgewSG4UbQoCskdFfXXKm |  0.000216 |
+| transaction | 35082252 | 1202411 | tz1NQN7Vq485AeWM1PrZKXcfMMdU9yXjV57o |  0.005632 |
+| transaction | 35082253 | 1202411 | tz1NTk2gcNv1sTNQKt3Y3fyasEsftkcdjrcN |  1.444078 |
+| transaction | 35082254 | 1202411 | tz1P3zYHDMgunNCwVnhhNBJtZeiHpfMYTwK9 |  0.000072 |
+| transaction | 35082255 | 1202411 | tz1P8H3JtoJid5G4tyFc2TdFQ58Wd6vWH2pP |  0.005811 |
+| transaction | 35082256 | 1202411 | tz1PCeDqPQVUNmkxsGf9TUrCPpn53DfDFiQ4 |  0.283780 |
+| transaction | 35082257 | 1202411 | tz1PePQHfBC5PW3wky56Jv8ZnyZfaKrdnTKv |  0.167536 |
+| transaction | 35082258 | 1202411 | tz1PKdYUvtvWLzPuEiCsXb6YfXowMdFZ3MXJ |  0.635330 |
+| transaction | 35082259 | 1202411 | tz1PMms7MnwDM2oUsY5P9aTaRzhwrtJ8g6CR |  0.013595 |
+| transaction | 35082260 | 1202411 | tz1PmWKP1tHDZtEx66YZaeqrjKSRVCufNpDm |  0.000092 |
+| transaction | 35082261 | 1202411 | tz1PpEhrfJmM3wr3BUxoHKawjUVC4S7yFPa2 |  0.000498 |
+| transaction | 35082262 | 1202411 | tz1PqsuL6feKx81wyWKeHapyh8rucKEv6pQM |  0.291484 |
+| transaction | 35082263 | 1202411 | tz1Pqt7vHvTqueCCBEyVTPSo4jZu8bnCdG6V |  0.000025 |
+| transaction | 35082264 | 1202411 | tz1PVAzUn8vuK5VHjS8fczbjNS3hTZxaSjvP |  0.358387 |
+| transaction | 35082265 | 1202411 | tz1Q1MK5e96yDeoNrGM9Sga6n3i4eqDYBjNu |  0.002110 |
+| transaction | 35082266 | 1202411 | tz1Q77ZcZghPWvNBVefPCgHykQAwZCpMCseK |  0.641846 |
+| transaction | 35082267 | 1202411 | tz1Q8RtyZyZZfDToNJmYrPEPucwcjryxbvSQ |  0.238893 |
+| transaction | 35082268 | 1202411 | tz1QAJfuurKsT8MQZXy2RGMbojLy66KyZssm |  0.002833 |
+| transaction | 35082269 | 1202411 | tz1QFJYavNXePFafWxBM3gjuxsPDqAz1agSG |  0.556642 |
+| transaction | 35082270 | 1202411 | tz1QG5wmua1J8bTvGiGLeYEceDZJ8p3UDD8p |  6.832461 |
+| transaction | 35082271 | 1202411 | tz1Qg7zULmrmGL187umZsycbdHuifpuNBdsh |  3.000990 |
+| transaction | 35082272 | 1202411 | tz1QHKL26Xsj5vQwd8k3kS7sYdZ3Bbwthqxi |  0.000163 |
+| transaction | 35082273 | 1202411 | tz1Qh12SE4xj5FNKKYYQoAxbkWGJjpvAZKeC |  4.443201 |
+| transaction | 35082274 | 1202411 | tz1QJywDdjvfvpULxiahNh1cZ2UfAA3Zhs5o |  0.012420 |
+| transaction | 35082275 | 1202411 | tz1QjaFUNnBVHBXoTMsW5BJnNJhKsUrPVj87 |  0.450074 |
+| transaction | 35082276 | 1202411 | tz1QKDWXEnSBS3M948txvvreTKQPAtCQEjhK |  0.125772 |
+| transaction | 35082277 | 1202411 | tz1Qq5AfNXrBqRQNrgXPoZ6uQ1nJdPTctonU |  0.015730 |
+| transaction | 35082278 | 1202411 | tz1QtjVmtpVyEj6mEWEsLxqTGTymLAFaHTkd |  0.000009 |
+| transaction | 35082279 | 1202411 | tz1QVsmU7n1Dw2J8Mu8XcLnNJVcAm5EkMdSN |  0.140679 |
+| transaction | 35082280 | 1202411 | tz1QYjAZ5Sy2j7cjAWs7fPMUQENCpa5rKJLM |  0.204433 |
+| transaction | 35082281 | 1202411 | tz1QznDdZPW4jfMeRuJWLuQsrQkHLaA3dq8M |  0.000267 |
+| transaction | 35082282 | 1202411 | tz1R1bModU5MwrjNxPMaooxvhNGQ7JA1HSMk |  1.645729 |
+| transaction | 35082283 | 1202411 | tz1R1Skm13E6HYQ2miSGfJzKqdsJ77Z111nk |  0.137817 |
+| transaction | 35082284 | 1202411 | tz1R4wj72xLBUTCx7irHUJKjNEM9sAh3SPJK |  0.000012 |
+| transaction | 35082285 | 1202411 | tz1RAL2uWYZiP2fpsnLceUgMAg24Vyxr55J7 |  0.005635 |
+| transaction | 35082286 | 1202411 | tz1RcGJja2N7Xasd8hBZxi5nJCNd4xGy5WNK |  0.000105 |
+| transaction | 35082287 | 1202411 | tz1RES1mXs6WA39eWHK8jt2XVTHb3cFenxD7 |  0.267032 |
+| transaction | 35082288 | 1202411 | tz1RFc7FwdNTeiSMmCLskgRgc6dPm9itHpGZ |  0.137243 |
+| transaction | 35082289 | 1202411 | tz1RGkfT4XWN6MfgRQErZy8odp8uDnLuTTFL |  0.001872 |
+| transaction | 35082290 | 1202411 | tz1RGRQA7wq1GANPCCL2PgEySCHy5wx5WDxN |  0.000882 |
+| transaction | 35082291 | 1202411 | tz1RJhQikDLqYnxKMgQGJeh2Tj5NVFiL23ox |  0.097558 |
+| transaction | 35082292 | 1202411 | tz1RjgEnULSzgkjWLHE2gvW6Q1B6dcLpDtUw |  0.460131 |
+| transaction | 35082293 | 1202411 | tz1RjR1h3am5c8GVvzqRU6KQFT2gFVhMDreX |  1.227847 |
+| transaction | 35082294 | 1202411 | tz1RLKDBWhewQrzZMGPGHmyQzBcDTSegJRdL |  0.001376 |
+| transaction | 35082295 | 1202411 | tz1RNPyQd8Mf24Guj7f6YGp8q8dZUrjFxdTp |  0.000001 |
+| transaction | 35082296 | 1202411 | tz1RPRipqd7yFKPyJN55mB6GRDUqkbzcDo4h |  0.202689 |
+| transaction | 35082297 | 1202411 | tz1RpMBcAvRwvePLCFWkBmKitGz6FuL43HiD |  0.001049 |
+| transaction | 35082298 | 1202411 | tz1RRmX2EwBVKvMyyqbZnswWN8PTBCxh7H6r |  0.028989 |
+| transaction | 35082299 | 1202411 | tz1RStT6WxtdR7SFxgD8A4kvTegERirw4Z6d |  0.001001 |
+| transaction | 35082300 | 1202411 | tz1Rtxn4TbMg2EEQ45B6AkDwnnqQAQHiAiz4 |  0.006736 |
+| transaction | 35082301 | 1202411 | tz1SAaSYqid12hjzuXFB1duUXhJmHEG4bzZ9 |  0.055799 |
+| transaction | 35082302 | 1202411 | tz1SBoSCn5x3L7VnNqHD2bkH6xKgUR6qf9As |  0.000001 |
+| transaction | 35082303 | 1202411 | tz1SBWobVR73mQD5TaAZACVy6Rpwj9hrcyUz |  0.013761 |
+| transaction | 35082304 | 1202411 | tz1Sc9xnVPRBHbDtjkSRk8KYDQXdad6HUusD |  0.000045 |
+| transaction | 35082305 | 1202411 | tz1SMkiGccYjFuPHQTuurb4ebqxfQUnD3mFP |  0.123331 |
+| transaction | 35082306 | 1202411 | tz1SNSQWSie7Bm9mFWHQFGvSLAcsc3ak8wMw |  0.003933 |
+| transaction | 35082307 | 1202411 | tz1Sn2oTMoG2vzsnUbhUZdY2S6b66ukTvcjj |  0.000526 |
+| transaction | 35082308 | 1202411 | tz1SnnzWescq9Hwzvq7Bqw9wkUdyJV55WcYm |  0.004280 |
+| transaction | 35082309 | 1202411 | tz1SSZErQeBFHrQe3RkgVPbzZF6DEXXdFmJd |  0.105188 |
+| transaction | 35082310 | 1202411 | tz1SuCKoYC9Rwm72oD7AcZ9ByyoAVFpqouwn |  0.311904 |
+| transaction | 35082311 | 1202411 | tz1T6LUopATG7zaERezxRDTDxT1xqEpG3iic |  0.001266 |
+| transaction | 35082312 | 1202411 | tz1T9pDBM9nohX5YgaDCTkHh8HD3chB5J5An |  0.050675 |
+| transaction | 35082313 | 1202411 | tz1TajMkoqfoMFY8Ju9WpXDPk1NpjN7uBDLX |  0.312721 |
+| transaction | 35082314 | 1202411 | tz1TBV1dce3eQ2VGsL1ZP1NvC2AZnks3JQh2 |  0.024569 |
+| transaction | 35082315 | 1202411 | tz1TCrDs9XhF9g3jaAWARTtA8XoHu6TJPLzN |  0.005283 |
+| transaction | 35082316 | 1202411 | tz1TDBByRbw3G45sVYrvVs6afHrRxTvCdPN6 |  0.313445 |
+| transaction | 35082317 | 1202411 | tz1TGQp7bwMNHx65qW6YBmYxpB3BeV54kZpf |  0.000027 |
+| transaction | 35082318 | 1202411 | tz1TGvp19rT95YkA7rQCsjz37Ms1g4vSvJR9 |  0.001719 |
+| transaction | 35082319 | 1202411 | tz1THnQKU5CDxKjaqSPFLoBNBv8VttqNFwg5 |  0.258423 |
+| transaction | 35082320 | 1202411 | tz1ThbvKgAKXD9y9Mcb92eVLJd5EqjqYXmAc |  0.000018 |
+| transaction | 35082321 | 1202411 | tz1Thyh3smtxaKxzVtoomKddWG1ue7F4FgdU |  0.003665 |
+| transaction | 35082322 | 1202411 | tz1TnbmVrRBjdvoLFCSz9oRKSLGwAEMScPiE |  0.391344 |
+| transaction | 35082323 | 1202411 | tz1TqxAqcdcg3Y6Kwa3xGnvVGnD6jfDRKFoe |  0.192850 |
+| transaction | 35082324 | 1202411 | tz1TrCC8w2pZPgn2MurZrnMA5ULA82gNcP76 |  0.050353 |
+| transaction | 35082325 | 1202411 | tz1TS4FbJfZjMfxfTpsLQn45FF5Wj7auZNwq |  0.002133 |
+| transaction | 35082326 | 1202411 | tz1TsYEmro6UJ75DNPHPTbEZsJKG2fQEanhF |  0.223648 |
+| transaction | 35082327 | 1202411 | tz1TUcLFNhPqye1yo9nsNRPfXErEBJWHCLSJ |  0.155858 |
+| transaction | 35082328 | 1202411 | tz1TvKD3tZGv2jGap1CHvxVPjVc6onmT1Sr7 |  0.006264 |
+| transaction | 35082329 | 1202411 | tz1TW6TkKamWP5VVYYrUAapteVRpmgrTS2JH |  0.531081 |
+| transaction | 35082330 | 1202411 | tz1TwUDXJwWdGUxwCAkjbkYju2De6EaGS1Kx |  0.049650 |
+| transaction | 35082331 | 1202411 | tz1TYYphefn6L3bDrNo88HMWbNFZFutuLbXp |  0.340404 |
+| transaction | 35082332 | 1202411 | tz1Tz5EvufeZrzz7JE3Zhw8TQY77SKqjfv2m |  0.007278 |
+| transaction | 35082333 | 1202411 | tz1U1CHLRud8QYefxj1AxoCuD2cidrTh53kS |  2.393722 |
+| transaction | 35082334 | 1202411 | tz1U6fNxbPUMkRU625oxk5ya7hrjEn5SHtS7 |  0.000055 |
+| transaction | 35082335 | 1202411 | tz1UBxMdoFAFWTqjydpjFXfH819GaWQkCqth |  0.595444 |
+| transaction | 35082364 | 1202412 | tz1UgLEZornKsKPMDpq44Y84poaQRZgXZctK |  0.011317 |
+| transaction | 35082365 | 1202412 | tz1UKX6ZVxB1mcra9i4NPEhATAN8ismApN2R |  0.605735 |
+| transaction | 35082366 | 1202412 | tz1Uk5xHJ25ZabQq8fWE9WXsRnU39XQ7QKbu |  0.000023 |
+| transaction | 35082367 | 1202412 | tz1ULbSRSK8muk8Y92W5SLKG7daBVhJJ4tpJ |  0.000068 |
+| transaction | 35082368 | 1202412 | tz1ULEUTbaY1LEComjSVPqPuY1QRJJwXTiwg |  0.218981 |
+| transaction | 35082369 | 1202412 | tz1UNFm4QKx1kemaXArmCC3dCJDGHHiQWnGJ |  0.011387 |
+| transaction | 35082370 | 1202412 | tz1V4srsB3sz5i6xB6vx3uL7tUiXhpDtvLiS |  0.208368 |
+| transaction | 35082371 | 1202412 | tz1V4uckBMZJ816eeHMf1zqW9j7GQheJy5vz |  0.001444 |
+| transaction | 35082372 | 1202412 | tz1Va3cLY2LywWCiQGSGUYNzZrxWAYzzEcLB |  0.000456 |
+| transaction | 35082373 | 1202412 | tz1Va74cmt3QV16gN3e4NDvr3maSjG9wmH7G |  0.022130 |
+| transaction | 35082374 | 1202412 | tz1VadHe4AetFx1E6cJQ1LFD49yno61P7ygX |  0.004404 |
+| transaction | 35082375 | 1202412 | tz1VBgUQMBJLWRU747a3N7Q8V3rHccUCduic |  0.014660 |
+| transaction | 35082376 | 1202412 | tz1VCqgWd8buPvWBU4Jv1uPiDxRg52XEinaH |  0.444278 |
+| transaction | 35082377 | 1202412 | tz1VF9DN8gFWSZFhTXjnurFAi66b1xkS6bh4 |  0.024296 |
+| transaction | 35082378 | 1202412 | tz1Vfw5DpJ9zyTx36Gex2wrMVCfHUFdiPuvf |  0.000004 |
+| transaction | 35082379 | 1202412 | tz1VJ3xTYZXWVJkEzPhtkf3j1THFWKadTtFV |  0.012120 |
+| transaction | 35082380 | 1202412 | tz1VMCv5wueZnAmeoMgkhpiDz1Un2FBXf25y |  0.009681 |
+| transaction | 35082381 | 1202412 | tz1VncNSworAZPVavTGP1pN1mZeJEqWY2NWE |  0.017397 |
+| transaction | 35082382 | 1202412 | tz1VoTssSQrMybZ5zwvAzVo4QzdCeggEa83q |  0.334905 |
+| transaction | 35082383 | 1202412 | tz1VrEjWBi3jDSECwdWcXo1TjS22y5kaQD1S |  0.000324 |
+| transaction | 35082384 | 1202412 | tz1VTe56pRR6jQu1qU6HAf6BVAxnrLo7uDio |  0.282835 |
+| transaction | 35082385 | 1202412 | tz1VuKJfHh8Mets5fDspTdLAYgYAJ3i7c2SK |  0.022508 |
+| transaction | 35082386 | 1202412 | tz1W4WdHs4hgeB3sqMeAAqzFisyEqt2QAtro |  0.000442 |
+| transaction | 35082387 | 1202412 | tz1W66bLkHwWqGgPY3tDAhNYhw9mbax11Fos |  0.005508 |
+| transaction | 35082388 | 1202412 | tz1W6bajt6UQVjGikL3NodVyNYqiXtKd33Gv |  0.013151 |
+| transaction | 35082389 | 1202412 | tz1W7cb4ifpzQbnaY8WaPZApynmwsGu427W3 |  0.000002 |
+| transaction | 35082390 | 1202412 | tz1W8nDK4chGH5q3kh1LPjyRGkQn358XquDF |  0.115705 |
+| transaction | 35082391 | 1202412 | tz1WAokvav96926wAjWnwLE6eh2kzQzCuUp2 |  0.039380 |
+| transaction | 35082392 | 1202412 | tz1WaPZgxMPBgov728i7gqdUSkCuRSQXihK1 |  0.000117 |
+| transaction | 35082393 | 1202412 | tz1WDtyKHWnfgzH9kN4g9exBrm1Q4BNFvyj3 |  0.258897 |
+| transaction | 35082394 | 1202412 | tz1WFW6EYZLeDRrvNggbfqTycfUd9jSCoTMP |  0.000424 |
+| transaction | 35082395 | 1202412 | tz1WGeBE6cMpdUe7meZ1YrSyE9aTFTLiX9bH |  2.673299 |
+| transaction | 35082396 | 1202412 | tz1WGos4kEnRkwA6TNSQU5UCsuhmzUJttqhk |  0.072278 |
+| transaction | 35082397 | 1202412 | tz1Wh5VdCB4ig3nSLNJurAtosgRwnebaUAXA |  0.000011 |
+| transaction | 35082398 | 1202412 | tz1WJhJcoa3qC7i8q21xWb5BKUWNjvdAJgWX |  0.030650 |
+| transaction | 35082399 | 1202412 | tz1WojdivEjjxWrH8QLu8cS9sMKvgy4HVmWq |  0.002952 |
+| transaction | 35082400 | 1202412 | tz1WskwmoAXUXdgzucE4X9TWbgT3WEFBJNqe |  0.000109 |
+| transaction | 35082401 | 1202412 | tz1WUTxeiRsUm1a3MbECduZ6UZHYCU2xo3TF |  0.095832 |
+| transaction | 35082402 | 1202412 | tz1WVtvyLDDsVaPg9s2req2UBucYsgrUfkcX |  0.010250 |
+| transaction | 35082403 | 1202412 | tz1Wv2SVQDUUKNw2s1qF3WmXiKHpEoPs8CdM |  0.012649 |
+| transaction | 35082404 | 1202412 | tz1Ww695WB7rAvvpbpFt7ZYeXZ3QNeoXUfmF |  0.003345 |
+| transaction | 35082405 | 1202412 | tz1X3Z9S5CGYg9kijAxtzJpRfcTuYuncitxH |  0.000245 |
+| transaction | 35082406 | 1202412 | tz1X4s9vDagF3dbP1yeqbnYsJhrU6byk3DRF |  0.061632 |
+| transaction | 35082407 | 1202412 | tz1X7tWMP3J2jBwspxDhBD6jdAQbykbGofS8 |  0.001020 |
+| transaction | 35082408 | 1202412 | tz1X8MtSPq5dLJLMmQR3rLSy1U6hiW1x2z34 |  0.072505 |
+| transaction | 35082409 | 1202412 | tz1XgduT7uwnwx24ZdgKkAMmGo4pU6uzw8AL |  0.018107 |
+| transaction | 35082410 | 1202412 | tz1XhDErypaAa46T3NJpn43bMFY2xdvwPXg4 |  0.001841 |
+| transaction | 35082411 | 1202412 | tz1Xht17bycYk5PRJiGunuwcYGAuSaxDrQBp |  0.000118 |
+| transaction | 35082412 | 1202412 | tz1XkfMgm23yhbS6CWwMguZBn59GVXEnLNQ2 |  0.019413 |
+| transaction | 35082413 | 1202412 | tz1XLjJBYaLXKndgeGJUoEiqBt2ucVjHp7Nw |  0.091687 |
+| transaction | 35082414 | 1202412 | tz1XNMVTPgAf2ufF9FxAyBjUzSZbEuZtcQyq |  0.086308 |
+| transaction | 35082415 | 1202412 | tz1XNXhzfD8k5cMjRaRRNSjHWyodtJvfiZjn |  0.002210 |
+| transaction | 35082416 | 1202412 | tz1XnrjfWq1iu2rMj19L8j84fG1ARDJgfrUt |  0.000174 |
+| transaction | 35082417 | 1202412 | tz1Xo5aEbrd5EGEccNkZnKY26JeiDJQGbBBK |  0.001080 |
+| transaction | 35082418 | 1202412 | tz1XqPBwtRCHWdoJcAPptmvJosWGuGfwujb5 |  0.082107 |
+| transaction | 35082419 | 1202412 | tz1Xtkx445zEbFeKZ2umww2dxvmtd6MAaJEs |  0.869575 |
+| transaction | 35082420 | 1202412 | tz1XUECdE5krrWxesBJ89iKsfYybka4GiYn6 |  0.000088 |
+| transaction | 35082421 | 1202412 | tz1Xv9nbEBsC942fpN6HktCTfPiKMESesjKV |  0.000021 |
+| transaction | 35082422 | 1202412 | tz1XzKTjhhFUTaBM2rZ8mBhqxjLNDEMWWpt8 |  0.884342 |
+| transaction | 35082423 | 1202412 | tz1XzpYQcuQs7mkRJzUf3u2MMprXHkBhhDy3 |  0.000001 |
+| transaction | 35082424 | 1202412 | tz1Y5NH34F4RFAxe61TiwzBVKGFp7hn52vQu |  4.561994 |
+| transaction | 35082425 | 1202412 | tz1YBsFY8APAgXSKTDCUHHLEWqNhcv55jBZE |  0.149888 |
+| transaction | 35082426 | 1202412 | tz1Yb47sodX4a22hH7sSeLLusKrS1fD5xecC |  0.073224 |
+| transaction | 35082427 | 1202412 | tz1YCtEVcCpDPpqhPsxcETNYHcYnJe6CBAFC |  0.000454 |
+| transaction | 35082428 | 1202412 | tz1YDFHsRrL2sbkownnRaJ2d5tVeQbqQ6Qbj |  0.000003 |
+| transaction | 35082429 | 1202412 | tz1YdDUWSZms1SWtC5dAX2Du2yKCQBrR8kMX |  0.007760 |
+| transaction | 35082430 | 1202412 | tz1YEPUWvkYBujQSEf8RssgzBAwXa5ep74eC |  0.006903 |
+| transaction | 35082431 | 1202412 | tz1YEyNgphYf7M1EVA5XjHnFfaUZcNWp9rsX |  0.000131 |
+| transaction | 35082432 | 1202412 | tz1YF9upXPgVJDSHKxP3BVhbiyhNZRYKwMS4 |  0.012194 |
+| transaction | 35082433 | 1202412 | tz1Yjemg8TQCiNnwZAuXF67AAZHiYGcQuVBT |  0.533800 |
+| transaction | 35082434 | 1202412 | tz1YP7s2bxcS5amaxbGWy6biK24yeSLS1UmS |  0.332155 |
+| transaction | 35082435 | 1202412 | tz1YPArnvm7FLfqHDJwBPNSVwq1sBPr8aEpV |  0.000024 |
+| transaction | 35082436 | 1202412 | tz1YrscUYv4LdzPZqr3jbDTQzWy7ZSfHaKex |  0.033477 |
+| transaction | 35082437 | 1202412 | tz1YugXN8rCohivVVK52y3S4qZhpcrYVvpFX |  0.001494 |
+| transaction | 35082438 | 1202412 | tz1YVCPZqx2VsX7wVspiFXKSxjXjyhZp88LU |  1.361688 |
+| transaction | 35082439 | 1202412 | tz1YXqyLWV3H5VyqfA5JvrYiaTysHzb8Qbfp |  0.012379 |
+| transaction | 35082440 | 1202412 | tz1YXSeHDk4k9S4gCS3KT5Rn8gbXLMUES4N3 |  0.032120 |
+| transaction | 35082441 | 1202412 | tz1YXx7rrMqQzT6J5SWikfkLNRXbnDCaUvTJ |  0.374582 |
+| transaction | 35082442 | 1202412 | tz1Z3sRrPwZmHo5EkdFLczf792FBpdLvJVys |  0.004172 |
+| transaction | 35082443 | 1202412 | tz1ZEnEDKdd27RUuMUGe7PXdiFBv7em2a1pe |  0.012107 |
+| transaction | 35082444 | 1202412 | tz1ZfywPheNAWAMVkKBK6nB4Kf3hetV8DTeU |  0.014759 |
+| transaction | 35082445 | 1202412 | tz1ZkxvUecFyLmBjTgKmD5CYv94TDo1cdWK5 |  0.005096 |
+| transaction | 35082446 | 1202412 | tz1ZL8jccNxiQ17C34hkXC6jdkTREoTxfp9Y |  0.058144 |
+| transaction | 35082447 | 1202412 | tz1ZMhVoQFH1QBMdakmpn1qWAcDPQB4p7MDY |  1.328739 |
+| transaction | 35082448 | 1202412 | tz1ZmsWeD7ccB9ySL7zFmiWBV1aTeYrQUSzG |  0.037350 |
+| transaction | 35082449 | 1202412 | tz1ZmWVVZXVQ5CJpA2zkbnXWhjAq6EcgzjHh |  0.000009 |
+| transaction | 35082450 | 1202412 | tz1ZQ4QbGKAWbLxX1pGYj4gHjFHUC4sPZ5ez |  0.009074 |
+| transaction | 35082451 | 1202412 | tz1ZRcBhGe2DHMAD44x5riSw2zMD9YAWgD6Q |  0.079620 |
+| transaction | 35082452 | 1202412 | tz1ZTLh5vo6xwaSzUsqrEWjS6o2mTycZs3vD |  2.278597 |
+| transaction | 35082453 | 1202412 | tz1ZTmaDrpmGGSkGjhdvGMh3NNLAUx8PVpLZ |  0.013760 |
+| transaction | 35082454 | 1202412 | tz1ZuyuFM8wPB8VoBniCZm1NNN6veLxBUxnH |  0.001452 |
+| transaction | 35082455 | 1202412 | tz1ZwF84tJjLiWQ4TuxYYWKMjKLMwEb7mwDR |  0.000001 |
+| transaction | 35082456 | 1202412 | tz1Zx8a8i3h4UFFfdkDL7nThsVjxriDosFZo |  0.003811 |
+| transaction | 35082457 | 1202412 | tz1Zxd2hzY2AU2BN5Ho6HdiZ7kXz8qQNDtfF |  0.257137 |
+| transaction | 35082458 | 1202412 | tz1ZYs7fw53vqcH6SxEoTtbJU58RpSURA6dc |  2.648080 |
+| transaction | 35083155 | 1202437 | KT18dqd1o1Umm7KujuEZCEXhiE1VwZj6DyGp |  0.000616 |
+| transaction | 35083156 | 1202437 | KT18s41CcAYvFWCAhar94knxSY2beJjLSNM2 |  0.073393 |
+| transaction | 35083157 | 1202437 | KT19EgRhdPSnugHVarrqmbLcbdWcTVjHoGes |  0.000464 |
+| transaction | 35083158 | 1202437 | KT19FCo5Btgx1qAGpXNyJesMVW4F7q25EqtM |  0.002772 |
+| transaction | 35083159 | 1202437 | KT19GFjfYtNCicqXMgCYRvq7fZRDhE828uw2 |  0.016789 |
+| transaction | 35083160 | 1202437 | KT19gcB65rQksq2N8NmaviLxRo66JoBKP41d |  0.002002 |
+| transaction | 35083161 | 1202437 | KT19Lvb9rpgDRnRT5hBqNzTpKzkycafia4ax |  0.001660 |
+| transaction | 35083162 | 1202437 | KT19NDU5v35XYqYn3LtcxvyZwMPBV5jUmeJ5 |  6.767325 |
+| transaction | 35083163 | 1202437 | KT19NNAd3cnUp7TPgxaWb8BP2v6UqUhy4hp5 |  0.000622 |
+| transaction | 35083164 | 1202437 | KT1A6mBggiwAuDmVa2oS4uUHNAPXTWMmXbrU |  0.000042 |
+| transaction | 35083165 | 1202437 | KT1A7drknXEwQ84BztjFLaHspPsR5gq7WLU4 |  0.092600 |
+| transaction | 35083166 | 1202437 | KT1ABEYRksbtndGJKMXiRCQ2A7ym3GjhBPrQ |  0.000342 |
+| transaction | 35083167 | 1202437 | KT1AP55nYiD1iV5uXTkaMVW7NTQtTvHLfBmr |  0.003698 |
+| transaction | 35083168 | 1202437 | KT1ApjGtPKWTYncqCmQKzHiUD3YMhxw7sSwx |  0.002633 |
+| transaction | 35083169 | 1202437 | KT1AXfc7F5cWEWKCVS84RrHZec1LaJFActom |  0.007997 |
+| transaction | 35083170 | 1202437 | KT1B7dRzQhifuWGLGEvzvfGuCVupudgX1far |  0.034254 |
+| transaction | 35083171 | 1202437 | KT1BF5s3aah3YeavBTf2XUZscgAiaCgT4bnD |  0.001111 |
+| transaction | 35083172 | 1202437 | KT1BguM844PNfqcTHijPKk2HqMNsojH3NBRo |  0.030657 |
+| transaction | 35083173 | 1202437 | KT1BL1eHUKMC6fZAYdbu32Kwtvfk2L2cdEeC |  0.000307 |
+| transaction | 35083174 | 1202437 | KT1BLbHcUujF8QgLJh14Wxqh8k667DNACjNj |  0.007054 |
+| transaction | 35083175 | 1202437 | KT1BR9YbKw1nTCpSQG5nnWHxM2vNyuW4824p |  0.001849 |
+| transaction | 35083176 | 1202437 | KT1BThb9BXQpunk7Y4nVPtkR2DuLgcmUzqJB |  0.022713 |
+| transaction | 35083177 | 1202437 | KT1C3EUjFvXPxjCfTyHFgFfZDK96yvGWnUKu |  0.003092 |
+| transaction | 35083178 | 1202437 | KT1CA9msNjX4K8rgU9UxjASb2Pg4qXYjHvWB |  0.127036 |
+| transaction | 35083179 | 1202437 | KT1CEodmDdSxBdYsrdmVGZkrZyKJo6wPSPDH |  0.002261 |
+| transaction | 35083180 | 1202437 | KT1CGN3VALPUSHX5SmHQcrcBGNwidVDL4WnP |  0.000004 |
+| transaction | 35083181 | 1202437 | KT1DF1Q7WBL3cL3NdC1SHkuUCHGKXFL3H8F7 |  0.000016 |
+| transaction | 35083182 | 1202437 | KT1DqedG8RozoTecvXmjFMWhrR7FFSGFVsey |  0.000003 |
+| transaction | 35083183 | 1202437 | KT1DSHXNZ34ppp8E4GjY7joedcB9DhDzVTMc |  0.000434 |
+| transaction | 35083184 | 1202437 | KT1DUX94ze5cJyoDBi8NoGKKibnV8JpTed2B |  0.000753 |
+| transaction | 35083185 | 1202437 | KT1DY95a4BgFuzFQPvDzruhenSz2Qiv4waK3 |  0.073291 |
+| transaction | 35083186 | 1202437 | KT1DYVu1ETsex35jtG9CfrcjM6zxETKVCeya |  0.000150 |
+| transaction | 35083187 | 1202437 | KT1E2KjWSFpaiQYgMHhZKE4BwVPr1fzo9jjJ |  0.001268 |
+| transaction | 35083188 | 1202437 | KT1E2YuzGzE4qy9xwHYQEgfT7gs9BKNLrPce |  0.058646 |
+| transaction | 35083189 | 1202437 | KT1E9z2WyP7ic1a3xwPEtnz2t8K6EhjT5scm |  0.660157 |
+| transaction | 35083190 | 1202437 | KT1EiYYRdgQRVcm6ds2QyTEDYJXyBfyGpkZ1 |  0.000023 |
+| transaction | 35083191 | 1202437 | KT1ER1FtuKoWy6jGMqCs3gGx6yEHRPqQUMVN |  0.003758 |
+| transaction | 35083192 | 1202437 | KT1FFirXDd2Kt6LdYWaDEcLGHZmqNYKRHCsg |  0.001597 |
+| transaction | 35083193 | 1202437 | KT1Ff9hiadZZfjNoPdK2M42THsAV2Zxonsja |  0.000002 |
+| transaction | 35083194 | 1202437 | KT1FfnuiMeyPQDbJYztiCPKmrowkAgcBy3ym |  0.000002 |
+| transaction | 35083195 | 1202437 | KT1GhPXVU7qcH9rug79QjFapwcZ436WVTXGi |  0.000333 |
+| transaction | 35083196 | 1202437 | KT1Gu6TxpCcm4m47KWPDwww3YekmcCPqozRs |  0.000188 |
+| transaction | 35083197 | 1202437 | KT1Gy2pTXh7xc3nfoHt8RHQcrpnjt3b11qUb |  0.000001 |
+| transaction | 35083198 | 1202437 | KT1HcAz8mBjYZgPLzC3xf7DZkGMQ3WCkD67M |  0.161843 |
+| transaction | 35083199 | 1202437 | KT1HJDDohgquugZ4wA4tQphWFKa8pK7SLh45 |  0.000108 |
+| transaction | 35083200 | 1202437 | KT1HqffgvPs1ZaUbfMcvqSizJgwWUwhcFr1Z |  0.000276 |
+| transaction | 35083201 | 1202437 | KT1HReKDyoqwBmujQJzVLHZd17gDEybaw3c1 |  0.000051 |
+| transaction | 35083202 | 1202437 | KT1HUAvDaCRYJQVWtEJM9eMMg7tiCvXTd4Ps |  0.661176 |
+| transaction | 35083203 | 1202437 | KT1JMYavPEzjZ5XdyQsNkkaDycapJARLr7zQ |  0.018650 |
+| transaction | 35083204 | 1202437 | KT1JQW8krmGmYJrrHxSUH8ikW5vTcP8M52GC |  0.000022 |
+| transaction | 35083205 | 1202437 | KT1JSX6utL7m7sZenk2oNZJQKrq2NuPzdTbk |  0.000019 |
+| transaction | 35083206 | 1202437 | KT1K4caGxcBW6ktP5tMtFXjdXYd47faDYd2V |  0.423289 |
+| transaction | 35083207 | 1202437 | KT1KHSgro3py2nnACjnkjRRRH7RYSjB9aXpj |  0.000035 |
+| transaction | 35083208 | 1202437 | KT1Ki1Z2qtK7FqH2YewYmWnJVZeTdDzBD1vg |  1.402581 |
+| transaction | 35083209 | 1202437 | KT1KLRcd8pnotvsCFN9GYFoqemrVGm46qfNv |  0.010560 |
+| transaction | 35083210 | 1202437 | KT1KXsKxcBdJD8S8Pc4JCLxceX65LEH2WWn1 |  0.005673 |
+| transaction | 35083211 | 1202437 | KT1KYaG216oBbNgQa92FrALdBiQVLj4jDbqQ |  0.050990 |
+| transaction | 35083212 | 1202437 | KT1L4TQiu17xupn3ph2U2k3kQiYwnNj1vfaW |  0.533223 |
+| transaction | 35083213 | 1202437 | KT1L86xsTvmcXiKNCKjHMDp5xUHSUkHdKiAQ |  0.315441 |
+| transaction | 35083214 | 1202437 | KT1M1XCvL37K5Lj4dPC6x2QMY7sSuZNw61tk |  0.000181 |
+| transaction | 35083215 | 1202437 | KT1M3dhr5zqzjsKMyChQZ7Vh5VrGa6m5xbw5 |  0.000216 |
+| transaction | 35083216 | 1202437 | KT1MEYRN58iSwF1JcjE3r6rmFt8rT6FDK6aK |  0.000642 |
+| transaction | 35083217 | 1202437 | KT1MH5TLBMPF6iDLvLrjrct2mYngeUf2fmN8 |  0.000425 |
+| transaction | 35083218 | 1202437 | KT1Min6mLRf48zHPdpnXsQGL9rsy7KwRtLSN |  0.001141 |
+| transaction | 35083219 | 1202437 | KT1Mu2VDkSFTVkga9NHz7yDVyx9fKou5wA3i |  3.713105 |
+| transaction | 35083220 | 1202437 | KT1N22vkiB4GSxFjwyLWhXXQzYCT3ADdvubP |  0.293520 |
+| transaction | 35083221 | 1202437 | KT1NFfnRiGcXjh7shNNprLJLJg5acTWnNdKf |  2.178675 |
+| transaction | 35083222 | 1202437 | KT1NUWAgxRAD7FWynszzbAMSTfon3Ms1sXDB |  0.028828 |
+| transaction | 35083223 | 1202437 | KT1NxUPYwCfJZrgW7LYh229NrLjuPbHyGCBC |  0.000153 |
+| transaction | 35083224 | 1202437 | KT1P2ZP1DUxjYcDDCLrULca1g81k18uifKrK |  0.022211 |
+| transaction | 35083225 | 1202437 | KT1Pc4vDuWPWaVKY2KYZb3ZSNb7xDyMWg7ou |  0.008324 |
+| transaction | 35083226 | 1202437 | KT1PH39UeJRGTpVBCSHQcBpb4pjgVp8NSpde |  0.014573 |
+| transaction | 35083227 | 1202437 | KT1PtbK31rbtcvjdL4gFY9eaDGbZdPoZRNoL |  0.000182 |
+| transaction | 35083228 | 1202437 | KT1Q9jrZ8dRcdVhCcL4v7xPcdLnLJ5rorjW4 |  0.290205 |
+| transaction | 35083229 | 1202437 | KT1QFRFVKzQ3MqUA9UoVT8bWfH1GWsrpL9GX |  0.000017 |
+| transaction | 35083230 | 1202437 | KT1QFTpFb5NBuZNLWjTBsNc8fpqnLBXdjJ3y |  0.028238 |
+| transaction | 35083231 | 1202437 | KT1QN5vJqTcP9XQHa4HatcjWBUsw4qE4HWqa |  0.323632 |
+| transaction | 35083232 | 1202437 | KT1QQ2U6ADB9TJ1cNLyTKAh2hpUM3yvZp1j4 |  0.000046 |
+| transaction | 35083233 | 1202437 | KT1QrRXS5HCwFFL4VojSyNzuQJaEUo1UuZb1 |  0.000154 |
+| transaction | 35083234 | 1202437 | KT1ReyqCeWoTDzjJ7rYmVEAU7dWFNCdi3X3F |  0.000015 |
+| transaction | 35083235 | 1202437 | KT1RgBmtR6bMUmxWKKK5tM1fjcWeAfdGYd6V |  0.116070 |
+| transaction | 35083236 | 1202437 | KT1RNcF2pRnvCR8ej1Uk7exvZ5ZTRf9HRgw1 |  0.093247 |
+| transaction | 35083237 | 1202437 | KT1RpwDcfeor2z87LNbuA7tQxdevWGrmNByY |  2.918529 |
+| transaction | 35083238 | 1202437 | KT1RxGFZL2NUC3kpE2SgCQumWKqHtRXCjq5X |  0.000284 |
+| transaction | 35083239 | 1202437 | KT1S9JdEqwrVC7723Mckk4Zs7RxuUYzgELzw |  0.011678 |
+| transaction | 35083240 | 1202437 | KT1SZW1BpgPibbiRc9aqtqXeKKh4fe56XyZB |  0.000031 |
+| transaction | 35083241 | 1202437 | KT1T3EsMLX2EVRcifTp2msaAk3EuDwD7GUNT |  0.334689 |
+| transaction | 35083242 | 1202437 | KT1U3bR9LdJ1d7UcUL5RMjCEbBMDfhCDhrP5 |  0.001590 |
+| transaction | 35083243 | 1202437 | KT1V1YQYdHvagPjXAApUeyK9wEH8yuS5R6Hb |  0.288774 |
+| transaction | 35083244 | 1202437 | KT1V8njyWahCtGktDEvN9hWNP8hPzCNgvTmb |  0.000014 |
+| transaction | 35083245 | 1202437 | KT1VLU2GdLCW7YtfWuFcuavud2bFRrjqagk1 |  0.010957 |
+| transaction | 35083246 | 1202437 | KT1W1XUAnV9aJV34o1buRsEa8GAdA6cyhbcx |  0.024272 |
+| transaction | 35083247 | 1202437 | KT1WBq1M1ZLWuk9nGoXvCyhMfcucZmnYtjHU |  4.465302 |
+| transaction | 35083248 | 1202437 | KT1WGDtvK1KkUNDASSwifDL5TebEVtMZ6afz |  0.001689 |
+| transaction | 35083249 | 1202437 | KT1WjyowJSz4iLwu194xK6GuyUgDjo9sJCwL |  0.037751 |
+| transaction | 35083250 | 1202437 | KT1WskG2woswPMieWGzcFjVZNtuFYBTALimy |  0.000330 |
+| transaction | 35083251 | 1202437 | KT1WWur5chtQJDPfX4PnNqPisfAE5wuEBX4G |  0.000824 |
+| transaction | 35083252 | 1202437 | KT1WZsytxAcncs5suMRfqRUQBC4i5zUSTrpZ |  0.003060 |
+| transaction | 35083253 | 1202437 | KT1X64yHCHPRMaZpmqH6JRbtF5ADfBxmHLga |  0.000810 |
+| transaction | 35083254 | 1202437 | KT1XEN5V5othwaLwNhjUJffKgnYLbZRUCPx8 |  0.030599 |
+| transaction | 35083255 | 1202437 | KT1XH4i4WymDZyqQckLdQ1m5GBZabYa9JV2M |  0.000019 |
+| transaction | 35083256 | 1202437 | KT1XMhF448qQVTcWAknovsvmpByXLzmQpdkr |  0.000069 |
+| transaction | 35083257 | 1202437 | KT1XWovRciZLv7cnAs3QWCLVTxEg4rDheCJL |  0.000008 |
+| transaction | 35083258 | 1202437 | tz1a1ZcbAeBEjxYSwuNKxSu6FbFB4dxdL3m9 |  0.084429 |
+| transaction | 35083259 | 1202437 | tz1a23GzcRmEVfWaR1EquzX9fuFqHS2bpSdp |  0.002472 |
+| transaction | 35083260 | 1202437 | tz1aA9QbrZpCMMjQc8e4WZnas2s4hkgYoeRp |  0.060948 |
+| transaction | 35083261 | 1202437 | tz1aAfeSEC3EFhjyHBdVpQsrR4pAENBpijBY |  0.000287 |
+| transaction | 35083262 | 1202437 | tz1aarbbPrrEjgwPTUgon8UKSrzARWKTjsRk |  0.010193 |
+| transaction | 35083263 | 1202437 | tz1aFQMUAS5BrtUB1dbAA19bs335KYhFxYnr |  0.000030 |
+| transaction | 35083264 | 1202437 | tz1afxp7fXP1UXdueH4VBg3bgRxs8kMvqDAr |  1.149320 |
+| transaction | 35083265 | 1202437 | tz1aHjcevnojC1wwNS34qcHskX2phFnLk1w1 |  0.000028 |
+| transaction | 35083266 | 1202437 | tz1akbAW96YXTW5Da212BpSPZEKAxsmmJLgM |  0.023895 |
+| transaction | 35083267 | 1202437 | tz1aLpFAf1UWWRbUbZ1fSHeFky6snLq86EUY |  0.000368 |
+| transaction | 35083268 | 1202437 | tz1aMygJa6MPbZ1KPsForifyNkbuzyxiX1mU |  0.307100 |
+| transaction | 35083269 | 1202437 | tz1aWabqcQsJbUcPBhDvsX5LmcbGBHjHBk6b |  0.023029 |
+| transaction | 35083270 | 1202437 | tz1aXoe9fbRpSBWQx6qkdkWMmcvWWb86VTPM |  0.001600 |
+| transaction | 35083271 | 1202437 | tz1b12b4mLtNiUDtJD1EijaSn2Zkcqs4QRmT |  0.051194 |
+| transaction | 35083272 | 1202437 | tz1bCydLqcheD6Ao1pR8qEawxGZkZ5jkNBWN |  0.000529 |
+| transaction | 35083273 | 1202437 | tz1bD4oVSaWAaRYiWB6aYaDa3f1ABv9TsBV7 |  0.014561 |
+| transaction | 35083465 | 1202444 | KT18dqd1o1Umm7KujuEZCEXhiE1VwZj6DyGp |  0.000959 |
+| transaction | 35083466 | 1202444 | KT18s41CcAYvFWCAhar94knxSY2beJjLSNM2 |  0.114183 |
+| transaction | 35083467 | 1202444 | KT19EgRhdPSnugHVarrqmbLcbdWcTVjHoGes |  0.000722 |
+| transaction | 35083468 | 1202444 | KT19FCo5Btgx1qAGpXNyJesMVW4F7q25EqtM |  0.004313 |
+| transaction | 35083469 | 1202444 | KT19GFjfYtNCicqXMgCYRvq7fZRDhE828uw2 |  0.026120 |
+| transaction | 35083470 | 1202444 | KT19gcB65rQksq2N8NmaviLxRo66JoBKP41d |  0.003114 |
+| transaction | 35083471 | 1202444 | KT19Lvb9rpgDRnRT5hBqNzTpKzkycafia4ax |  0.002583 |
+| transaction | 35083472 | 1202444 | KT19NDU5v35XYqYn3LtcxvyZwMPBV5jUmeJ5 | 10.528487 |
+| transaction | 35083473 | 1202444 | KT19NNAd3cnUp7TPgxaWb8BP2v6UqUhy4hp5 |  0.000968 |
+| transaction | 35083474 | 1202444 | KT1A6mBggiwAuDmVa2oS4uUHNAPXTWMmXbrU |  0.000065 |
+| transaction | 35083475 | 1202444 | KT1A7drknXEwQ84BztjFLaHspPsR5gq7WLU4 |  0.144064 |
+| transaction | 35083476 | 1202444 | KT1ABEYRksbtndGJKMXiRCQ2A7ym3GjhBPrQ |  0.000532 |
+| transaction | 35083477 | 1202444 | KT1AP55nYiD1iV5uXTkaMVW7NTQtTvHLfBmr |  0.005752 |
+| transaction | 35083478 | 1202444 | KT1ApjGtPKWTYncqCmQKzHiUD3YMhxw7sSwx |  0.004096 |
+| transaction | 35083479 | 1202444 | KT1AXfc7F5cWEWKCVS84RrHZec1LaJFActom |  0.012441 |
+| transaction | 35083480 | 1202444 | KT1B7dRzQhifuWGLGEvzvfGuCVupudgX1far |  0.053293 |
+| transaction | 35083481 | 1202444 | KT1BF5s3aah3YeavBTf2XUZscgAiaCgT4bnD |  0.001728 |
+| transaction | 35083482 | 1202444 | KT1BguM844PNfqcTHijPKk2HqMNsojH3NBRo |  0.047695 |
+| transaction | 35083483 | 1202444 | KT1BL1eHUKMC6fZAYdbu32Kwtvfk2L2cdEeC |  0.000478 |
+| transaction | 35083484 | 1202444 | KT1BLbHcUujF8QgLJh14Wxqh8k667DNACjNj |  0.010973 |
+| transaction | 35083485 | 1202444 | KT1BR9YbKw1nTCpSQG5nnWHxM2vNyuW4824p |  0.002877 |
+| transaction | 35083486 | 1202444 | KT1BThb9BXQpunk7Y4nVPtkR2DuLgcmUzqJB |  0.035335 |
+| transaction | 35083487 | 1202444 | KT1C3EUjFvXPxjCfTyHFgFfZDK96yvGWnUKu |  0.004811 |
+| transaction | 35083488 | 1202444 | KT1CA9msNjX4K8rgU9UxjASb2Pg4qXYjHvWB |  0.197641 |
+| transaction | 35083489 | 1202444 | KT1CEodmDdSxBdYsrdmVGZkrZyKJo6wPSPDH |  0.003518 |
+| transaction | 35083490 | 1202444 | KT1CGN3VALPUSHX5SmHQcrcBGNwidVDL4WnP |  0.000007 |
+| transaction | 35083491 | 1202444 | KT1DF1Q7WBL3cL3NdC1SHkuUCHGKXFL3H8F7 |  0.000024 |
+| transaction | 35083492 | 1202444 | KT1DqedG8RozoTecvXmjFMWhrR7FFSGFVsey |  0.000004 |
+| transaction | 35083493 | 1202444 | KT1DSHXNZ34ppp8E4GjY7joedcB9DhDzVTMc |  0.000675 |
+| transaction | 35083494 | 1202444 | KT1DUX94ze5cJyoDBi8NoGKKibnV8JpTed2B |  0.001171 |
+| transaction | 35083495 | 1202444 | KT1DY95a4BgFuzFQPvDzruhenSz2Qiv4waK3 |  0.114025 |
+| transaction | 35083496 | 1202444 | KT1DYVu1ETsex35jtG9CfrcjM6zxETKVCeya |  0.000234 |
+| transaction | 35083497 | 1202444 | KT1E2KjWSFpaiQYgMHhZKE4BwVPr1fzo9jjJ |  0.001973 |
+| transaction | 35083498 | 1202444 | KT1E2YuzGzE4qy9xwHYQEgfT7gs9BKNLrPce |  0.091241 |
+| transaction | 35083499 | 1202444 | KT1E9z2WyP7ic1a3xwPEtnz2t8K6EhjT5scm |  1.027060 |
+| transaction | 35083500 | 1202444 | KT1EiYYRdgQRVcm6ds2QyTEDYJXyBfyGpkZ1 |  0.000035 |
+| transaction | 35083501 | 1202444 | KT1ER1FtuKoWy6jGMqCs3gGx6yEHRPqQUMVN |  0.005847 |
+| transaction | 35083502 | 1202444 | KT1FFirXDd2Kt6LdYWaDEcLGHZmqNYKRHCsg |  0.002484 |
+| transaction | 35083503 | 1202444 | KT1Ff9hiadZZfjNoPdK2M42THsAV2Zxonsja |  0.000003 |
+| transaction | 35083504 | 1202444 | KT1FfnuiMeyPQDbJYztiCPKmrowkAgcBy3ym |  0.000004 |
+| transaction | 35083505 | 1202444 | KT1GhPXVU7qcH9rug79QjFapwcZ436WVTXGi |  0.000518 |
+| transaction | 35083506 | 1202444 | KT1Gu6TxpCcm4m47KWPDwww3YekmcCPqozRs |  0.000291 |
+| transaction | 35083507 | 1202444 | KT1Gy2pTXh7xc3nfoHt8RHQcrpnjt3b11qUb |  0.000001 |
+| transaction | 35083508 | 1202444 | KT1HcAz8mBjYZgPLzC3xf7DZkGMQ3WCkD67M |  0.251792 |
+| transaction | 35083509 | 1202444 | KT1HJDDohgquugZ4wA4tQphWFKa8pK7SLh45 |  0.000167 |
+| transaction | 35083510 | 1202444 | KT1HqffgvPs1ZaUbfMcvqSizJgwWUwhcFr1Z |  0.000429 |
+| transaction | 35083511 | 1202444 | KT1HReKDyoqwBmujQJzVLHZd17gDEybaw3c1 |  0.000079 |
+| transaction | 35083512 | 1202444 | KT1HUAvDaCRYJQVWtEJM9eMMg7tiCvXTd4Ps |  1.028646 |
+| transaction | 35083513 | 1202444 | KT1JMYavPEzjZ5XdyQsNkkaDycapJARLr7zQ |  0.029016 |
+| transaction | 35083514 | 1202444 | KT1JQW8krmGmYJrrHxSUH8ikW5vTcP8M52GC |  0.000035 |
+| transaction | 35083515 | 1202444 | KT1JSX6utL7m7sZenk2oNZJQKrq2NuPzdTbk |  0.000030 |
+| transaction | 35083516 | 1202444 | KT1K4caGxcBW6ktP5tMtFXjdXYd47faDYd2V |  0.658546 |
+| transaction | 35083517 | 1202444 | KT1KHSgro3py2nnACjnkjRRRH7RYSjB9aXpj |  0.000054 |
+| transaction | 35083518 | 1202444 | KT1Ki1Z2qtK7FqH2YewYmWnJVZeTdDzBD1vg |  2.182111 |
+| transaction | 35083519 | 1202444 | KT1KLRcd8pnotvsCFN9GYFoqemrVGm46qfNv |  0.016429 |
+| transaction | 35083520 | 1202444 | KT1KXsKxcBdJD8S8Pc4JCLxceX65LEH2WWn1 |  0.008826 |
+| transaction | 35083521 | 1202444 | KT1KYaG216oBbNgQa92FrALdBiQVLj4jDbqQ |  0.079328 |
+| transaction | 35083522 | 1202444 | KT1L4TQiu17xupn3ph2U2k3kQiYwnNj1vfaW |  0.829578 |
+| transaction | 35083523 | 1202444 | KT1L86xsTvmcXiKNCKjHMDp5xUHSUkHdKiAQ |  0.490758 |
+| transaction | 35083524 | 1202444 | KT1M1XCvL37K5Lj4dPC6x2QMY7sSuZNw61tk |  0.000283 |
+| transaction | 35083525 | 1202444 | KT1M3dhr5zqzjsKMyChQZ7Vh5VrGa6m5xbw5 |  0.000335 |
+| transaction | 35083526 | 1202444 | KT1MEYRN58iSwF1JcjE3r6rmFt8rT6FDK6aK |  0.000999 |
+| transaction | 35083527 | 1202444 | KT1MH5TLBMPF6iDLvLrjrct2mYngeUf2fmN8 |  0.000662 |
+| transaction | 35083528 | 1202444 | KT1Min6mLRf48zHPdpnXsQGL9rsy7KwRtLSN |  0.001774 |
+| transaction | 35083529 | 1202444 | KT1Mu2VDkSFTVkga9NHz7yDVyx9fKou5wA3i |  5.776785 |
+| transaction | 35083530 | 1202444 | KT1N22vkiB4GSxFjwyLWhXXQzYCT3ADdvubP |  0.456654 |
+| transaction | 35083531 | 1202444 | KT1NFfnRiGcXjh7shNNprLJLJg5acTWnNdKf |  3.389545 |
+| transaction | 35083532 | 1202444 | KT1NUWAgxRAD7FWynszzbAMSTfon3Ms1sXDB |  0.044851 |
+| transaction | 35083533 | 1202444 | KT1NxUPYwCfJZrgW7LYh229NrLjuPbHyGCBC |  0.000239 |
+| transaction | 35083534 | 1202444 | KT1P2ZP1DUxjYcDDCLrULca1g81k18uifKrK |  0.034554 |
+| transaction | 35083535 | 1202444 | KT1Pc4vDuWPWaVKY2KYZb3ZSNb7xDyMWg7ou |  0.012950 |
+| transaction | 35083536 | 1202444 | KT1PH39UeJRGTpVBCSHQcBpb4pjgVp8NSpde |  0.022672 |
+| transaction | 35083537 | 1202444 | KT1PtbK31rbtcvjdL4gFY9eaDGbZdPoZRNoL |  0.000284 |
+| transaction | 35083538 | 1202444 | KT1Q9jrZ8dRcdVhCcL4v7xPcdLnLJ5rorjW4 |  0.451496 |
+| transaction | 35083539 | 1202444 | KT1QFRFVKzQ3MqUA9UoVT8bWfH1GWsrpL9GX |  0.000027 |
+| transaction | 35083540 | 1202444 | KT1QFTpFb5NBuZNLWjTBsNc8fpqnLBXdjJ3y |  0.043933 |
+| transaction | 35083541 | 1202444 | KT1QN5vJqTcP9XQHa4HatcjWBUsw4qE4HWqa |  0.503502 |
+| transaction | 35083542 | 1202444 | KT1QQ2U6ADB9TJ1cNLyTKAh2hpUM3yvZp1j4 |  0.000072 |
+| transaction | 35083543 | 1202444 | KT1QrRXS5HCwFFL4VojSyNzuQJaEUo1UuZb1 |  0.000240 |
+| transaction | 35083544 | 1202444 | KT1ReyqCeWoTDzjJ7rYmVEAU7dWFNCdi3X3F |  0.000022 |
+| transaction | 35083545 | 1202444 | KT1RgBmtR6bMUmxWKKK5tM1fjcWeAfdGYd6V |  0.180579 |
+| transaction | 35083546 | 1202444 | KT1RNcF2pRnvCR8ej1Uk7exvZ5ZTRf9HRgw1 |  0.145071 |
+| transaction | 35083547 | 1202444 | KT1RpwDcfeor2z87LNbuA7tQxdevWGrmNByY |  4.540597 |
+| transaction | 35083548 | 1202444 | KT1RxGFZL2NUC3kpE2SgCQumWKqHtRXCjq5X |  0.000441 |
+| transaction | 35083549 | 1202444 | KT1S9JdEqwrVC7723Mckk4Zs7RxuUYzgELzw |  0.018168 |
+| transaction | 35083550 | 1202444 | KT1SZW1BpgPibbiRc9aqtqXeKKh4fe56XyZB |  0.000048 |
+| transaction | 35083551 | 1202444 | KT1T3EsMLX2EVRcifTp2msaAk3EuDwD7GUNT |  0.520703 |
+| transaction | 35083552 | 1202444 | KT1U3bR9LdJ1d7UcUL5RMjCEbBMDfhCDhrP5 |  0.002474 |
+| transaction | 35083553 | 1202444 | KT1V1YQYdHvagPjXAApUeyK9wEH8yuS5R6Hb |  0.449270 |
+| transaction | 35083554 | 1202444 | KT1V8njyWahCtGktDEvN9hWNP8hPzCNgvTmb |  0.000022 |
+| transaction | 35083555 | 1202444 | KT1VLU2GdLCW7YtfWuFcuavud2bFRrjqagk1 |  0.017046 |
+| transaction | 35083556 | 1202444 | KT1W1XUAnV9aJV34o1buRsEa8GAdA6cyhbcx |  0.037762 |
+| transaction | 35083557 | 1202444 | KT1WBq1M1ZLWuk9nGoXvCyhMfcucZmnYtjHU |  6.947039 |
+| transaction | 35083558 | 1202444 | KT1WGDtvK1KkUNDASSwifDL5TebEVtMZ6afz |  0.002628 |
+| transaction | 35083559 | 1202444 | KT1WjyowJSz4iLwu194xK6GuyUgDjo9sJCwL |  0.058732 |
+| transaction | 35083560 | 1202444 | KT1WskG2woswPMieWGzcFjVZNtuFYBTALimy |  0.000513 |
+| transaction | 35083561 | 1202444 | KT1WWur5chtQJDPfX4PnNqPisfAE5wuEBX4G |  0.001281 |
+| transaction | 35083562 | 1202444 | KT1WZsytxAcncs5suMRfqRUQBC4i5zUSTrpZ |  0.004761 |
+| transaction | 35083563 | 1202444 | KT1X64yHCHPRMaZpmqH6JRbtF5ADfBxmHLga |  0.001260 |
+| transaction | 35083564 | 1202444 | KT1XEN5V5othwaLwNhjUJffKgnYLbZRUCPx8 |  0.047605 |
+| transaction | 35083565 | 1202444 | KT1XH4i4WymDZyqQckLdQ1m5GBZabYa9JV2M |  0.000030 |
+| transaction | 35083566 | 1202444 | KT1XMhF448qQVTcWAknovsvmpByXLzmQpdkr |  0.000108 |
+| transaction | 35083567 | 1202444 | KT1XWovRciZLv7cnAs3QWCLVTxEg4rDheCJL |  0.000011 |
+| transaction | 35083568 | 1202444 | tz1a1ZcbAeBEjxYSwuNKxSu6FbFB4dxdL3m9 |  0.131354 |
+| transaction | 35083569 | 1202444 | tz1a23GzcRmEVfWaR1EquzX9fuFqHS2bpSdp |  0.003845 |
+| transaction | 35083570 | 1202444 | tz1aA9QbrZpCMMjQc8e4WZnas2s4hkgYoeRp |  0.094821 |
+| transaction | 35083571 | 1202444 | tz1aAfeSEC3EFhjyHBdVpQsrR4pAENBpijBY |  0.000446 |
+| transaction | 35083572 | 1202444 | tz1aarbbPrrEjgwPTUgon8UKSrzARWKTjsRk |  0.015858 |
+| transaction | 35083573 | 1202444 | tz1aFQMUAS5BrtUB1dbAA19bs335KYhFxYnr |  0.000046 |
+| transaction | 35083574 | 1202444 | tz1afxp7fXP1UXdueH4VBg3bgRxs8kMvqDAr |  1.788093 |
+| transaction | 35083575 | 1202444 | tz1aHjcevnojC1wwNS34qcHskX2phFnLk1w1 |  0.000044 |
+| transaction | 35083576 | 1202444 | tz1akbAW96YXTW5Da212BpSPZEKAxsmmJLgM |  0.037175 |
+| transaction | 35083577 | 1202444 | tz1aLpFAf1UWWRbUbZ1fSHeFky6snLq86EUY |  0.000572 |
+| transaction | 35083578 | 1202444 | tz1aMygJa6MPbZ1KPsForifyNkbuzyxiX1mU |  0.477781 |
+| transaction | 35083579 | 1202444 | tz1aWabqcQsJbUcPBhDvsX5LmcbGBHjHBk6b |  0.035827 |
+| transaction | 35083580 | 1202444 | tz1aXoe9fbRpSBWQx6qkdkWMmcvWWb86VTPM |  0.002489 |
+| transaction | 35083581 | 1202444 | tz1b12b4mLtNiUDtJD1EijaSn2Zkcqs4QRmT |  0.079647 |
+| transaction | 35083582 | 1202444 | tz1bCydLqcheD6Ao1pR8qEawxGZkZ5jkNBWN |  0.000822 |
+| transaction | 35083583 | 1202444 | tz1bD4oVSaWAaRYiWB6aYaDa3f1ABv9TsBV7 |  0.022653 |
+| transaction | 35083611 | 1202445 | tz1bKcf7FP2MGmB6q6xM6e4n1x1aDZCo7EVY |  0.190420 |
+| transaction | 35083612 | 1202445 | tz1bNpwHjJ9QBfRNR8xcTiKao5rXCWfiUPCH |  0.000435 |
+| transaction | 35083613 | 1202445 | tz1bNuNi7NfQ5cBDXKKc7p8o5YK2gUdPYBqW |  0.042186 |
+| transaction | 35083614 | 1202445 | tz1bRzcwMiusj5Zu9nY4RVcc1uLPSxsSF3sA |  0.942756 |
+| transaction | 35083615 | 1202445 | tz1bSTfd7Bo7XJP1hi4MDdsU2BbEkdUJ3GVY |  0.020198 |
+| transaction | 35083616 | 1202445 | tz1bsy611TeS7dPmJiHJxcgrpKDYJd94vahr |  0.000010 |
+| transaction | 35083617 | 1202445 | tz1bsZ9wHvZo9DNDCrkcaH2MZ5sgQYRA4i8P |  0.100809 |
+| transaction | 35083618 | 1202445 | tz1bTezZ1NYwtxxuMLuPTtU94hqkXd3fLEfZ |  0.022491 |
+| transaction | 35083619 | 1202445 | tz1bxf1gUQ9HGXENpPeneguywjy1XjxzEguV |  0.000006 |
+| transaction | 35083620 | 1202445 | tz1bY3b5xE5WZ1cxeZyYhxWKSfHPeyieAwFq |  0.251164 |
+| transaction | 35083621 | 1202445 | tz1c5c4gbpZwFtGGuyuQ2U2KRyjCxuvkJGtM |  0.001006 |
+| transaction | 35083622 | 1202445 | tz1c9Fm1et1PUowuv4rMABNaRB1YtcaQjLLN |  0.045663 |
+| transaction | 35083623 | 1202445 | tz1c9GefKMKhZgo74Z6zPa2eLAikSWnV8sAU |  0.452997 |
+| transaction | 35083624 | 1202445 | tz1cA8sxvRxEqCqWkGFVWj6zdotrqubLzepq |  0.003902 |
+| transaction | 35083625 | 1202445 | tz1cAaFnoY24sdADLjGkQMtcbV5fcFSkFVgo |  0.011684 |
+| transaction | 35083626 | 1202445 | tz1cAGZyxojMQDyhaAAD5X458fdqpEUCo8WN |  0.002952 |
+| transaction | 35083627 | 1202445 | tz1cfKgUTmHw6FxQpinFTxxZYZq1aMcVYCDp |  0.000001 |
+| transaction | 35083628 | 1202445 | tz1cfTyXgKuqVZf4Pbwt4VrM3ZK51Fyxu2DC |  0.001330 |
+| transaction | 35083629 | 1202445 | tz1cGzNCCby7qk2bpjbyszA8FHGUtLuzNivJ |  2.019194 |
+| transaction | 35083630 | 1202445 | tz1cmR3XFdnaFKL5mrsmn1jc2MhVz4W7zJB1 |  0.000204 |
+| transaction | 35083631 | 1202445 | tz1coCHKVMnr2sZteFLmpAqPQjzyAtHV46wf |  0.005962 |
+| transaction | 35083632 | 1202445 | tz1coccA9FKPwpPhCPSYE2riCuZRDiTv9zS6 |  0.034915 |
+| transaction | 35083633 | 1202445 | tz1cr5czaozJhGPACiBhcnoGET4Yvv8DZes2 |  0.275458 |
+| transaction | 35083634 | 1202445 | tz1cuoVFLa2NECpAvUiFpDV8mGX6bpBBbEUF |  0.974963 |
+| transaction | 35083635 | 1202445 | tz1cuWdffSkBznZU8xLGLZXVo1HdWTW32dBb |  0.000045 |
+| transaction | 35083636 | 1202445 | tz1cvjAje9hWWYanETg1t7oWo7DPx2ASszE5 |  0.000375 |
+| transaction | 35083637 | 1202445 | tz1cwgsGm8vQx4YaEzKZ8XCVzxfGX2dxnZ9W |  0.000010 |
+| transaction | 35083638 | 1202445 | tz1cX5zH9h3Mqbb8MHvBtSVoiJDnACCLFC3B |  0.051163 |
+| transaction | 35083639 | 1202445 | tz1cxp4tHyiaQfkGSxQzzDZfL22bwwRpb52b |  4.055038 |
+| transaction | 35083640 | 1202445 | tz1d4NWXgkCKzZftLWL71LGyCArhWxfBoniJ |  0.002368 |
+| transaction | 35083641 | 1202445 | tz1dbhyNPyKQi2VgDvsdKQLCwpEkZUwNJ2CR |  0.013563 |
+| transaction | 35083642 | 1202445 | tz1dce8MCEY6oXqd95BajXt24Jxiur85khGJ |  0.008261 |
+| transaction | 35083643 | 1202445 | tz1ddPJMnpa7a27usgnKmSaARY8Nd4u5TaVy |  0.000135 |
+| transaction | 35083644 | 1202445 | tz1dLq8e9Hq8KeMQvXsnYHPhJ8CWg8S7W5m3 |  0.002271 |
+| transaction | 35083645 | 1202445 | tz1dNpQjArCn46vDcATJ5GX9Xes8t6RHhyf4 |  0.006940 |
+| transaction | 35083646 | 1202445 | tz1doTAcL9x1cwXaj8YJ2JYo1BZxmHZQZ8F1 |  0.003579 |
+| transaction | 35083647 | 1202445 | tz1doZ62LHC99WPAetioYKteTRnLgA8T4euM |  0.001289 |
+| transaction | 35083648 | 1202445 | tz1dPAPShEvHDmHGTaQakcfPMQEy7syJtqt3 |  0.090036 |
+| transaction | 35083649 | 1202445 | tz1dQ4UYR7GBPGmyQdhnE1zLZv43kGBcZbzJ |  0.000465 |
+| transaction | 35083650 | 1202445 | tz1dRb2htoZennXPaSGHtYpQbyaCSaJ45zwn |  0.045684 |
+| transaction | 35083651 | 1202445 | tz1dt1s5VynRUURYTcW2KhCqFAuemP7Zh2Tr |  0.046681 |
+| transaction | 35083652 | 1202445 | tz1dvoDjEjCoYNwoHBKyQcQ6idS9RYYRJd9g |  0.010869 |
+| transaction | 35083653 | 1202445 | tz1eaMccdqKqNHrfCHSrM7XQoBShGvTZqjYU |  0.007868 |
+| transaction | 35083654 | 1202445 | tz1ebdhHDyC2z4VbxJqdPHQJp3dSWjG7bDGP |  0.117622 |
+| transaction | 35083655 | 1202445 | tz1ebithdPYQBuM96gSA72eYuudyRgS3Tn98 |  0.009790 |
+| transaction | 35083656 | 1202445 | tz1ec7Rgtk8sDCdLWvVEsZw6QaPG77QSC1yq |  0.000006 |
+| transaction | 35083657 | 1202445 | tz1eG9ouy38Yi2SBp7EtWVyPuWuMMY9xmfPv |  0.286002 |
+| transaction | 35083658 | 1202445 | tz1ege3wZ6PUWpbe1GvrNaN2usjWViyhfmZb |  0.007352 |
+| transaction | 35083659 | 1202445 | tz1eiXKjDMMMvx8mQhmBkoSaS8iGkQqbw3aa |  0.007737 |
+| transaction | 35083660 | 1202445 | tz1eLZWXwhERj3yziigkYjGQzSFRnYwZkpXD |  0.000143 |
+| transaction | 35083661 | 1202445 | tz1eQ2rkeafEHG1GGZcd3eiRfaXNJ1f6jWfD |  0.020556 |
+| transaction | 35083662 | 1202445 | tz1etJt3TonYCXHpUfJgaD8VhqYou6PiboeP |  0.171432 |
+| transaction | 35083663 | 1202445 | tz1eV4U1N5AmQo4L7AYy5T7hmxr2q1XDmnTH |  0.002045 |
+| transaction | 35083664 | 1202445 | tz1eY3pFcwNaDaN1iYVJ9igCSYRtxqe3fs2w |  0.864765 |
+| transaction | 35083665 | 1202445 | tz1f1irCPQkjEZ12WwKLixyLuRw9gswcGZXq |  0.004021 |
+| transaction | 35083666 | 1202445 | tz1f7b979MrjD6dLnVcJJXfwY4KLkzyT6M5r |  0.002384 |
+| transaction | 35083667 | 1202445 | tz1fBEj3ZtQzVe2b8ZmQVSFdP2XgipyoFe2o |  0.053572 |
+| transaction | 35083668 | 1202445 | tz1fbxNVj5b49VQwHTpwnTDp7T8ojzWLY6F6 |  0.000007 |
+| transaction | 35083669 | 1202445 | tz1fDNxi79eypDkDVxfLLKacZmaeCHC2hHrm |  0.008978 |
+| transaction | 35083670 | 1202445 | tz1fDPJAq93teURaYAdSKa4LDsT1EGiek4a8 |  0.452254 |
+| transaction | 35083671 | 1202445 | tz1febig6brY9M2TmmRMWmNbyJGwPgeW2Sx3 |  0.464320 |
+| transaction | 35083672 | 1202445 | tz1fJsdQcdigeZ9xjQLGgcJnKQAo1UxwiAL2 |  0.053232 |
+| transaction | 35083673 | 1202445 | tz1fKe1LmdrU16BVquHuxZKEAQvwckseceSq |  0.018546 |
+| transaction | 35083674 | 1202445 | tz1fp4qfYHMfftoxmyCNnHgQ37kukHhh5Hgu |  0.022365 |
+| transaction | 35083675 | 1202445 | tz1fsAKHUGPrbMZWxYjMMhW9KvpLY4UiVuqB |  0.053624 |
+| transaction | 35083676 | 1202445 | tz1fXtHKHFPEMWadNDXa4VtoqNyUrYT8Wech |  0.205572 |
+| transaction | 35083677 | 1202445 | tz1fYZBTiJ5HQ7S8hnzJMy81vBpMEnUsWXjM |  0.135181 |
+| transaction | 35083678 | 1202445 | tz1fzLhUjygbdUc482h2TLpy2wnaPbaYJEyf |  0.062136 |
+| transaction | 35083679 | 1202445 | tz1g7AE4pqQLY4MZEMQBDGFY7gAZkA8PpSSC |  0.000003 |
+| transaction | 35083680 | 1202445 | tz1g8FgdE3A2p5HUaFHQNm9Z3JtKXbABGSwz |  0.140630 |
+| transaction | 35083681 | 1202445 | tz1gCVeNd5GUAPBn6GPq4K5kBRzKZzVPNvtt |  0.000003 |
+| transaction | 35083682 | 1202445 | tz1gerydtyNqTuYDQ5fZZ4PsVotD7nxPAaBa |  0.113364 |
+| transaction | 35083683 | 1202445 | tz1giCkT5ksWU2tia9NFYoKCVzUKake7Qu6f |  1.739942 |
+| transaction | 35083684 | 1202445 | tz1gNvsZt6ZTLSa1ReEYgzUsAnusRro3zNws |  0.000303 |
+| transaction | 35083685 | 1202445 | tz1gQz4riMiZcsPczWhgVB8MX9uu2mKHAg3j |  0.004398 |
+| transaction | 35083686 | 1202445 | tz1gRXve9tsnTCA7dMoBdQzebW3PWbWNazQB |  0.017405 |
+| transaction | 35083687 | 1202445 | tz1gSoMFn22TCCd8VzKdLB23gByvYEEnahKD |  1.278061 |
+| transaction | 35083688 | 1202445 | tz1gTHxkVeqWtWTQyr9xMd3a1Bh2fFB1KNLP |  0.074174 |
+| transaction | 35083689 | 1202445 | tz1gtLf7yM7wV7uThWnWCbH3cqEm9H4kwcF7 |  0.294787 |
+| transaction | 35083690 | 1202445 | tz1guM3QVFin7Qs7yh4LEjG33guP2WCyTN44 |  4.561579 |
+| transaction | 35083691 | 1202445 | tz1gV3DEaWtqKGWB5jkYfziKqxPRLNfY9YFW |  0.096940 |
+| transaction | 35083692 | 1202445 | tz1gvvcwDex4aGdvPAe7fbYaavoHYso8gPZU |  0.000099 |
+| transaction | 35083693 | 1202445 | tz1gXNwGv91PXaETvQmSQyZnSrNTHhAQtGHL |  0.446657 |
+| transaction | 35083694 | 1202445 | tz1gYyUFmBQd5zCaBTjA9SFwAfx25CadNvg5 |  0.613409 |
+| transaction | 35083695 | 1202445 | tz1gYzsnfbpmbMemEfNdCdftPAw6hpqXXnrj |  0.044839 |
+| transaction | 35083696 | 1202445 | tz1h1CxXpje8GkKECPyNP4FRnRprZc1rqogf |  0.163424 |
+| transaction | 35083697 | 1202445 | tz1h2oCSn5Xyy76jKxXwwQuLjHDpqtxakxLy |  0.000929 |
+| transaction | 35083698 | 1202445 | tz1h35ZDHw3MKN4J3DPMRzxnMWkHWkKFzUz7 |  0.001545 |
+| transaction | 35083699 | 1202445 | tz1h6xJUFfz4yNLonKfNVVrjJsmHVnUTxEbF |  0.092605 |
+| transaction | 35083700 | 1202445 | tz1h7TGc6MAVR6VwSbakLpMEjdanhhm7NyMS |  0.949501 |
+| transaction | 35083701 | 1202445 | tz1h7XuhpHWoyoe3oEGRwZDEWyWxGStjrGpA |  0.016542 |
+| transaction | 35083702 | 1202445 | tz1hbi3QhKZirVkCArzTx4xZ1SQSVNDpQd7y |  0.151238 |
+| transaction | 35083703 | 1202445 | tz1hCXC5jr2dUs4cGay526ShAZxHNVarkHFh |  0.138604 |
+| transaction | 35083704 | 1202445 | tz1hDmTVduoD3Mp4DYNH2mBeeDAiSyhnzrZF |  0.000113 |
+| transaction | 35083705 | 1202445 | tz1hj8tpquUGy553HCyLEcxGM7JB7ZqXvSox |  0.022987 |
+| transaction | 35083706 | 1202445 | tz1hLhKWw9qNj4Fg1v3MB2XrKNkrJ7DtNqKR |  0.158103 |
+| transaction | 35083707 | 1202445 | tz1hLPpEf8Nfn2jU1i3cgWHmhabvzMJQSseG |  0.001884 |
+| transaction | 35083708 | 1202445 | tz1horhhhbXZtMJjE95b6w2DzkjhX7p53PQX |  0.015037 |
+| transaction | 35083709 | 1202445 | tz1hSa8Sokf4Psb39tNZ9KtoEFKUbjdASdKB |  0.045447 |
+| transaction | 35083710 | 1202445 | tz1hWmwHZxc58p2maFg498uSZYXHTDQ4iTJn |  0.001401 |
+| transaction | 35083711 | 1202445 | tz1hXEfHS8KNMc4iuPqg7s1PVnELkeMxZGFj |  0.142774 |
+| transaction | 35083712 | 1202445 | tz1i21ZfqYAW3tCz1o24TWkpHvDytyzD1k7q |  0.012042 |
+| transaction | 35083713 | 1202445 | tz1i9FdG144CgNfAHAurXgkkQ1srCNq2ypLj |  0.000003 |
+| transaction | 35083714 | 1202445 | tz1iaatepHXc87Q4nTsmbpCtnp7XqoYktzhZ |  0.122574 |
+| transaction | 35083715 | 1202445 | tz1ib1p6h7K7kENdECS2vmskhhea6rBhan4v |  0.000042 |
+| transaction | 35083716 | 1202445 | tz1ibdFZSwd7AVqcvmmCXdhcDjhgqedNo7Tp |  0.180083 |
+| transaction | 35083717 | 1202445 | tz1iD1UzVrohEhru2aqKdJHYkdkX1FMGCMWP |  0.004571 |
+| transaction | 35083718 | 1202445 | tz1iMGegH6qzeDxFwk8v5nJZ8wpEt97jmmsA |  0.000003 |
+| transaction | 35083719 | 1202445 | tz1iQsAnyq5hPuiqqUF7YFog6L5MqLneo5NN |  0.455117 |
+| transaction | 35083720 | 1202445 | tz1iraXc1VfSJ8WJnZJ5ujGouP2VscsZtEKC |  0.001463 |
+| transaction | 35083721 | 1202445 | tz1iSXduDgf7yiUV8ME2GANNogDsEhnYkB2w |  0.000918 |
+| transaction | 35083722 | 1202445 | tz1itE1jhHodLP17XdYunz2VmVqMzd4xakNg |  0.679024 |
+| transaction | 35083723 | 1202445 | tz1iu6scdJBgsDhA1yWCybqmE5XxGN5hLrUY |  0.045798 |
+| transaction | 35083724 | 1202445 | tz1iVX7Aq5V5RbToCpBzAUCwsRqPtrRf4GWY |  0.050081 |
+| transaction | 35083725 | 1202445 | tz1ixqkmiNCaGk8S743VWJ126NRPhdUNhxvk |  0.044946 |
+| transaction | 35083726 | 1202445 | tz1iyLY6LfU8123rrrWvQ2u78icGurjK1UtH |  0.000028 |
+| transaction | 35083727 | 1202445 | tz1iZmUv59ZDiXadwJUFtkMUsugdrWzdDRX7 |  0.069182 |
+| transaction | 35083728 | 1202445 | tz1KjF3vrKPBFesS4iWhAyMiaDTVZhin2r3p |  0.000540 |
+| transaction | 35083729 | 1202445 | tz1KnCyw7NrtW8ukxd4XCfX2tX7RHfvQBR8o |  0.018741 |
+| transaction | 35083756 | 1202446 | tz1KowAN7P9WjydTiDpjqhLyER5xMEHe4VDV |  0.000455 |
+| transaction | 35083757 | 1202446 | tz1KpR68GkryWSQJhyJhim8hs7WiBzwSj1RN | 18.009093 |
+| transaction | 35083758 | 1202446 | tz1KuTQSonJYYPZBTswT8tLiQbFqbWXdukD5 |  0.000426 |
+| transaction | 35083759 | 1202446 | tz1Kz5xj7eASEkdWRsPnWygjHQZPjkm4Ybu7 |  0.000028 |
+| transaction | 35083760 | 1202446 | tz1L7M4VKvrPxm2etF4keSj4tY4pBxg2Ly6h |  0.068938 |
+| transaction | 35083761 | 1202446 | tz1L9Ez42oLSCEu4gKUrnDpKdJkoPD6BuB7Q |  0.010450 |
+| transaction | 35083762 | 1202446 | tz1L9NoFW4TMtJGWVmAtrUF7S3fJFPv1VLWV |  0.012490 |
+| transaction | 35083763 | 1202446 | tz1LB7TVKUy7E5k5Xp63LxTENSoUoQvSem9y |  0.019703 |
+| transaction | 35083764 | 1202446 | tz1LBEuPv4bDWnwpqVqm3uUwdjRfVfEN7dYA |  0.045057 |
+| transaction | 35083765 | 1202446 | tz1LDw5zoY7FYzhUHsixCTnrF3U6x3kRDPJF |  0.232097 |
+| transaction | 35083766 | 1202446 | tz1LgGjrgcUFe9ztaFxzjo1XNiqFtYqTF3Pd |  0.050391 |
+| transaction | 35083767 | 1202446 | tz1LiTDD7JRi1xPVaFsCiFeTLHAYvTzDvNrt |  4.502268 |
+| transaction | 35083768 | 1202446 | tz1LjExjhAP74j9q97KqtD4xEM4LGVoBxuFK |  0.000004 |
+| transaction | 35083769 | 1202446 | tz1LUB9b1b6PKzWgxBhpZuVBKm1CaJ3R1EQN |  0.013653 |
+| transaction | 35083770 | 1202446 | tz1LuSHHhJmKrECdA3CJrunMhFjD4hCGKJRN |  2.720619 |
+| transaction | 35083771 | 1202446 | tz1Lv2khLyTi5r6yBcpzCuvjFwUuk92KzEwA |  0.000343 |
+| transaction | 35083772 | 1202446 | tz1Lv635Hq3dJxPMcLak1VuxhGWxRjQNFvka |  0.050339 |
+| transaction | 35083773 | 1202446 | tz1LWrH6fEB1NfHA4iEvfYQifPi3EwBpY45M |  0.018018 |
+| transaction | 35083774 | 1202446 | tz1LxidQXeRuXWe61VYRf7JV4ceq4psvbRir |  0.000097 |
+| transaction | 35083775 | 1202446 | tz1M5FmR2Krt1Rko5BSrrkP8MV7SaskRM9tY |  0.049275 |
+| transaction | 35083776 | 1202446 | tz1M6j55v5bw6yTVXyHUVcvnkNjtqpufBvQw |  0.008746 |
+| transaction | 35083777 | 1202446 | tz1M7Kpno9fjk1DWpbsXUmD3jVs4gYyvoa6a |  0.004494 |
+| transaction | 35083778 | 1202446 | tz1MAf5p7b2kSWYPAueNhfYHYiva62CbUL5L |  0.000036 |
+| transaction | 35083779 | 1202446 | tz1McAK72w7tQufJseNtWCp4qe6MoSosnjFX |  0.000042 |
+| transaction | 35083780 | 1202446 | tz1MD6CVdDpRrHSQYvNdZRkb1ty1zCLDp6Jf |  0.182487 |
+| transaction | 35083781 | 1202446 | tz1Mg35BKtwTMgMLfdNdaXqa7ZoqW8C4euy8 |  0.001222 |
+| transaction | 35083782 | 1202446 | tz1MJt6YYLLGPTZw9tUWVbo3ZAcAWWbGdhDn |  0.046311 |
+| transaction | 35083783 | 1202446 | tz1MKCMt9dQDccykzripUGk5439BwEWthqx5 |  0.022698 |
+| transaction | 35083784 | 1202446 | tz1Mt9eG1vSc8pgRQCpt5W8dMcWTiX6jP1Lz |  0.012951 |
+| transaction | 35083785 | 1202446 | tz1MY5Yg36KaJzSnXDuknWCUH3JaBJkPZw6Z |  0.000003 |
+| transaction | 35083786 | 1202446 | tz1MyKQaPvijnR3bwHsFqJyiGHbm7ay6fi2X |  0.457786 |
+| transaction | 35083787 | 1202446 | tz1MZWsL6DpjkqXLmQ6eiRqjiwvb9ykMNUPj |  0.045236 |
+| transaction | 35083788 | 1202446 | tz1MzceVHro7b9SUAk5iicCnyEdFuBCkk7gd |  0.013295 |
+| transaction | 35083789 | 1202446 | tz1N2bv4tWZL3P8bPz9spiatisSMThEBvC4B |  0.021238 |
+| transaction | 35083790 | 1202446 | tz1N9FT6EkgM174b6suFBxhszg5oLnYpBvqf |  0.117207 |
+| transaction | 35083791 | 1202446 | tz1N9Waofcf9xj2HFar5ZrD8xDrufRFCxRZN |  0.017609 |
+| transaction | 35083792 | 1202446 | tz1NcMTsYqqr2WhAiK8gFGxCR8VN4CRtf9BT |  0.001747 |
+| transaction | 35083793 | 1202446 | tz1NhNqQ9jfXJf4cBHc6RrtziUYWQ8XfUywj |  0.116343 |
+| transaction | 35083794 | 1202446 | tz1NhqvEkXdqnYdxpjnYsshS28XKt1yhiH6N |  0.399505 |
+| transaction | 35083795 | 1202446 | tz1NoPcf5pSL723o23MVxYpJjVboJoC1CurB |  0.000514 |
+| transaction | 35083796 | 1202446 | tz1NPRoJzijdJpCJgewSG4UbQoCskdFfXXKm |  0.000222 |
+| transaction | 35083797 | 1202446 | tz1NQN7Vq485AeWM1PrZKXcfMMdU9yXjV57o |  0.005760 |
+| transaction | 35083798 | 1202446 | tz1NTk2gcNv1sTNQKt3Y3fyasEsftkcdjrcN |  1.476964 |
+| transaction | 35083799 | 1202446 | tz1P3zYHDMgunNCwVnhhNBJtZeiHpfMYTwK9 |  0.000090 |
+| transaction | 35083800 | 1202446 | tz1P8H3JtoJid5G4tyFc2TdFQ58Wd6vWH2pP |  0.006008 |
+| transaction | 35083801 | 1202446 | tz1PCeDqPQVUNmkxsGf9TUrCPpn53DfDFiQ4 |  0.290240 |
+| transaction | 35083802 | 1202446 | tz1PePQHfBC5PW3wky56Jv8ZnyZfaKrdnTKv |  0.171351 |
+| transaction | 35083803 | 1202446 | tz1PKdYUvtvWLzPuEiCsXb6YfXowMdFZ3MXJ |  0.649799 |
+| transaction | 35083804 | 1202446 | tz1PMms7MnwDM2oUsY5P9aTaRzhwrtJ8g6CR |  0.013905 |
+| transaction | 35083805 | 1202446 | tz1PmWKP1tHDZtEx66YZaeqrjKSRVCufNpDm |  0.000095 |
+| transaction | 35083806 | 1202446 | tz1PpEhrfJmM3wr3BUxoHKawjUVC4S7yFPa2 |  0.000576 |
+| transaction | 35083807 | 1202446 | tz1PqsuL6feKx81wyWKeHapyh8rucKEv6pQM |  0.298122 |
+| transaction | 35083808 | 1202446 | tz1Pqt7vHvTqueCCBEyVTPSo4jZu8bnCdG6V |  0.000025 |
+| transaction | 35083809 | 1202446 | tz1PVAzUn8vuK5VHjS8fczbjNS3hTZxaSjvP |  0.366548 |
+| transaction | 35083810 | 1202446 | tz1Q1MK5e96yDeoNrGM9Sga6n3i4eqDYBjNu |  0.002158 |
+| transaction | 35083811 | 1202446 | tz1Q77ZcZghPWvNBVefPCgHykQAwZCpMCseK |  0.656463 |
+| transaction | 35083812 | 1202446 | tz1Q8RtyZyZZfDToNJmYrPEPucwcjryxbvSQ |  0.244332 |
+| transaction | 35083813 | 1202446 | tz1QAJfuurKsT8MQZXy2RGMbojLy66KyZssm |  0.002898 |
+| transaction | 35083814 | 1202446 | tz1QFJYavNXePFafWxBM3gjuxsPDqAz1agSG |  0.569319 |
+| transaction | 35083815 | 1202446 | tz1QG5wmua1J8bTvGiGLeYEceDZJ8p3UDD8p |  6.988057 |
+| transaction | 35083816 | 1202446 | tz1Qg7zULmrmGL187umZsycbdHuifpuNBdsh |  3.068435 |
+| transaction | 35083817 | 1202446 | tz1QHKL26Xsj5vQwd8k3kS7sYdZ3Bbwthqxi |  0.000167 |
+| transaction | 35083818 | 1202446 | tz1Qh12SE4xj5FNKKYYQoAxbkWGJjpvAZKeC |  4.544387 |
+| transaction | 35083819 | 1202446 | tz1QjaFUNnBVHBXoTMsW5BJnNJhKsUrPVj87 |  0.460323 |
+| transaction | 35083820 | 1202446 | tz1QKDWXEnSBS3M948txvvreTKQPAtCQEjhK |  0.128636 |
+| transaction | 35083821 | 1202446 | tz1Qq5AfNXrBqRQNrgXPoZ6uQ1nJdPTctonU |  0.016088 |
+| transaction | 35083822 | 1202446 | tz1QtjVmtpVyEj6mEWEsLxqTGTymLAFaHTkd |  0.000009 |
+| transaction | 35083823 | 1202446 | tz1QVsmU7n1Dw2J8Mu8XcLnNJVcAm5EkMdSN |  0.143841 |
+| transaction | 35083824 | 1202446 | tz1QYjAZ5Sy2j7cjAWs7fPMUQENCpa5rKJLM |  0.209088 |
+| transaction | 35083825 | 1202446 | tz1QznDdZPW4jfMeRuJWLuQsrQkHLaA3dq8M |  0.000272 |
+| transaction | 35083826 | 1202446 | tz1R1bModU5MwrjNxPMaooxvhNGQ7JA1HSMk |  1.683206 |
+| transaction | 35083827 | 1202446 | tz1R1Skm13E6HYQ2miSGfJzKqdsJ77Z111nk |  0.140955 |
+| transaction | 35083828 | 1202446 | tz1R4wj72xLBUTCx7irHUJKjNEM9sAh3SPJK |  0.000013 |
+| transaction | 35083829 | 1202446 | tz1RAL2uWYZiP2fpsnLceUgMAg24Vyxr55J7 |  0.007110 |
+| transaction | 35083830 | 1202446 | tz1RAqXEp1Tu2uF2mTSsQPDnCmE3x3iaPRBd |  0.002342 |
+| transaction | 35083831 | 1202446 | tz1RcGJja2N7Xasd8hBZxi5nJCNd4xGy5WNK |  0.000108 |
+| transaction | 35083832 | 1202446 | tz1RES1mXs6WA39eWHK8jt2XVTHb3cFenxD7 |  0.273114 |
+| transaction | 35083833 | 1202446 | tz1RFc7FwdNTeiSMmCLskgRgc6dPm9itHpGZ |  0.140359 |
+| transaction | 35083834 | 1202446 | tz1RGkfT4XWN6MfgRQErZy8odp8uDnLuTTFL |  0.001915 |
+| transaction | 35083835 | 1202446 | tz1RGRQA7wq1GANPCCL2PgEySCHy5wx5WDxN |  0.000903 |
+| transaction | 35083836 | 1202446 | tz1RiLWqhd9hAD5C1HdEGqPMeAowuKGQSyu1 |  0.005623 |
+| transaction | 35083837 | 1202446 | tz1RJhQikDLqYnxKMgQGJeh2Tj5NVFiL23ox |  0.099779 |
+| transaction | 35083838 | 1202446 | tz1RjgEnULSzgkjWLHE2gvW6Q1B6dcLpDtUw |  0.470610 |
+| transaction | 35083839 | 1202446 | tz1RjR1h3am5c8GVvzqRU6KQFT2gFVhMDreX |  1.255808 |
+| transaction | 35083840 | 1202446 | tz1RLKDBWhewQrzZMGPGHmyQzBcDTSegJRdL |  0.001407 |
+| transaction | 35083841 | 1202446 | tz1RNPyQd8Mf24Guj7f6YGp8q8dZUrjFxdTp |  0.000002 |
+| transaction | 35083842 | 1202446 | tz1RPRipqd7yFKPyJN55mB6GRDUqkbzcDo4h |  0.207305 |
+| transaction | 35083843 | 1202446 | tz1RpMBcAvRwvePLCFWkBmKitGz6FuL43HiD |  0.001073 |
+| transaction | 35083844 | 1202446 | tz1RRmX2EwBVKvMyyqbZnswWN8PTBCxh7H6r |  0.029648 |
+| transaction | 35083845 | 1202446 | tz1RStT6WxtdR7SFxgD8A4kvTegERirw4Z6d |  0.001025 |
+| transaction | 35083846 | 1202446 | tz1Rtxn4TbMg2EEQ45B6AkDwnnqQAQHiAiz4 |  0.006889 |
+| transaction | 35083847 | 1202446 | tz1SAaSYqid12hjzuXFB1duUXhJmHEG4bzZ9 |  0.057069 |
+| transaction | 35083848 | 1202446 | tz1SBoSCn5x3L7VnNqHD2bkH6xKgUR6qf9As |  0.000001 |
+| transaction | 35083849 | 1202446 | tz1SBWobVR73mQD5TaAZACVy6Rpwj9hrcyUz |  0.014075 |
+| transaction | 35083850 | 1202446 | tz1Sc9xnVPRBHbDtjkSRk8KYDQXdad6HUusD |  0.000046 |
+| transaction | 35083851 | 1202446 | tz1SMkiGccYjFuPHQTuurb4ebqxfQUnD3mFP |  0.126124 |
+| transaction | 35083852 | 1202446 | tz1SNSQWSie7Bm9mFWHQFGvSLAcsc3ak8wMw |  0.004023 |
+| transaction | 35083853 | 1202446 | tz1Sn2oTMoG2vzsnUbhUZdY2S6b66ukTvcjj |  0.000538 |
+| transaction | 35083854 | 1202446 | tz1SnnzWescq9Hwzvq7Bqw9wkUdyJV55WcYm |  0.004377 |
+| transaction | 35083855 | 1202446 | tz1SSZErQeBFHrQe3RkgVPbzZF6DEXXdFmJd |  0.107584 |
+| transaction | 35083856 | 1202446 | tz1SuCKoYC9Rwm72oD7AcZ9ByyoAVFpqouwn |  0.319008 |
+| transaction | 35083857 | 1202446 | tz1T6LUopATG7zaERezxRDTDxT1xqEpG3iic |  0.001295 |
+| transaction | 35083858 | 1202446 | tz1T9pDBM9nohX5YgaDCTkHh8HD3chB5J5An |  0.051813 |
+| transaction | 35083859 | 1202446 | tz1TajMkoqfoMFY8Ju9WpXDPk1NpjN7uBDLX |  0.319842 |
+| transaction | 35083860 | 1202446 | tz1TBV1dce3eQ2VGsL1ZP1NvC2AZnks3JQh2 |  0.025128 |
+| transaction | 35083861 | 1202446 | tz1TCrDs9XhF9g3jaAWARTtA8XoHu6TJPLzN |  0.005401 |
+| transaction | 35083862 | 1202446 | tz1TDBByRbw3G45sVYrvVs6afHrRxTvCdPN6 |  0.320584 |
+| transaction | 35083863 | 1202446 | tz1TGQp7bwMNHx65qW6YBmYxpB3BeV54kZpf |  0.000028 |
+| transaction | 35083864 | 1202446 | tz1TGvp19rT95YkA7rQCsjz37Ms1g4vSvJR9 |  0.001759 |
+| transaction | 35083865 | 1202446 | tz1THnQKU5CDxKjaqSPFLoBNBv8VttqNFwg5 |  0.264309 |
+| transaction | 35083866 | 1202446 | tz1ThbvKgAKXD9y9Mcb92eVLJd5EqjqYXmAc |  0.000018 |
+| transaction | 35083867 | 1202446 | tz1Thyh3smtxaKxzVtoomKddWG1ue7F4FgdU |  0.003749 |
+| transaction | 35083868 | 1202446 | tz1TJKJBWbhibtxMCwctLzA3D3MyUKGt5nUo |  0.473040 |
+| transaction | 35083869 | 1202446 | tz1TnbmVrRBjdvoLFCSz9oRKSLGwAEMScPiE |  0.400256 |
+| transaction | 35083870 | 1202446 | tz1TqxAqcdcg3Y6Kwa3xGnvVGnD6jfDRKFoe |  0.197242 |
+| transaction | 35083871 | 1202446 | tz1TrCC8w2pZPgn2MurZrnMA5ULA82gNcP76 |  0.051499 |
+| transaction | 35083872 | 1202446 | tz1TS4FbJfZjMfxfTpsLQn45FF5Wj7auZNwq |  0.002182 |
+| transaction | 35083873 | 1202446 | tz1TsYEmro6UJ75DNPHPTbEZsJKG2fQEanhF |  0.229182 |
+| transaction | 35083874 | 1202446 | tz1TTsbQ9iCEY91JohqyLL8tvE7KAFDtnmCb |  0.007990 |
+| transaction | 35083875 | 1202446 | tz1TUcLFNhPqye1yo9nsNRPfXErEBJWHCLSJ |  0.159408 |
+| transaction | 35083876 | 1202446 | tz1TvKD3tZGv2jGap1CHvxVPjVc6onmT1Sr7 |  0.006408 |
+| transaction | 35083877 | 1202446 | tz1TW6TkKamWP5VVYYrUAapteVRpmgrTS2JH |  0.543175 |
+| transaction | 35083909 | 1202447 | tz1TwUDXJwWdGUxwCAkjbkYju2De6EaGS1Kx |  0.050776 |
+| transaction | 35083910 | 1202447 | tz1TxmrWpGxf5S9QAmd7VregGfd9VdwpMPQx |  0.000695 |
+| transaction | 35083911 | 1202447 | tz1TYYphefn6L3bDrNo88HMWbNFZFutuLbXp |  0.348055 |
+| transaction | 35083912 | 1202447 | tz1Tz5EvufeZrzz7JE3Zhw8TQY77SKqjfv2m |  0.007443 |
+| transaction | 35083913 | 1202447 | tz1U1CHLRud8QYefxj1AxoCuD2cidrTh53kS |  2.448234 |
+| transaction | 35083914 | 1202447 | tz1U6fNxbPUMkRU625oxk5ya7hrjEn5SHtS7 |  0.000057 |
+| transaction | 35083915 | 1202447 | tz1UBxMdoFAFWTqjydpjFXfH819GaWQkCqth |  0.609004 |
+| transaction | 35083916 | 1202447 | tz1UgLEZornKsKPMDpq44Y84poaQRZgXZctK |  0.011574 |
+| transaction | 35083917 | 1202447 | tz1UKX6ZVxB1mcra9i4NPEhATAN8ismApN2R |  0.619529 |
+| transaction | 35083918 | 1202447 | tz1Uk5xHJ25ZabQq8fWE9WXsRnU39XQ7QKbu |  0.000023 |
+| transaction | 35083919 | 1202447 | tz1ULbSRSK8muk8Y92W5SLKG7daBVhJJ4tpJ |  0.000070 |
+| transaction | 35083920 | 1202447 | tz1ULEUTbaY1LEComjSVPqPuY1QRJJwXTiwg |  0.223968 |
+| transaction | 35083921 | 1202447 | tz1UNFm4QKx1kemaXArmCC3dCJDGHHiQWnGJ |  0.011646 |
+| transaction | 35083922 | 1202447 | tz1V4srsB3sz5i6xB6vx3uL7tUiXhpDtvLiS |  0.213114 |
+| transaction | 35083923 | 1202447 | tz1V4uckBMZJ816eeHMf1zqW9j7GQheJy5vz |  0.001476 |
+| transaction | 35083924 | 1202447 | tz1Va3cLY2LywWCiQGSGUYNzZrxWAYzzEcLB |  0.000466 |
+| transaction | 35083925 | 1202447 | tz1Va74cmt3QV16gN3e4NDvr3maSjG9wmH7G |  0.026594 |
+| transaction | 35083926 | 1202447 | tz1VadHe4AetFx1E6cJQ1LFD49yno61P7ygX |  0.004505 |
+| transaction | 35083927 | 1202447 | tz1VBgUQMBJLWRU747a3N7Q8V3rHccUCduic |  0.015005 |
+| transaction | 35083928 | 1202447 | tz1VCqgWd8buPvWBU4Jv1uPiDxRg52XEinaH |  0.454253 |
+| transaction | 35083929 | 1202447 | tz1VF9DN8gFWSZFhTXjnurFAi66b1xkS6bh4 |  0.024849 |
+| transaction | 35083930 | 1202447 | tz1Vfw5DpJ9zyTx36Gex2wrMVCfHUFdiPuvf |  0.000004 |
+| transaction | 35083931 | 1202447 | tz1VJ3xTYZXWVJkEzPhtkf3j1THFWKadTtFV |  0.012393 |
+| transaction | 35083932 | 1202447 | tz1VMCv5wueZnAmeoMgkhpiDz1Un2FBXf25y |  0.009901 |
+| transaction | 35083933 | 1202447 | tz1VncNSworAZPVavTGP1pN1mZeJEqWY2NWE |  0.017793 |
+| transaction | 35083934 | 1202447 | tz1VoTssSQrMybZ5zwvAzVo4QzdCeggEa83q |  0.342531 |
+| transaction | 35083935 | 1202447 | tz1VrEjWBi3jDSECwdWcXo1TjS22y5kaQD1S |  0.000332 |
+| transaction | 35083936 | 1202447 | tz1VTe56pRR6jQu1qU6HAf6BVAxnrLo7uDio |  0.289276 |
+| transaction | 35083937 | 1202447 | tz1VuKJfHh8Mets5fDspTdLAYgYAJ3i7c2SK |  0.023034 |
+| transaction | 35083938 | 1202447 | tz1W4WdHs4hgeB3sqMeAAqzFisyEqt2QAtro |  0.000452 |
+| transaction | 35083939 | 1202447 | tz1W66bLkHwWqGgPY3tDAhNYhw9mbax11Fos |  0.005633 |
+| transaction | 35083940 | 1202447 | tz1W6bajt6UQVjGikL3NodVyNYqiXtKd33Gv |  0.013446 |
+| transaction | 35083941 | 1202447 | tz1W7cb4ifpzQbnaY8WaPZApynmwsGu427W3 |  0.000002 |
+| transaction | 35083942 | 1202447 | tz1W8nDK4chGH5q3kh1LPjyRGkQn358XquDF |  0.118341 |
+| transaction | 35083943 | 1202447 | tz1WAokvav96926wAjWnwLE6eh2kzQzCuUp2 |  0.040277 |
+| transaction | 35083944 | 1202447 | tz1WaPZgxMPBgov728i7gqdUSkCuRSQXihK1 |  0.000120 |
+| transaction | 35083945 | 1202447 | tz1WDtyKHWnfgzH9kN4g9exBrm1Q4BNFvyj3 |  0.264716 |
+| transaction | 35083946 | 1202447 | tz1WFW6EYZLeDRrvNggbfqTycfUd9jSCoTMP |  0.000434 |
+| transaction | 35083947 | 1202447 | tz1WGeBE6cMpdUe7meZ1YrSyE9aTFTLiX9bH |  2.734178 |
+| transaction | 35083948 | 1202447 | tz1WGos4kEnRkwA6TNSQU5UCsuhmzUJttqhk |  0.073924 |
+| transaction | 35083949 | 1202447 | tz1Wh5VdCB4ig3nSLNJurAtosgRwnebaUAXA |  0.000011 |
+| transaction | 35083950 | 1202447 | tz1WJhJcoa3qC7i8q21xWb5BKUWNjvdAJgWX |  0.031348 |
+| transaction | 35083951 | 1202447 | tz1WojdivEjjxWrH8QLu8cS9sMKvgy4HVmWq |  0.003020 |
+| transaction | 35083952 | 1202447 | tz1WskwmoAXUXdgzucE4X9TWbgT3WEFBJNqe |  0.000112 |
+| transaction | 35083953 | 1202447 | tz1WUTxeiRsUm1a3MbECduZ6UZHYCU2xo3TF |  0.098015 |
+| transaction | 35083954 | 1202447 | tz1WVtvyLDDsVaPg9s2req2UBucYsgrUfkcX |  0.010483 |
+| transaction | 35083955 | 1202447 | tz1Wv2SVQDUUKNw2s1qF3WmXiKHpEoPs8CdM |  0.012937 |
+| transaction | 35083956 | 1202447 | tz1WzsxKAE1bedEvtAZTEU1p8vyjaqhmA8ZA |  0.014234 |
+| transaction | 35083957 | 1202447 | tz1X3Z9S5CGYg9kijAxtzJpRfcTuYuncitxH |  0.000251 |
+| transaction | 35083958 | 1202447 | tz1X4s9vDagF3dbP1yeqbnYsJhrU6byk3DRF |  0.063018 |
+| transaction | 35083959 | 1202447 | tz1X7tWMP3J2jBwspxDhBD6jdAQbykbGofS8 |  0.001044 |
+| transaction | 35083960 | 1202447 | tz1XgduT7uwnwx24ZdgKkAMmGo4pU6uzw8AL |  0.018519 |
+| transaction | 35083961 | 1202447 | tz1XhDErypaAa46T3NJpn43bMFY2xdvwPXg4 |  0.001882 |
+| transaction | 35083962 | 1202447 | tz1Xht17bycYk5PRJiGunuwcYGAuSaxDrQBp |  0.000121 |
+| transaction | 35083963 | 1202447 | tz1XkfMgm23yhbS6CWwMguZBn59GVXEnLNQ2 |  0.019855 |
+| transaction | 35083964 | 1202447 | tz1XLjJBYaLXKndgeGJUoEiqBt2ucVjHp7Nw |  0.093747 |
+| transaction | 35083965 | 1202447 | tz1XNMVTPgAf2ufF9FxAyBjUzSZbEuZtcQyq |  0.088273 |
+| transaction | 35083966 | 1202447 | tz1XNXhzfD8k5cMjRaRRNSjHWyodtJvfiZjn |  0.002260 |
+| transaction | 35083967 | 1202447 | tz1XnrjfWq1iu2rMj19L8j84fG1ARDJgfrUt |  0.000179 |
+| transaction | 35083968 | 1202447 | tz1Xo5aEbrd5EGEccNkZnKY26JeiDJQGbBBK |  0.001104 |
+| transaction | 35083969 | 1202447 | tz1XqPBwtRCHWdoJcAPptmvJosWGuGfwujb5 |  0.083977 |
+| transaction | 35083970 | 1202447 | tz1Xtkx445zEbFeKZ2umww2dxvmtd6MAaJEs |  0.889379 |
+| transaction | 35083971 | 1202447 | tz1XUECdE5krrWxesBJ89iKsfYybka4GiYn6 |  0.000090 |
+| transaction | 35083972 | 1202447 | tz1XzKTjhhFUTaBM2rZ8mBhqxjLNDEMWWpt8 |  0.904726 |
+| transaction | 35083973 | 1202447 | tz1XzpYQcuQs7mkRJzUf3u2MMprXHkBhhDy3 |  0.000001 |
++-------------+----------+---------+--------------------------------------+-----------+
+[boy@Plum payman (feature/old-cycles ✗)]$ 
