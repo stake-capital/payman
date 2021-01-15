@@ -56,18 +56,17 @@ func Table(cycle int, delegate string, rewards tzkt.RewardsSplit) {
 			share += lp.Share
 		}
 
-		if float64(delegation.NetRewards)/float64(gotezos.MUTEZ) > 0 {
-			table.Append([]string{
-				delegation.Address,
-				fmt.Sprintf("%v", delegation.BlackListed),
-				fmt.Sprintf("%.6f", delegation.Share),
-				fmt.Sprintf("%.6f", float64(delegation.GrossRewards)/float64(gotezos.MUTEZ)),
-				fmt.Sprintf("%.6f", float64(delegation.NetRewards)/float64(gotezos.MUTEZ)),
-				fmt.Sprintf("%.6f", float64(delegation.Fee)/float64(gotezos.MUTEZ)),
-			})
-			net += float64(delegation.NetRewards) / float64(gotezos.MUTEZ)
-			fee += float64(delegation.Fee) / float64(gotezos.MUTEZ)
-		}
+		table.Append([]string{
+			delegation.Address,
+			fmt.Sprintf("%v", delegation.BlackListed),
+			fmt.Sprintf("%.6f", delegation.Share),
+			fmt.Sprintf("%.6f", float64(delegation.GrossRewards)/float64(gotezos.MUTEZ)),
+			fmt.Sprintf("%.6f", float64(delegation.NetRewards)/float64(gotezos.MUTEZ)),
+			fmt.Sprintf("%.6f", float64(delegation.Fee)/float64(gotezos.MUTEZ)),
+		})
+		net += float64(delegation.NetRewards) / float64(gotezos.MUTEZ)
+		fee += float64(delegation.Fee) / float64(gotezos.MUTEZ)
+
 	}
 
 	table.SetFooter([]string{"", "", "", "TOTAL", fmt.Sprintf("%.6f", net), fmt.Sprintf("%.6f", fee)}) // Add Footer
