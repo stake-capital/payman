@@ -5,6 +5,7 @@ import (
 	"fmt"
 	"time"
 
+	gotezos "github.com/goat-systems/go-tezos/v2"
 	"github.com/goat-systems/go-tezos/v3/forge"
 	"github.com/goat-systems/go-tezos/v3/keys"
 	"github.com/goat-systems/go-tezos/v3/rpc"
@@ -184,7 +185,7 @@ func (p *Payout) constructDelegation(delegator tzkt.Delegator, totalRewards, sta
 		}
 	}
 
-	if delegator.NetRewards < p.config.Baker.MinimumPayment {
+	if delegator.NetRewards < p.config.Baker.MinimumPayment || float64(delegator.NetRewards)/float64(gotezos.MUTEZ) <= 0 {
 		delegator.BlackListed = true
 	}
 
