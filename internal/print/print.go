@@ -66,6 +66,7 @@ func Table(cycle int, delegate string, rewards tzkt.RewardsSplit) {
 		})
 		net += float64(delegation.NetRewards) / float64(gotezos.MUTEZ)
 		fee += float64(delegation.Fee) / float64(gotezos.MUTEZ)
+
 	}
 
 	table.SetFooter([]string{"", "", "", "TOTAL", fmt.Sprintf("%.6f", net), fmt.Sprintf("%.6f", fee)}) // Add Footer
