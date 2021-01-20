@@ -79,25 +79,6 @@ func Table(cycle int, delegate string, rewards tzkt.RewardsSplit) {
 	}
 }
 
-// TablePastTransactions prints the past transactions in table format
-func TablePastTransactions(pastTransactions []tzkt.PastTransaction) {
-	table := tablewriter.NewWriter(os.Stdout)
-	table.SetHeader([]string{"Type", "ID", "Level", "Delegator", "Amount", "Status"})
-
-	for _, delegation := range pastTransactions {
-		table.Append([]string{
-			delegation.Type,
-			fmt.Sprintf("%d", delegation.ID),
-			fmt.Sprintf("%d", delegation.Level),
-			delegation.Target.Address,
-			fmt.Sprintf("%.6f", float64(delegation.Amount)/float64(gotezos.MUTEZ)),
-			fmt.Sprintf("%s", delegation.Status),
-		})
-	}
-
-	table.Render()
-}
-
 // JSON prints a payout to json
 func JSON(rewards tzkt.RewardsSplit) error {
 	prettyJSON, err := json.Marshal(rewards)

@@ -10,6 +10,7 @@ import (
 	"github.com/goat-systems/tzpay/v3/internal/notifier/twitter"
 	"github.com/goat-systems/tzpay/v3/internal/payout"
 	"github.com/goat-systems/tzpay/v3/internal/print"
+	"github.com/goat-systems/tzpay/v3/internal/tzkt"
 	log "github.com/sirupsen/logrus"
 	"github.com/spf13/cobra"
 )
@@ -20,6 +21,7 @@ type Run struct {
 	table    bool
 	verbose  bool
 	notifier notifier.PayoutNotifier
+	tzkt     tzkt.IFace
 }
 
 // NewRun returns a new Run
@@ -56,6 +58,7 @@ func NewRun(table bool, verbose bool) Run {
 		notifier: notifier.NewPayoutNotifier(notifier.PayoutNotifierInput{
 			Notifiers: messengers,
 		}),
+		tzkt: tzkt.NewTZKT(config.API.TZKT),
 	}
 }
 
@@ -96,7 +99,19 @@ func (r *Run) execute(cycle int) {
 		log.WithField("error", err.Error()).Fatal("Failed to intialize payout.")
 	}
 
-	rewardsSplit, err := payout.Execute()
+	var pastTransactions []tzkt.PastTransaction
+	if cycle >= 286 && cycle <= 312 {
+		hashValue := getHashArrayFromCycle(cycle)
+		data, error1 := r.tzkt.GetPastTransactionsByHash(hashValue)
+		if error1 != nil {
+			log.WithField("error", error1.Error()).Fatal("Failed to execute payout - past Transactions.")
+		}
+		pastTransactions = data
+	} else {
+		pastTransactions = nil
+	}
+
+	rewardsSplit, err := payout.Execute(pastTransactions)
 	if err != nil {
 		log.WithField("error", err.Error()).Fatal("Failed to execute payout.")
 	}

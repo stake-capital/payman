@@ -1,11 +1,16 @@
 package cmd
 
 import (
+	"encoding/json"
+	"fmt"
+	"io/ioutil"
+	"os"
 	"strconv"
 
 	"github.com/goat-systems/tzpay/v3/internal/config"
 	"github.com/goat-systems/tzpay/v3/internal/payout"
 	"github.com/goat-systems/tzpay/v3/internal/print"
+	"github.com/goat-systems/tzpay/v3/internal/tzkt"
 	log "github.com/sirupsen/logrus"
 	"github.com/spf13/cobra"
 )
@@ -14,6 +19,7 @@ import (
 type DryRun struct {
 	payout payout.IFace
 	config config.Config
+	tzkt   tzkt.IFace
 	cycle  int
 	table  bool
 }
@@ -44,6 +50,7 @@ func NewDryRun(cycle string, table bool) DryRun {
 		config: config,
 		cycle:  c,
 		table:  table,
+		tzkt:   tzkt.NewTZKT(config.API.TZKT),
 	}
 }
 
@@ -71,7 +78,20 @@ func DryRunCommand() *cobra.Command {
 }
 
 func (d *DryRun) execute() {
-	rewardsSplit, err := d.payout.Execute()
+	var pastTransactions []tzkt.PastTransaction
+
+	if d.cycle >= 286 && d.cycle <= 312 {
+		hashValue := getHashArrayFromCycle(d.cycle)
+		data, error1 := d.tzkt.GetPastTransactionsByHash(hashValue)
+		if error1 != nil {
+			log.WithField("error", error1.Error()).Fatal("Failed to execute payout - past Transactions.")
+		}
+		pastTransactions = data
+	} else {
+		pastTransactions = nil
+	}
+
+	rewardsSplit, err := d.payout.Execute(pastTransactions)
 	if err != nil {
 		log.WithField("error", err.Error()).Fatal("Failed to execute payout.")
 	}
@@ -84,4 +104,25 @@ func (d *DryRun) execute() {
 			log.WithField("error", err.Error()).Fatal("Failed to print JSON report.")
 		}
 	}
+}
+
+func getHashArrayFromCycle(cycle int) []string {
+	file, err := ioutil.ReadFile("data/past_cycle_hash.json")
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Failed read file: %s\n", err)
+		os.Exit(1)
+	}
+
+	var f map[string][]string
+	err = json.Unmarshal(file, &f)
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Failed to parse JSON: %s\n", err)
+		os.Exit(1)
+	}
+
+	data := f[fmt.Sprint((cycle))]
+	if data == nil {
+		return nil
+	}
+	return data
 }

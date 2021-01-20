@@ -17,8 +17,6 @@ func main() {
 		cmd.RunCommand(),
 		cmd.NewVersionCommand(),
 		cmd.NewSetupCommand(),
-		cmd.DryRun2Command(), // dryrun2
-		cmd.Run2Command(),    // run2
 	)
 
 	rootCommand.Execute()
