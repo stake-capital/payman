@@ -8,7 +8,7 @@ import (
 
 const (
 	version = "v3.2.0 - latest"
-	changed = "Latest version with all fixes. Old Cycles - WIP"
+	changed = "Latest version with all fixes."
 )
 
 // NewVersionCommand returns a version cobra command
