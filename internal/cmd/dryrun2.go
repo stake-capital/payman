@@ -1,6 +1,10 @@
 package cmd
 
 import (
+	"encoding/json"
+	"fmt"
+	"io/ioutil"
+	"os"
 	"strconv"
 
 	"github.com/goat-systems/tzpay/v3/internal/config"
@@ -48,11 +52,11 @@ func NewDryRunOldCycles(cycle string) DryRunOldCycles {
 	}
 }
 
-// DryRunOldCyclesCommand returns the cobra command for dryrun2
+// DryRun2Command returns the cobra command for dryrun2
 // Only table format is supported
 // It should return the reward table(same as dryrun) + real transaction happened for that cycle (6 cycles after)
 // The script should find delegators who are not get paid for their rewards and print those who need to be paid for past cycles
-func DryRunOldCyclesCommand() *cobra.Command {
+func DryRun2Command() *cobra.Command {
 
 	var dryrun = &cobra.Command{
 		Use:     "dryrun2",
@@ -73,16 +77,45 @@ func DryRunOldCyclesCommand() *cobra.Command {
 }
 
 func (d *DryRunOldCycles) execute() {
-	rewardsSplit, err := d.payout.Execute()
-	pastTransactions, error := d.tzkt.GetPastTransactions(d.cycle, d.config.Baker.PayoutAddress)
-
-	if err != nil {
-		log.WithField("error", err.Error()).Fatal("Failed to execute payout - get Reward splits.")
+	hashValue := getHashArrayFromCycle(d.cycle)
+	if hashValue == nil {
+		fmt.Printf("This is a completed cycle. No need to run again. Thanks for using this!")
+		return
 	}
+	// rewardsSplit, err := d.payout.Execute()
+	pastTransactions, error := d.tzkt.GetPastTransactionsByHash(hashValue)
+
+	// if err != nil {
+	// 	log.WithField("error", err.Error()).Fatal("Failed to execute payout - get Reward splits.")
+	// }
 	if error != nil {
 		log.WithField("error", error.Error()).Fatal("Failed to execute payout - past Transactions.")
 	}
 
-	print.Table(d.cycle, d.config.Baker.Address, rewardsSplit)
+	// print.Table(d.cycle, d.config.Baker.Address, rewardsSplit)
 	print.TablePastTransactions(pastTransactions)
+}
+
+func getHashArrayFromCycle(cycle int) []string {
+	file, err := ioutil.ReadFile("data/past_cycle_hash.json")
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Failed read file: %s\n", err)
+		os.Exit(1)
+	}
+
+	var f map[string][]string
+	err = json.Unmarshal(file, &f)
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Failed to parse JSON: %s\n", err)
+		os.Exit(1)
+	}
+
+	// m := f.(map[string][]string)
+
+	data := f[fmt.Sprint((cycle))]
+
+	if data == nil {
+		return nil
+	}
+	return data
 }

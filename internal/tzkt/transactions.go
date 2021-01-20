@@ -40,24 +40,27 @@ type PastTransaction struct {
 }
 
 /*
-GetPastTransactions -
-see: https://api.tzkt.io/#operation/Accounts_GetOperations
+GetPastTransactionsByHash -
+see: https://api.tzkt.io/#operation/Operations_GetTransactionByHash
 */
-func (t *Tzkt) GetPastTransactions(cycle int, baker string) ([]PastTransaction, error) {
+func (t *Tzkt) GetPastTransactionsByHash(hash []string) ([]PastTransaction, error) {
+	result := make([]PastTransaction, 0)
 
-	GT := 1 + ((cycle + 6) * 4096)
-	LE := GT + 4095
+	for _, s := range hash {
+		fmt.Printf("%s\n", s)
+		resp, err := t.get(fmt.Sprintf("/v1/operations/transactions/%s", s))
 
-	resp, err := t.get(fmt.Sprintf("/v1/accounts/%s/operations?type=transaction&level.gt=%d&level.le=%d&sort=0&limit=1000", baker, GT, LE))
+		if err != nil {
+			return []PastTransaction{}, errors.Wrapf(err, "failed to get transactions")
+		}
 
-	if err != nil {
-		return []PastTransaction{}, errors.Wrapf(err, "failed to get transactions")
+		var transactions []PastTransaction
+		if err := json.Unmarshal(resp, &transactions); err != nil {
+			return []PastTransaction{}, errors.Wrap(err, "failed to get transactions")
+		}
+
+		result = append(result, transactions...)
 	}
 
-	var transactions []PastTransaction
-	if err := json.Unmarshal(resp, &transactions); err != nil {
-		return []PastTransaction{}, errors.Wrap(err, "failed to get transactions")
-	}
-
-	return transactions, nil
+	return result, nil
 }

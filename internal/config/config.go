@@ -20,7 +20,6 @@ type Config struct {
 // Baker contains configurations related to the how a baker might run their baking operation
 type Baker struct {
 	Address                      string   `env:"TZPAY_BAKER" validate:"required"`
-	PayoutAddress                string   `env:"TZPAY_BAKER_PAYOUT" validate:"required"`
 	Fee                          float64  `env:"TZPAY_BAKER_FEE" validate:"required"`
 	MinimumPayment               int      `env:"TZPAY_BAKER_MINIMUM_PAYMENT" envDefault:"1"`
 	EarningsOnly                 bool     `env:"TZPAY_BAKER_EARNINGS_ONLY"`

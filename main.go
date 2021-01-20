@@ -1,18 +1,11 @@
 package main
 
 import (
-	"log"
-
 	"github.com/goat-systems/tzpay/v3/internal/cmd"
-	"github.com/joho/godotenv"
 	"github.com/spf13/cobra"
 )
 
 func main() {
-	err := godotenv.Load()
-	if err != nil {
-		log.Fatalf("Error loading .env file")
-	}
 
 	rootCommand := &cobra.Command{
 		Use:   "tzpay",
@@ -24,8 +17,19 @@ func main() {
 		cmd.RunCommand(),
 		cmd.NewVersionCommand(),
 		cmd.NewSetupCommand(),
-		cmd.DryRunOldCyclesCommand(), // dryrun2
+		cmd.DryRun2Command(), // dryrun2
+		cmd.Run2Command(),    // run2
 	)
 
 	rootCommand.Execute()
 }
+
+/**
+Comment
+
+Dryrun2 - displays two table
+	1. Full Delegators list with their rewards for a given cycle	-- the same result of <dryrun>
+	2. Unpaid delegators -- fetch all transactions using the hashes saved in <data/past_cycle_hash.json>
+
+Run2 - handle payment for dryrun2
+*/
