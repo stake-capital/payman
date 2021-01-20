@@ -110,10 +110,7 @@ func getHashArrayFromCycle(cycle int) []string {
 		os.Exit(1)
 	}
 
-	// m := f.(map[string][]string)
-
 	data := f[fmt.Sprint((cycle))]
-
 	if data == nil {
 		return nil
 	}
