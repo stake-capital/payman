@@ -17,17 +17,8 @@ func main() {
 		cmd.RunCommand(),
 		cmd.NewVersionCommand(),
 		cmd.NewSetupCommand(),
+		cmd.TestCommand(),
 	)
 
 	rootCommand.Execute()
 }
-
-/**
-Comment
-
-Dryrun2 - displays two table
-	1. Full Delegators list with their rewards for a given cycle	-- the same result of <dryrun>
-	2. Unpaid delegators -- fetch all transactions using the hashes saved in <data/past_cycle_hash.json>
-
-Run2 - handle payment for dryrun2
-*/
