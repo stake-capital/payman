@@ -17,7 +17,7 @@ import (
 
 // IFace for testing things that consume Payout
 type IFace interface {
-	Execute() (tzkt.RewardsSplit, error)
+	Execute(pastTransactions []tzkt.PastTransaction) (tzkt.RewardsSplit, error)
 }
 
 var (
@@ -36,7 +36,7 @@ type Payout struct {
 	verbose                           bool
 	constructDexterContractPayoutFunc func(delegator tzkt.Delegator) (tzkt.Delegator, error)
 	applyFunc                         func(delegators tzkt.Delegators) ([]string, error)
-	constructPayoutFunc               func() (tzkt.RewardsSplit, error)
+	constructPayoutFunc               func(pastTransactions []tzkt.PastTransaction) (tzkt.RewardsSplit, error)
 }
 
 // New returns a pointer to a new Baker
@@ -76,16 +76,16 @@ func New(config config.Config, cycle int, inject, verbose bool) (*Payout, error)
 }
 
 // Execute will execute a payout based off the Payout configuration
-func (p *Payout) Execute() (tzkt.RewardsSplit, error) {
-	payout, err := p.constructPayoutFunc()
+func (p *Payout) Execute(pastTransactions []tzkt.PastTransaction) (tzkt.RewardsSplit, error) {
+	payout, err := p.constructPayoutFunc(pastTransactions)
 	if err != nil {
-		return payout, errors.Wrapf(err, "failed to execute payout for cycle %d", p.cycle)
+		return payout, errors.Wrapf(err, "failed to execute payout for cycle %d, sob1", p.cycle)
 	}
 
 	if p.inject {
 		operations, err := p.applyFunc(payout.Delegators)
 		if err != nil {
-			return payout, errors.Wrapf(err, "failed to execute payout for cycle %d", p.cycle)
+			return payout, errors.Wrapf(err, "failed to execute payout for cycle %d, sob2", p.cycle)
 		}
 
 		for _, op := range operations {
@@ -96,7 +96,7 @@ func (p *Payout) Execute() (tzkt.RewardsSplit, error) {
 	return payout, err
 }
 
-func (p *Payout) constructPayout() (tzkt.RewardsSplit, error) {
+func (p *Payout) constructPayout(pastTransaction []tzkt.PastTransaction) (tzkt.RewardsSplit, error) {
 	rewardsSplit, err := p.tzkt.GetRewardsSplit(p.config.Baker.Address, p.cycle)
 	if err != nil {
 		return rewardsSplit, errors.Wrap(err, "failed to contruct payout")
@@ -120,7 +120,7 @@ func (p *Payout) constructPayout() (tzkt.RewardsSplit, error) {
 
 	if !p.config.Baker.DexterLiquidityContractsOnly {
 		for _, delegation := range delegations {
-			delegation, err = p.constructDelegation(delegation, totalRewards, rewardsSplit.StakingBalance)
+			delegation, err = p.constructDelegation(delegation, totalRewards, rewardsSplit.StakingBalance, pastTransaction)
 			if err != nil {
 				return rewardsSplit, errors.Wrap(err, "failed to contruct payout")
 			}
@@ -130,7 +130,7 @@ func (p *Payout) constructPayout() (tzkt.RewardsSplit, error) {
 	}
 
 	for _, contract := range dexterContracts {
-		contract, err = p.constructDelegation(contract, totalRewards, rewardsSplit.StakingBalance)
+		contract, err = p.constructDelegation(contract, totalRewards, rewardsSplit.StakingBalance, pastTransaction)
 		if err != nil {
 			return rewardsSplit, errors.Wrap(err, "failed to contruct payout")
 		}
@@ -161,7 +161,7 @@ func (p *Payout) splitDelegationsAndDexterContracts(rewardsSplit tzkt.RewardsSpl
 	return delegations, dexterContracts
 }
 
-func (p *Payout) constructDelegation(delegator tzkt.Delegator, totalRewards, stakingBalance int) (tzkt.Delegator, error) {
+func (p *Payout) constructDelegation(delegator tzkt.Delegator, totalRewards, stakingBalance int, pastTransaction []tzkt.PastTransaction) (tzkt.Delegator, error) {
 	delegator.Share = float64(delegator.Balance) / float64(stakingBalance)
 	if p.config.Baker.EarningsOnly {
 		delegator.GrossRewards = int(delegator.Share * float64(totalRewards))
@@ -187,6 +187,14 @@ func (p *Payout) constructDelegation(delegator tzkt.Delegator, totalRewards, sta
 
 	if delegator.NetRewards < p.config.Baker.MinimumPayment || float64(delegator.NetRewards)/float64(gotezos.MUTEZ) <= 0 {
 		delegator.BlackListed = true
+	}
+
+	if pastTransaction != nil {
+		for _, transaction := range pastTransaction {
+			if transaction.Target.Address == delegator.Address && transaction.Status == "applied" {
+				delegator.BlackListed = true
+			}
+		}
 	}
 
 	return delegator, nil

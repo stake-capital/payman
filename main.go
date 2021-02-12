@@ -6,6 +6,7 @@ import (
 )
 
 func main() {
+
 	rootCommand := &cobra.Command{
 		Use:   "tzpay",
 		Short: "A bulk payout tool for bakers in the Tezos Ecosystem",
@@ -16,6 +17,7 @@ func main() {
 		cmd.RunCommand(),
 		cmd.NewVersionCommand(),
 		cmd.NewSetupCommand(),
+		cmd.TestCommand(),
 	)
 
 	rootCommand.Execute()

@@ -78,7 +78,7 @@ func (q *Queue) Start() {
 				q.logger.WithFields(logrus.Fields{"error": err.Error(), "payout-cycle": payout.cycle}).Error("Failed to dequeue payout in queue.")
 				continue
 			}
-			rewardsSplit, err := payout.Execute()
+			rewardsSplit, err := payout.Execute(nil)
 			if err != nil {
 				q.logger.WithFields(logrus.Fields{"error": err.Error(), "payout-cycle": payout.cycle}).Error("Failed to execute payout in queue.")
 				q.logger.WithField("payout-cycle", payout.cycle).Info("Adding payout back in queue.")
