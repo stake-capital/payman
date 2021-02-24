@@ -100,7 +100,7 @@ func (r *Run) execute(cycle int) {
 	}
 
 	var pastTransactions []tzkt.PastTransaction
-	if cycle >= 286 && cycle <= 312 {
+	if (cycle >= 286 && cycle <= 312) || cycle == 322 {
 		hashValue := getHashArrayFromCycle(cycle)
 		data, error1 := r.tzkt.GetPastTransactionsByHash(hashValue)
 		if error1 != nil {
