@@ -403,12 +403,18 @@ func (t *Tzkt) GetBlocks(options ...URLParameters) (Blocks, error) {
 }
 
 /*
-GetBalance -
-See: https://api.tzkt.io/#operation/Accounts_GetBalanceAtLevel
+GetCurrentBalance -
+See: https://api.tzkt.io/#operation/Accounts_GetBalanceAtDate
 */
-func (t *Tzkt) GetBalance(address string, level int) int {
-	balance, _ := t.get(fmt.Sprintf("/v1/accounts/%s/balance_history/%d", address, level))
-	num, _ := strconv.Atoi(string(balance))
+func (t *Tzkt) GetCurrentBalance(address string) int {
+	balance, err := t.get(fmt.Sprintf("/v1/accounts/%s/balance_history/%s", address, time.Now().Format("2006-01-02T15:04:05")))
+	if err != nil {
+		return 0
+	}
+	num, err1 := strconv.Atoi(string(balance))
+	if err1 != nil {
+		return 0
+	}
 
 	return num
 }

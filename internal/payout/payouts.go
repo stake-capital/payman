@@ -103,10 +103,10 @@ func (p *Payout) constructPayout(pastTransaction []tzkt.PastTransaction) (tzkt.R
 	}
 
 	totalRewards := p.calculateTotals(rewardsSplit)
-	balance := p.tzkt.GetBalance(p.config.Baker.PayoutAddress, 1359798)
+	balance := p.tzkt.GetCurrentBalance(p.config.Baker.PayoutAddress)
 
 	if balance < totalRewards {
-		return rewardsSplit, errors.New("not enough funds to pay users")
+		return rewardsSplit, errors.New("not enough funds")
 	}
 
 	bakerBalance, err := p.rpc.Balance(rpc.BalanceInput{
