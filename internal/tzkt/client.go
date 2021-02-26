@@ -28,6 +28,7 @@ type IFace interface {
 	GetRights(options ...URLParameters) (Rights, error)
 	GetHead() (Head, error)
 	GetBlocks(options ...URLParameters) (Blocks, error)
+	GetCurrentBalance(string) int
 }
 
 type Tzkt struct {

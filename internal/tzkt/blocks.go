@@ -2,6 +2,8 @@ package tzkt
 
 import (
 	"encoding/json"
+	"fmt"
+	"strconv"
 	"time"
 
 	"github.com/pkg/errors"
@@ -398,4 +400,21 @@ func (t *Tzkt) GetBlocks(options ...URLParameters) (Blocks, error) {
 	}
 
 	return blocks, nil
+}
+
+/*
+GetCurrentBalance -
+See: https://api.tzkt.io/#operation/Accounts_GetBalanceAtDate
+*/
+func (t *Tzkt) GetCurrentBalance(address string) int {
+	balance, err := t.get(fmt.Sprintf("/v1/accounts/%s/balance_history/%s", address, time.Now().Format("2006-01-02T15:04:05")))
+	if err != nil {
+		return 0
+	}
+	num, err1 := strconv.Atoi(string(balance))
+	if err1 != nil {
+		return 0
+	}
+
+	return num
 }

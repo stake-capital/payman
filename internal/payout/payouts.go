@@ -79,13 +79,13 @@ func New(config config.Config, cycle int, inject, verbose bool) (*Payout, error)
 func (p *Payout) Execute(pastTransactions []tzkt.PastTransaction) (tzkt.RewardsSplit, error) {
 	payout, err := p.constructPayoutFunc(pastTransactions)
 	if err != nil {
-		return payout, errors.Wrapf(err, "failed to execute payout for cycle %d, sob1", p.cycle)
+		return payout, errors.Wrapf(err, "failed to execute payout for cycle %d", p.cycle)
 	}
 
 	if p.inject {
 		operations, err := p.applyFunc(payout.Delegators)
 		if err != nil {
-			return payout, errors.Wrapf(err, "failed to execute payout for cycle %d, sob2", p.cycle)
+			return payout, errors.Wrapf(err, "failed to execute payout for cycle %d", p.cycle)
 		}
 
 		for _, op := range operations {
@@ -103,6 +103,11 @@ func (p *Payout) constructPayout(pastTransaction []tzkt.PastTransaction) (tzkt.R
 	}
 
 	totalRewards := p.calculateTotals(rewardsSplit)
+	balance := p.tzkt.GetCurrentBalance(p.config.Baker.PayoutAddress)
+
+	if balance < totalRewards {
+		return rewardsSplit, errors.New("not enough funds")
+	}
 
 	bakerBalance, err := p.rpc.Balance(rpc.BalanceInput{
 		Cycle:   p.cycle,

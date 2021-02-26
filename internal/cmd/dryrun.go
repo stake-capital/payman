@@ -80,15 +80,13 @@ func DryRunCommand() *cobra.Command {
 func (d *DryRun) execute() {
 	var pastTransactions []tzkt.PastTransaction
 
-	if d.cycle >= 286 && d.cycle <= 312 {
-		hashValue := getHashArrayFromCycle(d.cycle)
-		data, error1 := d.tzkt.GetPastTransactionsByHash(hashValue)
-		if error1 != nil {
-			log.WithField("error", error1.Error()).Fatal("Failed to execute payout - past Transactions.")
+	hashValue := getHashArrayFromCycle(d.cycle)
+	if len(hashValue) != 0 {
+		data, error := d.tzkt.GetPastTransactionsByHash(hashValue)
+		if error != nil {
+			log.WithField("error", error.Error()).Fatal("Failed to execute payout - past Transactions.")
 		}
 		pastTransactions = data
-	} else {
-		pastTransactions = nil
 	}
 
 	rewardsSplit, err := d.payout.Execute(pastTransactions)
