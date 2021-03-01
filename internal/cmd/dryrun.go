@@ -7,6 +7,7 @@ import (
 	"os"
 	"strconv"
 
+	gotezos "github.com/goat-systems/go-tezos/v2"
 	"github.com/goat-systems/tzpay/v3/internal/config"
 	"github.com/goat-systems/tzpay/v3/internal/payout"
 	"github.com/goat-systems/tzpay/v3/internal/print"
@@ -94,6 +95,13 @@ func (d *DryRun) execute() {
 		log.WithField("error", err.Error()).Fatal("Failed to execute payout.")
 	}
 
+	amount, totalCount, blackListed := getPaymentInfo(rewardsSplit)
+	currentBalance := d.tzkt.GetCurrentBalance(d.config.Baker.PayoutAddress)
+	fmt.Printf("You have to pay %f XTZ.\n", amount)
+	fmt.Printf("Current balance of the wallet: %f.\n", float64(currentBalance)/float64(gotezos.MUTEZ))
+	fmt.Printf("Number of Addresses: %d\n", totalCount)
+	fmt.Printf("Blacklisted Addresses: %d\n", blackListed)
+
 	if d.table {
 		print.Table(d.cycle, d.config.Baker.Address, rewardsSplit)
 	} else {
@@ -123,4 +131,19 @@ func getHashArrayFromCycle(cycle int) []string {
 		return nil
 	}
 	return data
+}
+
+func getPaymentInfo(rewardSplit tzkt.RewardsSplit) (float64, int, int) {
+	amount := 0.00
+	totalCount := 0
+	blackListed := 0
+	for _, delegator := range rewardSplit.Delegators {
+		if delegator.BlackListed == false {
+			amount += float64(delegator.NetRewards) / float64(gotezos.MUTEZ)
+			totalCount++
+		} else {
+			blackListed++
+		}
+	}
+	return amount, totalCount, blackListed
 }
