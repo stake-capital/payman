@@ -95,11 +95,11 @@ func (d *DryRun) execute() {
 		log.WithField("error", err.Error()).Fatal("Failed to execute payout.")
 	}
 
-	amount, totalCount, blackListed := getPaymentInfo(rewardsSplit)
+	amount, whiteListed, blackListed := getPaymentInfo(rewardsSplit)
 	currentBalance := d.tzkt.GetCurrentBalance(d.config.Baker.PayoutAddress)
 	fmt.Printf("You have to pay %f XTZ.\n", amount)
 	fmt.Printf("Current balance of the wallet: %f XTZ.\n", float64(currentBalance)/float64(gotezos.MUTEZ))
-	fmt.Printf("Number of Addresses: %d\n", totalCount)
+	fmt.Printf("whiteListed Addresses: %d\n", whiteListed)
 	fmt.Printf("Blacklisted Addresses: %d\n", blackListed)
 
 	if d.table {
@@ -135,15 +135,15 @@ func getHashArrayFromCycle(cycle int) []string {
 
 func getPaymentInfo(rewardSplit tzkt.RewardsSplit) (float64, int, int) {
 	amount := 0.00
-	totalCount := 0
+	whiteListed := 0
 	blackListed := 0
 	for _, delegator := range rewardSplit.Delegators {
 		if delegator.BlackListed == false {
 			amount += float64(delegator.NetRewards) / float64(gotezos.MUTEZ)
-			totalCount++
+			whiteListed++
 		} else {
 			blackListed++
 		}
 	}
-	return amount, totalCount, blackListed
+	return amount, whiteListed, blackListed
 }
