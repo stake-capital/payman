@@ -98,7 +98,7 @@ func (d *DryRun) execute() {
 	amount, totalCount, blackListed := getPaymentInfo(rewardsSplit)
 	currentBalance := d.tzkt.GetCurrentBalance(d.config.Baker.PayoutAddress)
 	fmt.Printf("You have to pay %f XTZ.\n", amount)
-	fmt.Printf("Current balance of the wallet: %f.\n", float64(currentBalance)/float64(gotezos.MUTEZ))
+	fmt.Printf("Current balance of the wallet: %f XTZ.\n", float64(currentBalance)/float64(gotezos.MUTEZ))
 	fmt.Printf("Number of Addresses: %d\n", totalCount)
 	fmt.Printf("Blacklisted Addresses: %d\n", blackListed)
 
