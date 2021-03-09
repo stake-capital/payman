@@ -100,15 +100,14 @@ func (r *Run) execute(cycle int) {
 	}
 
 	var pastTransactions []tzkt.PastTransaction
-	if (cycle >= 286 && cycle <= 312) || cycle == 322 {
-		hashValue := getHashArrayFromCycle(cycle)
-		data, error1 := r.tzkt.GetPastTransactionsByHash(hashValue)
-		if error1 != nil {
-			log.WithField("error", error1.Error()).Fatal("Failed to execute payout - past Transactions.")
+
+	hashValue := getHashArrayFromCycle(cycle)
+	if len(hashValue) != 0 {
+		data, error := r.tzkt.GetPastTransactionsByHash(hashValue)
+		if error != nil {
+			log.WithField("error", error.Error()).Fatal("Failed to execute payout - past Transactions.")
 		}
 		pastTransactions = data
-	} else {
-		pastTransactions = nil
 	}
 
 	rewardsSplit, err := payout.Execute(pastTransactions)
